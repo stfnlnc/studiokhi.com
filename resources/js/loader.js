@@ -1,6 +1,8 @@
 const links = document.querySelectorAll('.link-loader')
 const loader = document.getElementById('loader')
 const preloader = document.getElementById('preloader')
+const logoUp = document.getElementById('logo-preloader-up')
+const logoDown = document.getElementById('logo-preloader-down')
 
 links.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -14,5 +16,10 @@ links.forEach(link => {
 })
 
 window.onload = () => {
+    logoUp.classList.remove('translate-x-4')
+    logoUp.classList.remove('-translate-y-4')
+    logoUp.classList.remove('opacity-0')
+    logoDown.classList.remove('translate-y-4')
+    logoDown.classList.remove('opacity-0')
     preloader.classList.add('-translate-y-full')
 }
