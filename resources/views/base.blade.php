@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>@yield('title', 'Création de sites web et identités visuelles') - {{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 <header>
     <nav
-        class="px-16 py-8 flex flex-row items-center justify-between z-20 fixed top-0 left-0 w-full mix-blend-difference invert"
-    >
+        class="px-16 py-8 flex flex-row items-center justify-between z-20 fixed top-0 left-0 w-full mix-blend-difference invert">
         <a class="link-loader" href="{{ route('app.index') }}">
             <x-logo.inline class="fill-sk-dark w-40"/>
         </a>

@@ -3,10 +3,12 @@ const loader = document.getElementById('loader')
 const preloader = document.getElementById('preloader')
 const logoUp = document.getElementById('logo-preloader-up')
 const logoDown = document.getElementById('logo-preloader-down')
+const dropdown = document.getElementById('dropdown')
 
 links.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault()
+        dropdown.classList.add('-translate-y-full')
         let href = link.getAttribute('href')
         loader.classList.remove('translate-y-full')
         setTimeout(() => {
