@@ -7,7 +7,7 @@
 <div
     class='group flex w-fit cursor-pointer select-none flex-col items-start bg-transparent text-body-base text-sk-{{ $mode }} transition-colors duration-300'
 >
-    <a class="py-[0.3rem]">
+    <a {{ $attributes->merge(['class' => 'py-[0.3rem]']) }}>
         {{ $slot }}
     </a>
     @if($underline)

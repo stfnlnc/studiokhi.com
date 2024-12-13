@@ -27,7 +27,7 @@
         margin: 0;
         padding: 0;
         font-family: "Inter", sans-serif;
-        @apply text-sk-dark overflow-x-hidden;
+        @apply text-sk-dark overflow-x-hidden bg-sk-light;
     }
 
     h1,
