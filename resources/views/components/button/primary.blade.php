@@ -9,7 +9,7 @@
      $classes .=
      $mode === 'dark'
      ? 'border-sk-light text-sk-light bg-sk-dark hover:border-sk-grey hover:bg-sk-grey'
-     : 'border-sk-dark text-sk-dark;bg-sk-light hover:bg-sk-dark hover:text-sk-light';
+     : 'border-sk-dark text-sk-dark bg-sk-light hover:bg-sk-dark hover:border-sk-light hover:text-sk-light';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
