@@ -24,21 +24,24 @@ ScrollTrigger.create({
 
 const services = document.querySelectorAll('.service')
 
-services.forEach(service => {
-    gsap.to(service, {
-        filter: "blur(5px)",
-        duration: 1,
-        scrollTrigger: {
-            trigger: service,
-            start: "bottom 75%",
-            scrub: 1,
-        }
-    })
+if (window.innerWidth > 768) {
+    services.forEach(service => {
+        gsap.to(service, {
+            filter: "blur(5px)",
+            duration: 1,
+            scrollTrigger: {
+                trigger: service,
+                start: "bottom 75%",
+                scrub: 1,
+            }
+        })
 
-    ScrollTrigger.create({
-        trigger: service,
-        pin: true,
-        pinSpacing: false,
-        start: "bottom bottom"
+        ScrollTrigger.create({
+            trigger: service,
+            pin: true,
+            pinSpacing: false,
+            start: "bottom bottom"
+        })
     })
-})
+}
+
