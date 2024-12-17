@@ -48,7 +48,7 @@
             <h1>Branding & <br> Direction Artistique</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-[32rem]">
+            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
                 Du logo à un système graphique audacieux, nous élaborons ensemble une image qui vous ressemble pour
                 renforcer votre présence en ligne.
             </p>
@@ -70,7 +70,7 @@
             <h1>Webdesign & <br> Design Digital</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-[32rem]">
+            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
                 Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent l'attention. Notre
                 approche est de trouver le juste équilibre entre beauté et fonctionnalité.
             </p>
@@ -91,7 +91,7 @@
             <h1 class="break-all">Développement Web & <br> Sites Sur Mesure</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-[32rem]">
+            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
                 Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre marque. Grâce à
                 notre expertise technique, nous transformons vos idées en réalité digitale.
             </p>
