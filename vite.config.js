@@ -1,5 +1,6 @@
 import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
     plugins: [
@@ -11,5 +12,6 @@ export default defineConfig({
             ],
             refresh: true,
         }),
+        viteCompression()
     ],
 });

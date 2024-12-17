@@ -16,7 +16,7 @@
         <x-logo.inline class="absolute bottom-0 left-0 hidden w-full px-4 fill-sk-dark md:block lg:px-8 xl:px-16"/>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
+        class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
         <p class="w-2/5 text-body-lg">
             Notre approche
         </p>
@@ -104,6 +104,267 @@
                 <li>Formation & Maintenance</li>
             </ul>
             <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
+        </div>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
+        <div class="flex flex-col gap-4 lg:flex-row">
+            <p class="w-2/5 text-body-lg">
+                Nos réalisations
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <div class="text-body-base text-sk-grey">
+                    <p>Nous nous efforçons de toujours créer quelque chose qui sort de l'ordinaire.
+                        <br><br>
+                        Notre portfolio reflète notre expertise et notre engagement à fournir des produits et des
+                        marques
+                        numériques de haute qualité.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-20">
+            <div class="relative flex w-full flex-col gap-4">
+                <img class="aspect-video rounded-2xl"
+                     src="https://studiokhi.com/uploads/projects/featured/full/oto-nove-swiss-3bd98c001b712315dcd1f01d71b4755f.webp"
+                     alt="">
+                <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                    <x-tag.primary color="blue">Développement web</x-tag.primary>
+                    <x-tag.primary color="purple">Branding</x-tag.primary>
+                </div>
+                <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
+                    <p class="text-body-lg lg:w-2/5">Nom du projet</p>
+                    <p class="text-body-base text-sk-grey lg:w-2/5">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed
+                        do eiusmod
+                        tempor incididunt ut labore.</p>
+                    <p class="text-body-base lg:ml-auto">Tech</p>
+                </div>
+            </div>
+        </div>
+        <x-button.secondary class="self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col px-4 py-24 bg-sk-dark text-sk-light lg:flex-row lg:px-8 xl:px-16">
+        <div id="pin-title" class="w-2/5">
+            <p class="w-3/4 text-body-lg">
+                Nous travaillons en étroite collaboration avec nos clients pour valoriser leur marque.
+            </p>
+        </div>
+        <div class="flex w-full flex-col gap-20 lg:w-3/5">
+            <div class="flex flex-col gap-2">
+                <p class="text-body-base">
+                    01 L'appel découverte
+                </p>
+                <p class="w-3/4 text-sk-grey text-body-sm">
+                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
+                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
+                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
+                    proposer un devis détaillé, adapté à votre projet.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <p class="text-body-base">
+                    01 L'appel découverte
+                </p>
+                <p class="w-3/4 text-sk-grey text-body-sm">
+                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
+                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
+                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
+                    proposer un devis détaillé, adapté à votre projet.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <p class="text-body-base">
+                    01 L'appel découverte
+                </p>
+                <p class="w-3/4 text-sk-grey text-body-sm">
+                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
+                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
+                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
+                    proposer un devis détaillé, adapté à votre projet.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <p class="text-body-base">
+                    01 L'appel découverte
+                </p>
+                <p class="w-3/4 text-sk-grey text-body-sm">
+                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
+                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
+                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
+                    proposer un devis détaillé, adapté à votre projet.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <p class="text-body-base">
+                    01 L'appel découverte
+                </p>
+                <p class="w-3/4 text-sk-grey text-body-sm">
+                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
+                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
+                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
+                    proposer un devis détaillé, adapté à votre projet.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
+        <div class="flex flex-row">
+            <p class="w-2/5 text-body-lg">
+                Le Studio
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <h3 class="w-full md:w-4/5">
+                    Un duo créatif au service d’une seule mission : vous rendre unique.
+                </h3>
+                <div class="text-body-base text-sk-grey">
+                    <p>Derrière Studio Khi, nous sommes deux : une designer et un développeur. Nous avons rassemblé nos
+                        compétences afin de vous proposer une expertise complète au service de votre marque.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <x-button.secondary href="{{ route('app.studio') }}" class="link-loader" mode="dark" icon>Découvrir
+                        le studio
+                    </x-button.secondary>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-5">
+            <div class="col-span-2 mr-8">
+                <img class="w-full rounded-3xl object-cover object-center h-[32rem]"
+                     src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
+            </div>
+            <img class="col-span-3 w-full rounded-3xl object-cover object-center h-[32rem]"
+                 src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
+        </div>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
+        <div class="flex flex-row">
+            <p class="w-2/5 text-body-lg">
+                Nos clients
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <div class="text-body-base text-sk-grey">
+                    <p> Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
+                        des
+                        partenariats créatifs et durables avec tous nos clients.
+                        <br><br>
+                        Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <x-button.secondary mode="dark" icon>Lire tous les avis</x-button.secondary>
+                </div>
+            </div>
+        </div>
+        <div id="container" class="relative flex w-full flex-row">
+            <div id="wrapper" class="inline-flex gap-8 overflow-hidden">
+                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
+                </card>
+                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark">
+                    <x-icon.stars class="w-20"/>
+                </card>
+                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark">
+                    <x-icon.stars class="w-20"/>
+                </card>
+            </div>
+        </div>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-dark text-sk-light border-sk-light-grey lg:px-8 xl:px-16">
+        <div class="flex flex-row">
+            <p class="w-2/5 text-body-lg">
+                Articles
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <div class="text-body-base">
+                    <p> Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par
+                        notre sélection d’articles.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <x-button.secondary mode="dark" icon>Lire tous les avis</x-button.secondary>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-5">
+            <div class="flex flex-col items-start gap-4">
+                <a href="">
+                    <img class="aspect-square rounded-3xl object-cover object-center"
+                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         alt="">
+                </a>
+                <a href="" class="mt-2 w-3/4 text-body-lg">
+                    5 ways the power of Ai might impact your corporate vision
+                </a>
+                <x-button.secondary>Lire l'article</x-button.secondary>
+            </div>
+            <div class="flex flex-col items-start gap-4">
+                <a href="">
+                    <img class="aspect-square rounded-3xl object-cover object-center"
+                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         alt="">
+                </a>
+                <a href="" class="mt-2 w-3/4 text-body-lg">
+                    5 ways the power of Ai might impact your corporate vision
+                </a>
+                <x-button.secondary>Lire l'article</x-button.secondary>
+            </div>
+        </div>
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
+        <div class="flex flex-row">
+            <p class="w-2/5 text-body-lg">
+                FAQ
+            </p>
+            <div class="flex w-full flex-col lg:w-3/5">
+                <div class="flex flex-col">
+                    <div class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-48 py-5 text-body-lg">
+                            Pourquoi faire confiance au Studio Khi ?
+                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
+                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
+                            tempora totam vero voluptate.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-48 py-5 text-body-lg">
+                            Pourquoi faire confiance au Studio Khi ?
+                            <x-icon.plus class="hidden h-3 w-3 rotate-45 faq-plus"/>
+                        </div>
+                        <p class="hidden w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
+                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
+                            tempora totam vero voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                            adipisci aliquam animi aperiam
+                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
+                            tempora totam vero voluptate.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
