@@ -4,22 +4,24 @@
 
 @section('content')
     <section id="hero"
-             class="relative z-0 xl:px-16 lg:px-8 px-4 w-full h-screen min-h-[700px] flex flex-col items-center justify-center">
-        <div class="flex flex-col gap-8 items-center text-center">
+             class="relative z-0 flex w-full flex-col items-center justify-center px-4 h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
+        <div class="flex flex-col-reverse items-center gap-8 text-center md:flex-col">
             <x-button.primary mode="dark" icon>Réserver votre appel découverte</x-button.primary>
-            <p class="text-body-base text-sk-grey w-1/2">Nous créons des sites et des designs pour des marques et des
+            <p class="w-full text-body-base text-sk-grey sm:w-1/2">Nous créons des sites et des designs pour des marques
+                et des
                 entrepreneurs
                 qui souhaitent se démarquer sur le web.</p>
+            <x-logo.square class="mb-16 block w-48 fill-sk-dark md:hidden"/>
         </div>
-        <x-logo.inline class="fill-sk-dark absolute bottom-0 left-0 w-full xl:px-16 lg:px-8 px-4"/>
+        <x-logo.inline class="absolute bottom-0 left-0 hidden w-full px-4 fill-sk-dark md:block lg:px-8 xl:px-16"/>
     </section>
     <section
-        class="xl:px-16 lg:px-8 px-4 py-24 z-10 relative w-full flex flex-row bg-sk-light border-t border-sk-light-grey">
-        <p class="text-body-lg w-2/5">
+        class="relative z-10 flex w-full flex-col lg:flex-row border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
+        <p class="w-2/5 text-body-lg">
             Notre approche
         </p>
-        <div class="flex flex-col w-3/5 gap-14">
-            <h3 class="w-4/5">On vous accompagne pour que vous ne ressembliez à personne.</h3>
+        <div class="flex w-full lg:w-3/5 flex-col gap-14">
+            <h3 class="w-full md:w-4/5">On vous accompagne pour que vous ne ressembliez à personne.</h3>
             <div class="text-body-base text-sk-grey">
                 <p>Chez Studio Khi, nous combinons stratégie digitale, design et développement web pour créer des
                     identités
@@ -40,35 +42,67 @@
         </div>
     </section>
     <section
-        class="xl:px-16 lg:px-8 px-4 py-24 z-10 relative h-screen w-full bg-sk-green flex flex-col items-start justify-center gap-24">
-        <h1>Branding & <br> Direction Artistique</h1>
-        <div class="flex flex-col items-start justify-start self-end gap-12 w-3/5">
-            <p class="text-body-base text-sk-grey">
+        class="relative z-10 flex h-screen w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-green lg:px-8 xl:px-16">
+        <div>
+            <span class="text-sk-dark text-body-base">01</span>
+            <h1>Branding & <br> Direction Artistique</h1>
+        </div>
+        <div class="flex lg:w-3/5 w-full flex-col items-start justify-start gap-12 self-end">
+            <p class="text-body-base text-sk-grey w-full sm:w-[32rem]">
                 Du logo à un système graphique audacieux, nous élaborons ensemble une image qui vous ressemble pour
                 renforcer votre présence en ligne.
             </p>
+            <ul class="text-sk-dark text-body-base">
+                <li>Moodboards</li>
+                <li>Logo</li>
+                <li>Identité Visuelle</li>
+                <li>Charte graphique</li>
+                <li>Design Réseaux Sociaux</li>
+                <li>Pitchdeck</li>
+            </ul>
             <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>
     <section
-        class="xl:px-16 lg:px-8 px-4 py-24 z-10 relative h-screen w-full bg-sk-blue flex flex-col items-start justify-center gap-24">
-        <h1>Webdesign & <br> Design Digital</h1>
-        <div class="flex flex-col items-start justify-start self-end gap-12 w-3/5">
-            <p class="text-body-base text-sk-grey">
+        class="relative z-10 flex h-screen w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-blue lg:px-8 xl:px-16">
+        <div>
+            <span class="text-sk-dark text-body-base">02</span>
+            <h1>Webdesign & <br> Design Digital</h1>
+        </div>
+        <div class="flex w-full lg:w-3/5 flex-col items-start justify-start gap-12 self-end">
+            <p class="text-body-base text-sk-grey w-full sm:w-[32rem]">
                 Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent l'attention. Notre
                 approche est de trouver le juste équilibre entre beauté et fonctionnalité.
             </p>
+            <ul class="text-sk-dark text-body-base">
+                <li>Webdesign</li>
+                <li>UX & UI Design</li>
+                <li>Wireframe</li>
+                <li>Maquettes & Prototypes</li>
+                <li>Design System</li>
+            </ul>
             <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>
     <section
-        class="xl:px-16 lg:px-8 px-4 py-24 z-10 relative h-screen w-full bg-sk-purple flex flex-col items-start justify-center gap-24">
-        <h1>Développement Web & <br> & Sites Sur Mesure</h1>
-        <div class="flex flex-col items-start justify-start self-end gap-12 w-3/5">
-            <p class="text-body-base text-sk-grey">
+        class="relative z-10 flex h-screen w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-purple lg:px-8 xl:px-16">
+        <div>
+            <span class="text-sk-dark text-body-base">03</span>
+            <h1 class="break-all">Développement Web & <br> Sites Sur Mesure</h1>
+        </div>
+        <div class="flex w-full lg:w-3/5 flex-col items-start justify-start gap-12 self-end">
+            <p class="text-body-base text-sk-grey w-full sm:w-[32rem]">
                 Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre marque. Grâce à
                 notre expertise technique, nous transformons vos idées en réalité digitale.
             </p>
+            <ul class="text-sk-dark text-body-base">
+                <li>Site vitrine</li>
+                <li>Site E-Commerce</li>
+                <li>Front-end & Back-end</li>
+                <li>Fonctionnalités Sur Mesure</li>
+                <li>SEO & Référencement Naturel</li>
+                <li>Formation & Maintenance</li>
+            </ul>
             <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>

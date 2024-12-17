@@ -1,4 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
@@ -11,11 +10,6 @@ export default {
 
     theme: {
         extend: {
-            fontSize: {
-                "body-sm": ["1rem", "150%"],
-                "body-base": ["1.1875rem", "150%"],
-                "body-lg": ["1.625rem", "135%"],
-            },
             colors: {
                 "sk-dark": "#191919",
                 "sk-light": "#FFFFFF",

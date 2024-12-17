@@ -10,7 +10,7 @@ gsap.to(hero, {
     duration: 1,
     scrollTrigger: {
         trigger: hero,
-        start: "top top",
+        start: "bottom 75%",
         scrub: 1,
     }
 })
@@ -19,5 +19,26 @@ ScrollTrigger.create({
     trigger: hero,
     pin: true,
     pinSpacing: false,
-    start: "top top"
+    start: "bottom bottom"
+})
+
+const services = document.querySelectorAll('.service')
+
+services.forEach(service => {
+    gsap.to(service, {
+        filter: "blur(5px)",
+        duration: 1,
+        scrollTrigger: {
+            trigger: service,
+            start: "bottom 75%",
+            scrub: 1,
+        }
+    })
+
+    ScrollTrigger.create({
+        trigger: service,
+        pin: true,
+        pinSpacing: false,
+        start: "bottom bottom"
+    })
 })

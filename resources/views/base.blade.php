@@ -10,18 +10,18 @@
 <body>
 <header>
     <nav
-        class="xl:px-16 lg:px-8 px-4 py-8 flex flex-row items-center justify-between z-20 fixed top-0 left-0 w-full mix-blend-difference invert">
+        class="fixed top-0 left-0 z-20 flex w-full flex-row items-center justify-between px-4 py-8 mix-blend-difference invert lg:px-8 xl:px-16">
         <a class="link-loader" href="{{ route('app.index') }}">
-            <x-logo.inline class="fill-sk-dark w-40"/>
+            <x-logo.inline class="w-40 fill-sk-dark"/>
         </a>
-        <div class="hidden lg:flex flex-row gap-10">
+        <div class="hidden flex-row gap-10 lg:flex">
             <x-nav.link id="dropdown-link" mode="dark" underline>Services</x-nav.link>
             <x-nav.link class="link-loader" :href="route('app.work')" mode="dark" underline>Réalisations</x-nav.link>
             <x-nav.link class="link-loader" :href="route('app.faq')" mode="dark" underline>FAQ</x-nav.link>
             <x-nav.link class="link-loader" :href="route('app.studio')" mode="dark" underline>Studio</x-nav.link>
             <x-nav.link class="link-loader" :href="route('app.posts')" mode="dark" underline>Articles</x-nav.link>
         </div>
-        <x-button.primary class="hidden lg:flex link-loader" :href="route('app.contact')" mode="light" icon>Contact
+        <x-button.primary class="hidden link-loader lg:flex" :href="route('app.contact')" mode="light" icon>Contact
         </x-button.primary>
     </nav>
     <x-nav.dropdown id="dropdown"/>
