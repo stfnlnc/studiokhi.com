@@ -1,4 +1,4 @@
 <div {{ $attributes }}
-     class="px-16 transition-transform fixed left-0 top-0 z-50 hidden h-[101lvh] w-screen flex-row items-center justify-center overflow-y-auto bg-sk-dark duration-1000 ease-in-out lg:flex translate-y-full"
+     class="fixed top-0 left-0 z-50 flex w-screen translate-y-full flex-row items-center justify-center overflow-y-auto px-16 transition-transform duration-1000 ease-in-out h-[101lvh] bg-sk-dark"
 >
 </div>

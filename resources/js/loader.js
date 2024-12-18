@@ -5,6 +5,7 @@ const logoUp = document.getElementById('logo-preloader-up')
 const logoDown = document.getElementById('logo-preloader-down')
 const dropdown = document.getElementById('dropdown')
 
+
 links.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault()
@@ -16,7 +17,6 @@ links.forEach(link => {
         }, 1000)
     })
 })
-
 window.onload = () => {
     logoUp.classList.remove('translate-x-4')
     logoUp.classList.remove('-translate-y-4')
@@ -25,3 +25,4 @@ window.onload = () => {
     logoDown.classList.remove('opacity-0')
     preloader.classList.add('-translate-y-full')
 }
+
