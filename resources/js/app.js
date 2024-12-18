@@ -15,6 +15,16 @@ ScrollSmoother.create({
     smoothTouch: 0.1,
 });
 
+const footer = document.querySelector('footer')
+if (window.innerWidth > 1024) {
+    ScrollTrigger.create({
+        trigger: footer,
+        pin: true,
+        start: "bottom bottom",
+        end: "+=100%"
+    });
+}
+
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;

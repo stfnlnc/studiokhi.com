@@ -5,28 +5,29 @@ import InertiaPlugin from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(ScrollTrigger)
 
-const hero = document.getElementById("hero")
-
-gsap.to(hero, {
-    filter: "blur(5px)",
-    duration: 1,
-    scrollTrigger: {
-        trigger: hero,
-        start: "bottom 75%",
-        scrub: 1,
-    }
-})
-
-ScrollTrigger.create({
-    trigger: hero,
-    pin: true,
-    pinSpacing: false,
-    start: "bottom bottom"
-})
-
-const services = document.querySelectorAll('.service')
-
 if (window.innerWidth > 768) {
+    const hero = document.getElementById("hero")
+
+    gsap.to(hero, {
+        filter: "blur(5px)",
+        duration: 1,
+        scrollTrigger: {
+            trigger: hero,
+            start: "bottom 75%",
+            scrub: 1,
+        }
+    })
+
+    ScrollTrigger.create({
+        trigger: hero,
+        pin: true,
+        pinSpacing: false,
+        start: "bottom bottom"
+    })
+
+    const services = document.querySelectorAll('.service')
+
+
     services.forEach(service => {
         gsap.to(service, {
             filter: "blur(5px)",
@@ -65,7 +66,9 @@ const wrapper = document.getElementById('wrapper')
 if (wrapper.clientWidth > window.innerWidth) {
     Draggable.create(wrapper, {
         type: "x",
-        bounds: container
+        bounds: container,
+        inertia: true,
+        dragResistance: 0.2
     });
 } else {
     container.style.justifyContent = "center"

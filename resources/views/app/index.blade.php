@@ -322,6 +322,36 @@
                         ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
                     </p>
                 </card>
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
+                </card>
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
+                </card>
             </div>
         </div>
     </section>
