@@ -1,123 +1,30 @@
 @extends('base')
-@section('title', 'Nos Réalisations')
+@section('title', 'FAQ')
 
-@vite(['resources/js/page-studio.js'])
+@vite(['resources/js/page-service.js'])
 
 @section('content')
-    <section
-        class="relative z-10 flex w-full flex-col gap-20 border-b px-4 py-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 lg:py-48 xl:px-16">
-        <h1>Découvrir notre studio</h1>
-        <p class="w-full self-end text-body-base lg:w-1/2">
-            Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des
-            designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.
-        </p>
-    </section>
-    <section
-        class="relative z-10 flex w-full flex-row justify-center items-center gap-20 border-b px-4 py-16 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16">
-        <x-button.primary mode="dark" icon>Réservez votre appel découverte</x-button.primary>
-    </section>
-    <section class="relative z-10 bg-sk-light">
-        <img id="pin-image" class="w-full h-[100lvh]" src="https://studiokhi.com/build/images/uploads/le-studio-1.webp" alt="">
-    </section>
-    <section
-        class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
-        <p class="w-full lg:w-2/5 text-body-lg">
-            Notre approche
-        </p>
-        <div class="flex w-full flex-col gap-14 lg:w-3/5">
-            <h3 class="w-full md:w-4/5">
-                Combiner design et développement web pour créer des marques et des sites que l’on remarque.
-            </h3>
-            <div class="text-body-base text-sk-grey">
-                <p>
-                    Chez Studio Khi, nous estimons que chaque projet est bien plus qu'une simple création ; c'est une opportunité d'établir une
-                    présence en ligne distinctive et mémorable. Nous croyons en la puissance du design sur mesure pour façonner des expériences
-                    numériques uniques qui captivent les utilisateurs et amplifient la valeur de votre marque. Dans un marché concurrentiel où chaque
-                    détail compte, le design n'est plus juste une option, mais une nécessité pour se démarquer.
-                    <br><br>
-                    Nous créons des sites internet et des designs sur mesure, avec comme ligne de mire de vous offrir des outils à la fois créatifs,
-                    intuitifs et performants.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section
-        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-dark text-sk-light border-sk-light-grey lg:px-8 xl:px-16">
-        <div class="flex flex-col gap-16">
-            <h3 class="w-full lg:w-2/5">
-                Une agence à 360° pour tout votre site
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div class="flex flex-col gap-8">
-                    <p class="text-body-lg">
-                        Branding & <br>
-                        Direction Artistique
-                    </p>
-                    <p class="text-body-sm text-sk-grey">
-                        Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence
-                        en ligne.
-                    </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <p class="text-body-lg">
-                        Webdesign & <br>
-                        Design Digital
-                    </p>
-                    <p class="text-body-sm text-sk-grey">
-                        La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes tout en proposant une
-                        expérience utilisateur optimale.
-                    </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <p class="text-body-lg">
-                        Développement Web & <br>
-                        Sites Sur Mesure
-                    </p>
-                    <p class="text-body-sm text-sk-grey">
-                        Nous développons votre site en langage web, identique à la maquette, tout en respectant les meilleures pratiques du web.
-                    </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
-                </div>
-            </div>
+    <section id="hero"
+             class="relative z-10 flex w-full flex-col gap-20 border-b px-4 py-36 h-[100lvh] bg-sk-green text-sk-dark border-sk-light-grey lg:px-8 lg:py-48 xl:px-16">
+        <h1>Branding & <br>
+            Direction Artistique</h1>
+        <div class="flex w-full flex-col gap-4 self-end lg:w-1/2">
+            <p class="text-body-base">
+                Identifiable et mémorable, votre image se doit être distinctive et en cohérence avec vos valeurs et votre discours. Du logo à la
+                charte
+                graphique, nous élaborons ensemble une image qui vous ressemble et qui peut faire la différence. Nous traduisons visuellement votre
+                histoire.
+            </p>
+            <x-button.primary mode="darker" icon>Réservez votre appel découverte</x-button.primary>
         </div>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
-        <p class="w-full lg:w-2/5 text-body-lg">
-            L'équipe
+        <p id="pin-title" class="w-full text-body-lg lg:w-2/5">
+            Créer une identité visuelle unique pour que votre marque se fasse enfin remarquer sur le web.
         </p>
-        <div class="flex w-full flex-col gap-14 lg:w-3/5">
-            <h3 class="w-full md:w-4/5">
-                Un duo de passionnés dévoués à des projets passionnants.
-            </h3>
-            <div class="grid grid-cols-2 gap-8">
-                <div class="flex flex-col">
-                    <img class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                         src="https://studiokhi.com/build/images/uploads/cynthia-jego.webp" alt="">
-                    <p class="text-body-lg mt-4">Cynthia Jego</p>
-                    <p class="text-body-base text-sk-grey">Designer</p>
-                    <x-button.secondary icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
-                </div>
-                <div class="flex flex-col">
-                    <img class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                         src="https://studiokhi.com/build/images/uploads/stefan-lancelot.webp" alt="">
-                    <p class="text-body-lg mt-4">Stefan Lancelot</p>
-                    <p class="text-body-base text-sk-grey">Développeur web</p>
-                    <x-button.secondary icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
-                </div>
-            </div>
-        </div>
-    </section>
-    @include('app.partials.process')
-    <section
-        class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
-        <p class="w-full lg:w-2/5 text-body-lg">
-            Notre approche
-        </p>
-        <div class="flex w-full flex-col gap-8 lg:w-3/5 text-sk-light">
-            <card class="flex flex-col gap-4 bg-sk-dark rounded-3xl p-8">
+        <div class="flex w-full flex-col gap-8 text-sk-light lg:w-3/5">
+            <card class="flex flex-col gap-4 rounded-3xl p-8 bg-sk-dark">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"></rect>
                     <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"></path>
@@ -132,7 +39,7 @@
                     chaque client et chaque projet.
                 </p>
             </card>
-            <card class="flex flex-col gap-4 bg-sk-dark rounded-3xl p-8">
+            <card class="flex flex-col gap-4 rounded-3xl p-8 bg-sk-dark">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"></rect>
                     <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"></path>
@@ -146,7 +53,7 @@
                     clients, de la conception initiale à la mise en ligne et au-delà.
                 </p>
             </card>
-            <card class="flex flex-col gap-4 bg-sk-dark rounded-3xl p-8">
+            <card class="flex flex-col gap-4 rounded-3xl p-8 bg-sk-dark">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"></rect>
                     <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"></path>
@@ -160,7 +67,7 @@
                     à nos clients des produits uniques et qui répondent pleinement à leurs besoins.
                 </p>
             </card>
-            <card class="flex flex-col gap-4 bg-sk-dark rounded-3xl p-8">
+            <card class="flex flex-col gap-4 rounded-3xl p-8 bg-sk-dark">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="#191919"></rect>
                     <path d="M31.3601 0.587891H0.587891V31.3089H31.3601V0.587891Z" stroke="#191919" stroke-width="5" stroke-miterlimit="10"></path>
@@ -176,9 +83,64 @@
             </card>
         </div>
     </section>
-    @include('app.partials.review')
-    <section>
-        <img class="w-full h-[100lvh]" src="https://studiokhi.com/build/images/uploads/le-studio-1.webp" alt="">
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
+        <div class="flex flex-col gap-4 lg:flex-row">
+            <p class="w-2/5 text-body-lg">
+                Notre savoir-faire
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <h3>
+                    Des identités uniques et impactantes pour propulser et élever votre marque.
+                </h3>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-3">
+            <div class="flex flex-col gap-8">
+                <p class="text-body-lg">
+                    Adobe Designer
+                </p>
+                <p class="text-body-sm text-sk-grey">
+                    Nous utilisons la suite Adobe Creative pour donner vie à votre marque. Ces logiciels offrent une
+                    gamme d'outils polyvalents et performants, allant de la conception de logos à la création de
+                    documents marketing. Nous pouvons ainsi exprimer pleinement la personnalité et les valeurs de
+                    votre marque à travers des designs percutants et professionnels.
+                </p>
+            </div>
+            <div class="flex flex-col gap-8">
+                <p class="text-body-lg">
+                    Des designs orientés web
+                </p>
+                <p class="text-body-sm text-sk-grey">
+                    Nos designs sont principalement pensés et conçus pour le web. C'est notre terrain de jeu, et il requiert une approche spécifique.
+                    En fusionnant notre expertise des principes graphiques avec les spécificités du monde numérique, nous créons des designs qui
+                    renforceront votre image de marque de manière cohérente et engageante.
+                </p>
+            </div>
+            <div class="flex flex-col gap-8">
+                <p class="text-body-lg">
+                    Cohérence de la marque
+                </p>
+                <p class="text-body-sm text-sk-grey">
+                    L'identité de votre marque ne se limite pas à un seul support. C'est pourquoi nous assurons une déclinaison de votre identité
+                    visuelle sur une multitude de supports, des réseaux sociaux en passant par les présentations Powerpoint. Chaque interaction avec
+                    votre marque est pensée pour garantir une cohérence et un impact maximal.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="px-4 lg:px-8 xl:px-16 py-4 bg-sk-dark grid grid-cols-3 md:grid-cols-6 gap-8 text-center justify-items-center">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+    </section>
+    <section
+        class="relative z-10 flex w-full flex-col lg:flex-row justify-start gap-8 px-4 py-24 bg-sk-green lg:px-8 xl:px-16 text-center lg:text-left">
+        <div class="h2 w-full lg:w-2/3">Vous souhaitez connaître nos tarifs ?</div>
+        <x-button.primary class="lg:ml-auto self-center lg:self-end" mode="darker" icon>Accéder aux tarifs</x-button.primary>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
@@ -221,9 +183,9 @@
         </div>
     </section>
     @include('app.partials.cta', [
-    'title' => 'Prêts à nous partager votre projet ?',
-    'description' => 'Réservez votre appel découverte',
-    'color' => 'beige',
-    'href' => ''
-    ])
+'title' => 'Prêts à nous partager votre projet ?',
+'description' => 'Réservez votre appel découverte',
+'color' => 'green',
+'href' => ''
+])
 @endsection

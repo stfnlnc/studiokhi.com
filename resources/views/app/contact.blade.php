@@ -2,7 +2,7 @@
 @section('title', 'Nous Contacter')
 
 @section('content')
-    <section class="relative z-10 flex w-full flex-col gap-20  px-4 py-24   lg:px-8 xl:px-16relative h-screen min-h-[700px] bg-sk-dark items-start justify-center
+    <section class="relative z-10 flex w-full flex-col gap-20  px-4 py-24 lg:px-8 xl:px-16 h-screen min-h-[700px] bg-sk-dark items-start justify-center
      text-sk-light">
         <div class="flex flex-col items-start gap-8">
             <h1>Nous avons hâte <br> d'écouter votre projet</h1>

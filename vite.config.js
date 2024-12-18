@@ -8,7 +8,9 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/page-index.js'
+                'resources/js/page-index.js',
+                'resources/js/page-studio.js',
+                'resources/js/page-service.js',
             ],
             refresh: true,
         }),

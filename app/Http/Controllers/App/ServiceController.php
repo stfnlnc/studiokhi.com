@@ -6,8 +6,18 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function branding()
     {
-        return view('app.index');
+        return view('app.branding');
+    }
+
+    public function webdesign()
+    {
+        return view('app.webdesign');
+    }
+
+    public function website()
+    {
+        return view('app.website');
     }
 }

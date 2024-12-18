@@ -4,6 +4,8 @@ use App\Http\Controllers\App\ContactController;
 use App\Http\Controllers\App\FaqController;
 use App\Http\Controllers\App\IndexController;
 use App\Http\Controllers\App\PostController;
+use App\Http\Controllers\App\PriceController;
+use App\Http\Controllers\App\ServiceController;
 use App\Http\Controllers\App\StudioController;
 use App\Http\Controllers\App\WorkController;
 use App\Http\Controllers\ProfileController;
@@ -17,6 +19,12 @@ Route::prefix('')->name('app.')->group(function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
     Route::get('/articles', [PostController::class, 'index'])->name('posts');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/tarifs', [PriceController::class, 'index'])->name('price');
+    Route::prefix('/services')->name('service.')->group(function () {
+        Route::get('/branding-et-direction-artistique', [ServiceController::class, 'branding'])->name('branding');
+        Route::get('/webdesign-et-design-digital', [ServiceController::class, 'webdesign'])->name('webdesign');
+        Route::get('/sites-sur-mesure', [ServiceController::class, 'website'])->name('website');
+    });
 });
 
 Route::get('/dashboard', function () {

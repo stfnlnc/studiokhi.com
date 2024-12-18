@@ -14,7 +14,7 @@ links.forEach(link => {
         loader.classList.remove('translate-y-full')
         setTimeout(() => {
             window.location.href = href
-        }, 1000)
+        }, 500)
     })
 })
 window.onload = () => {

@@ -38,11 +38,11 @@
         <a class="link-loader" href="{{ route('app.index') }}">
             <x-logo.inline class="w-40 fill-sk-dark 2xl:w-[10vw]"/>
         </a>
+        @php
+            $route = request()->route()->getName();
+        @endphp
         <div class="hidden flex-row gap-10 lg:flex">
-            <x-nav.link id="dropdown-link" mode="dark" underline>Services</x-nav.link>
-            @php
-                $route = request()->route()->getName();
-            @endphp
+            <x-nav.link id="dropdown-link" :current="str_contains($route, 'app.service.')" mode="dark" underline>Services</x-nav.link>
             <x-nav.link class="link-loader" :current="$route === 'app.work'" :href="route('app.work')" mode="dark"
                         underline>Réalisations
             </x-nav.link>

@@ -1,6 +1,6 @@
 @php
     $classes = 'h-[1rem] lg:h-[1.1875rem] 2xl:h-[1.1875vw] w-[1rem] lg:w-[1.1875rem] 2xl:w-[1.1875vw] transition-colors duration-300 ';
-    $classes .= $mode === 'dark' ? 'stroke-sk-light' : 'stroke-sk-dark group-hover:stroke-sk-light';
+    $classes .= $mode === 'dark' || $mode === 'darker' ? 'stroke-sk-light' : 'stroke-sk-dark group-hover:stroke-sk-light';
 @endphp
 
 <svg

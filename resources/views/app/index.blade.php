@@ -7,7 +7,7 @@
              class="relative z-10 flex w-full flex-col items-center justify-center px-4 bg-sk-light h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
         <div class="flex flex-col-reverse items-center gap-8 text-center md:flex-col">
             <x-button.primary mode="dark" icon>Réserver votre appel découverte</x-button.primary>
-            <p class="w-full text-body-base text-sk-grey sm:w-1/2">Nous créons des sites et des designs pour des marques
+            <p class="w-full text-body-base  sm:w-1/2">Nous créons des sites et des designs pour des marques
                 et des
                 entrepreneurs
                 qui souhaitent se démarquer sur le web.</p>
@@ -36,8 +36,8 @@
                 </ul>
             </div>
             <div class="flex flex-col gap-2">
-                <x-button.secondary mode="dark" icon>Découvrir le studio</x-button.secondary>
-                <x-button.secondary mode="dark" icon>Voir nos réalisations</x-button.secondary>
+                <x-button.secondary class="link-loader" href="{{ route('app.studio') }}" mode="dark" icon>Découvrir le studio</x-button.secondary>
+                <x-button.secondary class="link-loader" href="{{ route('app.work') }}" mode="dark" icon>Voir nos réalisations</x-button.secondary>
             </div>
         </div>
     </section>
@@ -144,71 +144,7 @@
         </div>
         <x-button.secondary class="self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
     </section>
-    <section
-        class="relative z-10 flex w-full flex-col gap-8 px-4 py-24 bg-sk-dark text-sk-light lg:flex-row lg:px-8 xl:px-16">
-        <div id="pin-title" class="w-full lg:w-2/5">
-            <p class="w-full text-body-lg lg:w-3/4">
-                Nous travaillons en étroite collaboration avec nos clients pour valoriser leur marque.
-            </p>
-        </div>
-        <div class="flex w-full flex-col gap-20 lg:w-3/5">
-            <div class="flex flex-col gap-2">
-                <p class="text-body-base">
-                    01 L'appel découverte
-                </p>
-                <p class="w-3/4 text-sk-grey text-body-sm">
-                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
-                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
-                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
-                    proposer un devis détaillé, adapté à votre projet.
-                </p>
-            </div>
-            <div class="flex flex-col gap-2">
-                <p class="text-body-base">
-                    01 L'appel découverte
-                </p>
-                <p class="w-3/4 text-sk-grey text-body-sm">
-                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
-                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
-                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
-                    proposer un devis détaillé, adapté à votre projet.
-                </p>
-            </div>
-            <div class="flex flex-col gap-2">
-                <p class="text-body-base">
-                    01 L'appel découverte
-                </p>
-                <p class="w-3/4 text-sk-grey text-body-sm">
-                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
-                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
-                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
-                    proposer un devis détaillé, adapté à votre projet.
-                </p>
-            </div>
-            <div class="flex flex-col gap-2">
-                <p class="text-body-base">
-                    01 L'appel découverte
-                </p>
-                <p class="w-3/4 text-sk-grey text-body-sm">
-                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
-                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
-                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
-                    proposer un devis détaillé, adapté à votre projet.
-                </p>
-            </div>
-            <div class="flex flex-col gap-2">
-                <p class="text-body-base">
-                    01 L'appel découverte
-                </p>
-                <p class="w-3/4 text-sk-grey text-body-sm">
-                    Chez nous, tout commence par vous. Nous organisons un appel découverte d'environ 30 minutes pour
-                    échanger sur votre projet. Nous faisons connaissance et prenons le temps de comprendre vos besoins,
-                    vos objectifs et les spécificités du projet. Nous vous posons ces quelques questions afin de vous
-                    proposer un devis détaillé, adapté à votre projet.
-                </p>
-            </div>
-        </div>
-    </section>
+    @include('app.partials.process')
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
         <div class="flex flex-col lg:flex-row gap-4">
@@ -240,121 +176,7 @@
                  src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
         </div>
     </section>
-    <section
-        class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
-        <div class="flex flex-col lg:flex-row gap-4">
-            <p class="w-2/5 text-body-lg">
-                Nos clients
-            </p>
-            <div class="flex w-full flex-col gap-14 lg:w-3/5">
-                <div class="text-body-base text-sk-grey">
-                    <p> Nous avons eu la chance de travailler sur des projets passionnants et nous cherchons à former
-                        des
-                        partenariats créatifs et durables avec tous nos clients.
-                        <br><br>
-                        Ne vous contentez pas de nous croire sur parole. Voici ce que nos clients disent de nous.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <x-button.secondary mode="dark" icon>Lire tous les avis</x-button.secondary>
-                </div>
-            </div>
-        </div>
-        <div id="container" class="relative flex w-full flex-row">
-            <div id="wrapper" class="inline-flex gap-8">
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-                <card
-                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
-                    <x-icon.stars/>
-                    <p class="mt-2">
-                        Nom de l'auteur
-                    </p>
-                    <p class="text-sk-grey">
-                        Entreprise
-                    </p>
-                    <p class="mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
-                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
-                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
-                    </p>
-                </card>
-            </div>
-        </div>
-    </section>
+    @include('app.partials.review')
     <section
         class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-dark text-sk-light border-sk-light-grey lg:px-8 xl:px-16">
         <div class="flex flex-col lg:flex-row gap-4">
@@ -434,4 +256,5 @@
             </div>
         </div>
     </section>
+
 @endsection

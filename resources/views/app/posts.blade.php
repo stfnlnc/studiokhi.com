@@ -2,5 +2,40 @@
 @section('title', 'Articles & Blog')
 
 @section('content')
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 px-4 py-36 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        <h1>Articles & Blog</h1>
+        <p class="text-body-base w-full lg:w-1/2 self-end">
+            Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.
+        </p>
+    </section>
+    <section class="relative z-10 flex w-full flex-row gap-20 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
 
+    </section>
+    <section class="relative z-10 w-full gap-20 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
+            <div class="flex flex-col items-start gap-4">
+                <a href="">
+                    <img class="aspect-square rounded-3xl object-cover object-center"
+                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         alt="">
+                </a>
+                <a href="" class="mt-2 w-3/4 text-body-lg">
+                    5 ways the power of Ai might impact your corporate vision
+                </a>
+                <x-button.secondary mode="dark">En savoir plus</x-button.secondary>
+            </div>
+            <div class="flex flex-col items-start gap-4">
+                <a href="">
+                    <img class="aspect-square rounded-3xl object-cover object-center"
+                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         alt="">
+                </a>
+                <a href="" class="mt-2 w-3/4 text-body-lg">
+                    5 ways the power of Ai might impact your corporate vision
+                </a>
+                <x-button.secondary mode="dark">En savoir plus</x-button.secondary>
+            </div>
+        </div>
+    </section>
 @endsection
