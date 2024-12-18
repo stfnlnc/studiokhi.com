@@ -16,6 +16,22 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+<style>
+    section::before {
+        background: repeat url({{ asset('images/noise.gif') }});
+        background-size: 50px;
+        bottom: 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        opacity: 0.1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
 <header>
     <nav
         class="fixed top-0 left-0 z-20 flex w-full flex-row items-center justify-between px-4 py-8 mix-blend-difference invert lg:px-8 xl:px-16">

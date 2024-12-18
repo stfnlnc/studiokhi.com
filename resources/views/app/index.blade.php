@@ -4,7 +4,7 @@
 
 @section('content')
     <section id="hero"
-             class="relative z-0 flex w-full flex-col items-center justify-center px-4 h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
+             class="relative z-10 flex w-full flex-col items-center justify-center px-4 bg-sk-light h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
         <div class="flex flex-col-reverse items-center gap-8 text-center md:flex-col">
             <x-button.primary mode="dark" icon>Réserver votre appel découverte</x-button.primary>
             <p class="w-full text-body-base text-sk-grey sm:w-1/2">Nous créons des sites et des designs pour des marques
@@ -17,7 +17,7 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
-        <p class="w-2/5 text-body-lg">
+        <p class="w-full lg:w-2/5 text-body-lg">
             Notre approche
         </p>
         <div class="flex w-full flex-col gap-14 lg:w-3/5">
@@ -86,9 +86,9 @@
     </section>
     <section
         class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-purple md:h-screen lg:px-8 xl:px-16">
-        <div>
+        <div class="w-full">
             <span class="text-sk-dark text-body-base">03</span>
-            <h1 class="break-all">Développement Web & <br> Sites Sur Mesure</h1>
+            <h1 class="break-words">Développement Web & <br> Sites Sur Mesure</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
             <p class="w-full text-body-base text-sk-grey sm:w-1/2">
@@ -109,7 +109,7 @@
     <section
         class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
         <div class="flex flex-col gap-4 lg:flex-row">
-            <p class="w-2/5 text-body-lg">
+            <p class="w-full lg:w-2/5 text-body-lg">
                 Nos réalisations
             </p>
             <div class="flex w-full flex-col gap-14 lg:w-3/5">
@@ -145,9 +145,9 @@
         <x-button.secondary class="self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col px-4 py-24 bg-sk-dark text-sk-light lg:flex-row lg:px-8 xl:px-16">
-        <div id="pin-title" class="w-2/5">
-            <p class="w-3/4 text-body-lg">
+        class="relative z-10 flex w-full flex-col gap-8 px-4 py-24 bg-sk-dark text-sk-light lg:flex-row lg:px-8 xl:px-16">
+        <div id="pin-title" class="w-full lg:w-2/5">
+            <p class="w-full text-body-lg lg:w-3/4">
                 Nous travaillons en étroite collaboration avec nos clients pour valoriser leur marque.
             </p>
         </div>
@@ -211,8 +211,8 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
-        <div class="flex flex-row">
-            <p class="w-2/5 text-body-lg">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <p class="w-full lg:w-2/5 text-body-lg">
                 Le Studio
             </p>
             <div class="flex w-full flex-col gap-14 lg:w-3/5">
@@ -231,8 +231,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid grid-cols-5">
-            <div class="col-span-2 mr-8">
+        <div class="lg:grid lg:grid-cols-5">
+            <div class="hidden lg:block col-span-2 lg:mr-8">
                 <img class="w-full rounded-3xl object-cover object-center h-[32rem]"
                      src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
             </div>
@@ -242,7 +242,7 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
-        <div class="flex flex-row">
+        <div class="flex flex-col lg:flex-row gap-4">
             <p class="w-2/5 text-body-lg">
                 Nos clients
             </p>
@@ -261,8 +261,9 @@
             </div>
         </div>
         <div id="container" class="relative flex w-full flex-row">
-            <div id="wrapper" class="inline-flex gap-8 overflow-hidden">
-                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark text-body-sm">
+            <div id="wrapper" class="inline-flex gap-8">
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
                     <x-icon.stars/>
                     <p class="mt-2">
                         Nom de l'auteur
@@ -276,19 +277,58 @@
                         ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
                     </p>
                 </card>
-                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark">
-                    <x-icon.stars class="w-20"/>
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
                 </card>
-                <card class="flex flex-col rounded-3xl border p-12 w-[25rem] h-[28rem] border-sk-dark">
-                    <x-icon.stars class="w-20"/>
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
+                </card>
+                <card
+                    class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] h-[24rem] lg:w-[25rem] lg:h-[28rem] border-sk-dark text-body-sm">
+                    <x-icon.stars/>
+                    <p class="mt-2">
+                        Nom de l'auteur
+                    </p>
+                    <p class="text-sk-grey">
+                        Entreprise
+                    </p>
+                    <p class="mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquid asperiores
+                        consequuntur doloribus eaque eius ipsa laudantium maiores maxime molestias obcaecati odit
+                        ratione repellat soluta veniam, voluptas. Consequuntur, eaque!
+                    </p>
                 </card>
             </div>
         </div>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 border-t px-4 py-24 bg-sk-dark text-sk-light border-sk-light-grey lg:px-8 xl:px-16">
-        <div class="flex flex-row">
-            <p class="w-2/5 text-body-lg">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <p class="w-full lg:w-2/5 text-body-lg">
                 Articles
             </p>
             <div class="flex w-full flex-col gap-14 lg:w-3/5">
@@ -297,12 +337,9 @@
                         notre sélection d’articles.
                     </p>
                 </div>
-                <div class="flex flex-col gap-2">
-                    <x-button.secondary mode="dark" icon>Lire tous les avis</x-button.secondary>
-                </div>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
             <div class="flex flex-col items-start gap-4">
                 <a href="">
                     <img class="aspect-square rounded-3xl object-cover object-center"
@@ -329,19 +366,19 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
-        <div class="flex flex-row">
-            <p class="w-2/5 text-body-lg">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <p class="w-full lg:w-2/5 text-body-lg">
                 FAQ
             </p>
             <div class="flex w-full flex-col lg:w-3/5">
                 <div class="flex flex-col">
                     <div class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between gap-48 py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
                             Pourquoi faire confiance au Studio Khi ?
                             <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
-                        <p class="hidden w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
                             commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
                             tempora totam vero voluptate.
@@ -350,11 +387,11 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between gap-48 py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
                             Pourquoi faire confiance au Studio Khi ?
-                            <x-icon.plus class="hidden h-3 w-3 rotate-45 faq-plus"/>
+                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
-                        <p class="hidden w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
                             commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
                             tempora totam vero voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad

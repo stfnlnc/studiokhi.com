@@ -91,7 +91,7 @@
     }
 
     .text-body-sm {
-        @apply text-[1rem] lg:text-[1rem] 2xl:text-[1vw];
+        @apply text-[0.875rem] lg:text-[1rem] 2xl:text-[1vw];
         line-height: 150%;
     }
 
@@ -101,7 +101,9 @@
     }
 
     .text-body-lg {
-        @apply text-[0.875rem] lg:text-[1.625rem] 2xl:text-[1.625vw];
+        @apply text-[1.25rem] lg:text-[1.625rem] 2xl:text-[1.625vw];
         line-height: 135%;
     }
+
+
 }
