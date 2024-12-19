@@ -3,6 +3,7 @@
 use App\Http\Controllers\App\ContactController;
 use App\Http\Controllers\App\FaqController;
 use App\Http\Controllers\App\IndexController;
+use App\Http\Controllers\App\PolicyController;
 use App\Http\Controllers\App\PostController;
 use App\Http\Controllers\App\PriceController;
 use App\Http\Controllers\App\ServiceController;
@@ -24,6 +25,11 @@ Route::prefix('')->name('app.')->group(function () {
         Route::get('/branding-et-direction-artistique', [ServiceController::class, 'branding'])->name('branding');
         Route::get('/webdesign-et-design-digital', [ServiceController::class, 'webdesign'])->name('webdesign');
         Route::get('/sites-sur-mesure', [ServiceController::class, 'website'])->name('website');
+    });
+    Route::name('policy.')->group(function () {
+        Route::get('/mentions-legales', [PolicyController::class, 'term_of_use'])->name('term_of_use');
+        Route::get('/politique-de-confidentialite', [PolicyController::class, 'privacy_policy'])->name('privacy_policy');
+        Route::get('/cookies', [PolicyController::class, 'cookies'])->name('cookies');
     });
 });
 

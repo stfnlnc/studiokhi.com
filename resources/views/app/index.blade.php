@@ -60,7 +60,7 @@
                 <li>Design Réseaux Sociaux</li>
                 <li>Pitchdeck</li>
             </ul>
-            <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
+            <x-button.secondary :href="route('app.price')" class="link-loader" mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>
     <section
@@ -81,7 +81,7 @@
                 <li>Maquettes & Prototypes</li>
                 <li>Design System</li>
             </ul>
-            <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
+            <x-button.secondary :href="route('app.price')" class="link-loader" mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>
     <section
@@ -103,7 +103,7 @@
                 <li>SEO & Référencement Naturel</li>
                 <li>Formation & Maintenance</li>
             </ul>
-            <x-button.secondary mode="dark" icon>Infos & Tarifs</x-button.secondary>
+            <x-button.secondary :href="route('app.price')" class="link-loader" mode="dark" icon>Infos & Tarifs</x-button.secondary>
         </div>
     </section>
     <section
@@ -142,7 +142,7 @@
                 </div>
             </div>
         </div>
-        <x-button.secondary class="self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
+        <x-button.secondary :href="route('app.work')" class="link-loader self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
     </section>
     @include('app.partials.process')
     <section

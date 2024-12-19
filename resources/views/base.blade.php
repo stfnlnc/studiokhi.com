@@ -16,22 +16,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<style>
-    section::before, footer::before {
-        background: repeat url({{ asset('images/noise.gif') }});
-        background-size: 50px;
-        bottom: 0;
-        content: "";
-        height: 100%;
-        left: 0;
-        opacity: 0.1;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        z-index: -1;
-    }
-</style>
 <header>
     <nav
         class="fixed top-0 left-0 z-20 flex w-full flex-row items-center justify-between px-4 py-8 mix-blend-difference invert lg:px-8 xl:px-16">
@@ -85,34 +69,38 @@
                             <p class="mb-4 text-sk-grey text-body-sm">
                                 Le Studio
                             </p>
-                            <x-nav.link class="text-body-sm" mode="light">Home</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Réalisations</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">À Propos</x-nav.link>
+                            <x-nav.link :href="route('app.index')" class="text-body-sm" mode="light">Home</x-nav.link>
+                            <x-nav.link :href="route('app.work')" class="text-body-sm" mode="light">Réalisations</x-nav.link>
+                            <x-nav.link :href="route('app.studio')" class="text-body-sm" mode="light">À Propos</x-nav.link>
                         </div>
                         <div class="flex flex-col">
                             <p class="mb-4 text-sk-grey text-body-sm">
                                 Services
                             </p>
-                            <x-nav.link class="text-body-sm" mode="light">Branding</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Webdesign</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Développement Web</x-nav.link>
+                            <x-nav.link :href="route('app.service.branding')" class="text-body-sm" mode="light">Branding</x-nav.link>
+                            <x-nav.link :href="route('app.service.webdesign')" class="text-body-sm" mode="light">Webdesign</x-nav.link>
+                            <x-nav.link :href="route('app.service.website')" class="text-body-sm" mode="light">Développement Web</x-nav.link>
                         </div>
                         <div class="flex flex-col">
                             <p class="mb-4 text-sk-grey text-body-sm">
                                 Questions
                             </p>
-                            <x-nav.link class="text-body-sm" mode="light">Articles & Blog</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">FAQ</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Tarifs</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Contact</x-nav.link>
+                            <x-nav.link :href="route('app.posts')" class="text-body-sm" mode="light">Articles & Blog</x-nav.link>
+                            <x-nav.link :href="route('app.faq')" class="text-body-sm" mode="light">FAQ</x-nav.link>
+                            <x-nav.link :href="route('app.price')" class="text-body-sm" mode="light">Tarifs</x-nav.link>
+                            <x-nav.link :href="route('app.contact')" class="text-body-sm" mode="light">Contact</x-nav.link>
                         </div>
                         <div class="flex flex-col">
                             <p class="mb-4 text-sk-grey text-body-sm">
                                 Socials
                             </p>
-                            <x-nav.link class="text-body-sm" mode="light">Instagram</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Linkedin</x-nav.link>
-                            <x-nav.link class="text-body-sm" mode="light">Behance</x-nav.link>
+                            <x-nav.link target="_blank" href="https://www.instagram.com/studio_khi/" class="text-body-sm" mode="light">Instagram
+                            </x-nav.link>
+                            <x-nav.link target="_blank" href="https://www.linkedin.com/company/studio-khi" class="text-body-sm" mode="light">
+                                Linkedin
+                            </x-nav.link>
+                            <x-nav.link target="_blank" href="https://www.behance.net/studiokhi" class="text-body-sm" mode="light">Behance
+                            </x-nav.link>
                         </div>
                         <div>
                             <x-nav.link class="text-body-sm" href="#" mode="light" underline>Back to Top</x-nav.link>
@@ -121,9 +109,9 @@
                     <div class="flex flex-col items-start justify-between gap-4 px-4 pt-8 lg:flex-row lg:px-8 xl:px-16">
                         <a href="" class="text-body-sm text-sk-grey">© 2024 Studio Khi. All rights reserved</a>
                         <div class="flex flex-col gap-4 lg:flex-row">
-                            <a href="" class="text-body-sm text-sk-grey">Politique de confidentialité</a>
-                            <a href="" class="text-body-sm text-sk-grey">Mentions légales</a>
-                            <a href="" class="text-body-sm text-sk-grey">Cookies</a>
+                            <a href="{{ route('app.policy.term_of_use') }}" class="text-body-sm text-sk-grey">Politique de confidentialité</a>
+                            <a href="{{ route('app.policy.privacy_policy') }}" class="text-body-sm text-sk-grey">Mentions légales</a>
+                            <a href="{{ route('app.policy.cookies') }}" class="text-body-sm text-sk-grey">Cookies</a>
                         </div>
                     </div>
                 </footer>
