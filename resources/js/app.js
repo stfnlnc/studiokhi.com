@@ -1,4 +1,3 @@
-import './bootstrap';
 import './nav.js';
 import './loader.js';
 import './faq.js';

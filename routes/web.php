@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\WorkController as WorkControllerAlias;
 use App\Http\Controllers\App\ContactController;
 use App\Http\Controllers\App\FaqController;
 use App\Http\Controllers\App\IndexController;
@@ -33,9 +34,14 @@ Route::prefix('')->name('app.')->group(function () {
     });
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+    Route::resource('works', WorkControllerAlias::class);
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

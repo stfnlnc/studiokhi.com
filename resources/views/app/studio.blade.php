@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'Nos Réalisations')
+@section('title', 'Le Studio')
 
 @vite(['resources/js/page-studio.js'])
 
@@ -7,14 +7,13 @@
     <section
         class="relative z-10 flex w-full flex-col gap-20 border-b px-4 py-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 lg:py-48 xl:px-16">
         <h1>Découvrir notre studio</h1>
-        <p class="w-full self-end text-body-base lg:w-1/2">
-            Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et des
-            designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.
-        </p>
-    </section>
-    <section
-        class="relative z-10 flex w-full flex-row justify-center items-center gap-20 border-b px-4 py-16 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16">
-        <x-button.primary mode="dark" icon>Réservez votre appel découverte</x-button.primary>
+        <div class="flex w-full flex-col gap-16 self-end lg:w-1/2">
+            <p class="text-body-base">
+                Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées. Nous créons des sites et
+                des designs sur mesure pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web, et ce, à travers la France.
+            </p>
+            <x-button.primary target="_blank" :href="config('app.calendly')" mode="darker" icon>Réservez votre appel découverte</x-button.primary>
+        </div>
     </section>
     <section class="relative z-10 bg-sk-light">
         <img id="pin-image" class="w-full h-[100lvh]" src="https://studiokhi.com/build/images/uploads/le-studio-1.webp" alt="">
@@ -57,7 +56,7 @@
                         Nous créons votre image de marque en cohérence avec vos valeurs et concevons des identités web pour renforcer votre présence
                         en ligne.
                     </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
+                    <x-button.secondary :href="route('app.price')" class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
                 </div>
                 <div class="flex flex-col gap-8">
                     <p class="text-body-lg">
@@ -68,7 +67,7 @@
                         La phase de design sur Figma permet de créer une maquette de site web qui répond à vos attentes tout en proposant une
                         expérience utilisateur optimale.
                     </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
+                    <x-button.secondary :href="route('app.price')" class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
                 </div>
                 <div class="flex flex-col gap-8">
                     <p class="text-body-lg">
@@ -78,7 +77,7 @@
                     <p class="text-body-sm text-sk-grey">
                         Nous développons votre site en langage web, identique à la maquette, tout en respectant les meilleures pratiques du web.
                     </p>
-                    <x-button.secondary class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
+                    <x-button.secondary :href="route('app.price')" class="mt-auto" mode="light" icon>Infos & Tarifs</x-button.secondary>
                 </div>
             </div>
         </div>
@@ -98,14 +97,15 @@
                          src="https://studiokhi.com/build/images/uploads/cynthia-jego.webp" alt="">
                     <p class="text-body-lg mt-4">Cynthia Jego</p>
                     <p class="text-body-base text-sk-grey">Designer</p>
-                    <x-button.secondary icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
+                    <x-button.secondary href="https://www.linkedin.com/in/cynthia-jego/" icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
                 </div>
                 <div class="flex flex-col">
                     <img class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
                          src="https://studiokhi.com/build/images/uploads/stefan-lancelot.webp" alt="">
                     <p class="text-body-lg mt-4">Stefan Lancelot</p>
                     <p class="text-body-base text-sk-grey">Développeur web</p>
-                    <x-button.secondary icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
+                    <x-button.secondary href="https://www.linkedin.com/in/stefan-lancelot/" icon mode="dark" class="mt-4">Linkedin
+                    </x-button.secondary>
                 </div>
             </div>
         </div>
@@ -220,10 +220,9 @@
             </div>
         </div>
     </section>
-    @include('app.partials.cta', [
-    'title' => 'Prêts à nous partager votre projet ?',
-    'description' => 'Réservez votre appel découverte',
-    'color' => 'beige',
-    'href' => ''
-    ])
+    <section
+        class="relative z-10 flex w-full flex-col items-center gap-16 px-4 py-24 bg-sk-beige lg:px-8 xl:px-16 text-center">
+        <div class="h2 w-full lg:w-2/3">Prêts à nous partager votre projet ?</div>
+        <x-button.primary :href="config('app.calendly')" mode="darker" icon>Réservez votre appel découverte</x-button.primary>
+    </section>
 @endsection

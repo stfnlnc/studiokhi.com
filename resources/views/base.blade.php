@@ -109,8 +109,8 @@
                     <div class="flex flex-col items-start justify-between gap-4 px-4 pt-8 lg:flex-row lg:px-8 xl:px-16">
                         <a href="" class="text-body-sm text-sk-grey">© 2024 Studio Khi. All rights reserved</a>
                         <div class="flex flex-col gap-4 lg:flex-row">
-                            <a href="{{ route('app.policy.term_of_use') }}" class="text-body-sm text-sk-grey">Politique de confidentialité</a>
-                            <a href="{{ route('app.policy.privacy_policy') }}" class="text-body-sm text-sk-grey">Mentions légales</a>
+                            <a href="{{ route('app.policy.privacy_policy') }}" class="text-body-sm text-sk-grey">Politique de confidentialité</a>
+                            <a href="{{ route('app.policy.term_of_use') }}" class="text-body-sm text-sk-grey">Mentions légales</a>
                             <a href="{{ route('app.policy.cookies') }}" class="text-body-sm text-sk-grey">Cookies</a>
                         </div>
                     </div>

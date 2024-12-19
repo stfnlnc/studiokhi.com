@@ -11,7 +11,7 @@
             <p class="text-body-base">
                 {{ $description }}
             </p>
-            <x-button.primary mode="darker" icon>Réservez votre appel découverte</x-button.primary>
+            <x-button.primary target="_blank" :href="config('app.calendly')" mode="darker" icon>Réservez votre appel découverte</x-button.primary>
         </div>
     </section>
     <section

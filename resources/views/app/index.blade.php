@@ -125,8 +125,8 @@
         </div>
         <div class="flex flex-col gap-20">
             <div class="relative flex w-full flex-col gap-4">
-                <img class="aspect-video rounded-2xl"
-                     src="https://studiokhi.com/uploads/projects/featured/full/oto-nove-swiss-3bd98c001b712315dcd1f01d71b4755f.webp"
+                <img class="aspect-video rounded-2xl object-cover object-center"
+                     src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
                      alt="">
                 <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                     <x-tag.primary color="blue">Développement web</x-tag.primary>
@@ -195,7 +195,7 @@
             <div class="flex flex-col items-start gap-4">
                 <a href="">
                     <img class="aspect-square rounded-3xl object-cover object-center"
-                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
                          alt="">
                 </a>
                 <a href="" class="mt-2 w-3/4 text-body-lg">
@@ -206,7 +206,7 @@
             <div class="flex flex-col items-start gap-4">
                 <a href="">
                     <img class="aspect-square rounded-3xl object-cover object-center"
-                         src="https://studiokhi.com/uploads/posts/featured/large/l-ux-c-est-quoi-et-pourquoi-c-est-essentiel-437db8679015ca4b76db607954d43a3f.webp"
+                         src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
                          alt="">
                 </a>
                 <a href="" class="mt-2 w-3/4 text-body-lg">
