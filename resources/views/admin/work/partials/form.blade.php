@@ -4,24 +4,21 @@
 ])
 
 <section>
-    <header>
-        <h2 class="text-lg font-medium text-zinc-900 dark:text-zinc-100">
-            {{ __('Profile Information') }}
-        </h2>
-
-        <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-            {{ __("Update your account's profile information and email address.") }}
-        </p>
-    </header>
-
-    <form method="post" action="{{ route($route, $work) }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+    <form method="post" action="{{ route($route, $work) }}" class="space-y-6" enctype="multipart/form-data">
         @csrf
         @method($method)
         <div>
             <x-input-label for="image" :value="__('File')"/>
             <x-text-input id="image" name="image" type="file" class="mt-1 block w-full"
-                          autofocus autocomplete="image"/>
+                          autofocus/>
             <x-input-error class="mt-2" :messages="$errors->get('image')"/>
+        </div>
+
+        <div>
+            <x-input-label for="images" :value="__('Images')"/>
+            <x-text-input id="images" name="images[]" type="file" class="mt-1 block w-full" multiple="multiple"
+                          autofocus/>
+            <x-input-error class="mt-2" :messages="$errors->get('images')"/>
         </div>
 
         <div>

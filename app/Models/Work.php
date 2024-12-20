@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Work extends Model
 {
@@ -11,6 +12,7 @@ class Work extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'subtitle',
         'category',
         'type',
@@ -19,6 +21,12 @@ class Work extends Model
         'description',
         'order',
         'online',
-        'image',
+        'image_format',
+        'image_path'
     ];
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(ImagesWork::class);
+    }
 }

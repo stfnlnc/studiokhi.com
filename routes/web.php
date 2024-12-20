@@ -40,6 +40,7 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
         return view('admin.dashboard');
     })->name('dashboard');
     Route::resource('works', WorkControllerAlias::class);
+    Route::delete('/works/{work}/image', [WorkControllerAlias::class, 'destroyImage'])->name('works.destroyImage');
 });
 
 Route::middleware('auth')->group(function () {
