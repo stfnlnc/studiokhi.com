@@ -66,9 +66,6 @@
                                         </div>
                                     </td>
                                     <th scope="row" class="flex items-center px-6 py-4 min-h-full text-zinc-900 whitespace-nowrap dark:text-white">
-                                        <img class="w-10 h-10 rounded-full"
-                                             src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
-                                             alt="">
                                         <div class="ps-3">
                                             <div class="text-base font-semibold">{{ $work->title }}</div>
                                             <div class="font-normal text-zinc-500">{{ $work->subtitle }}</div>
@@ -81,7 +78,9 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 gap-2 flex flex-row items-start">
-                                        <x-primary-button>Éditer</x-primary-button>
+                                        <a href="{{ route('admin.works.edit', $work) }}">
+                                            <x-primary-button>Éditer</x-primary-button>
+                                        </a>
                                         <form method="post" action="{{ route('admin.works.destroy', $work) }}">
                                             @csrf
                                             @method('DELETE')

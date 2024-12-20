@@ -6,10 +6,10 @@
     <section id="hero"
              class="relative z-10 flex w-full flex-col items-center justify-center px-4 bg-sk-light h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
         <div class="flex flex-col-reverse items-center gap-8 text-center md:flex-col">
-            <x-button.primary mode="dark" icon>Réserver votre appel découverte</x-button.primary>
+            <x-button.primary :href="config('app.calendly')" mode="dark" icon>Réserver votre appel découverte</x-button.primary>
             <p class="w-full text-body-base  sm:w-1/2">Nous créons des sites et des designs pour des marques
                 et des
-                entrepreneurs
+                entrepreneur
                 qui souhaitent se démarquer sur le web.</p>
             <x-logo.square class="mb-16 block w-48 fill-sk-dark md:hidden"/>
         </div>

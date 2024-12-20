@@ -14,9 +14,15 @@
         </p>
     </header>
 
-    <form method="post" action="{{ route($route) }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route($route, $work) }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method($method)
+        <div>
+            <x-input-label for="image" :value="__('File')"/>
+            <x-text-input id="image" name="image" type="file" class="mt-1 block w-full"
+                          autofocus autocomplete="image"/>
+            <x-input-error class="mt-2" :messages="$errors->get('image')"/>
+        </div>
 
         <div>
             <x-input-label for="title" :value="__('Title')"/>

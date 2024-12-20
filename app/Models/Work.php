@@ -19,5 +19,6 @@ class Work extends Model
         'description',
         'order',
         'online',
+        'image',
     ];
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkRequest;
 use App\Models\Work;
+use App\Service\ImageService;
 use Illuminate\Support\Facades\Redirect;
 
 class WorkController extends Controller
@@ -27,7 +28,10 @@ class WorkController extends Controller
 
     public function store(WorkRequest $request)
     {
-        Work::create($request->validated());
+        $validated = $request->validated();
+        $image = ImageService::uploadImage($request->validated('image'), 'works');
+        $validated['image'] = $image['webp'];
+        Work::create($validated);
 
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet créé');
     }
@@ -36,18 +40,24 @@ class WorkController extends Controller
     {
     }
 
-    public function edit()
+    public function edit(Work $work)
     {
-        return view('admin.work.edit');
+        return view('admin.work.edit', [
+            'work' => $work
+        ]);
     }
 
-    public function update()
+    public function update(WorkRequest $request, Work $work)
     {
+        $work->update($request->validated());
+
+        return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet édité');
     }
 
     public function destroy(Work $work)
     {
-        // $work->delete();
+
+        $work->delete();
 
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet supprimé');
     }

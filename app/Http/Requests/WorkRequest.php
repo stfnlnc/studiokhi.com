@@ -29,7 +29,8 @@ class WorkRequest extends FormRequest
             'date' => 'required',
             'url' => 'nullable',
             'description' => 'required',
-            'online' => 'required'
+            'online' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp,mp4|max:2048',
         ];
     }
 }
