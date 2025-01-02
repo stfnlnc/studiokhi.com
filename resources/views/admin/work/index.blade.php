@@ -96,4 +96,38 @@
             </div>
         </div>
     </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-zinc-900 dark:text-zinc-100 grid grid-cols-2">
+                    <form action="{{ route('admin.tags.store') }}" method="post" class="flex flex-col gap-4">
+                        @csrf
+                        <div>
+                            <x-input-label for="name" :value="__('Name')"/>
+                            <x-text-input id="name" name="name" type="text" class="mt-1 block w-fit"
+                                          :value="old('name')" autocomplete="name"/>
+                            <x-input-error class="mt-2" :messages="$errors->get('name')"/>
+                        </div>
+                        <div>
+                            <x-input-label for="name" :value="__('Name')"/>
+                            <select id="color" name="color"
+                                    class="border-zinc-300 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                <option value="blue">Bleu</option>
+                                <option value="green">Vert</option>
+                                <option value="purple">Violet</option>
+                                <option value="beige">Beige</option>
+                            </select>
+                            <x-input-error class="mt-2" :messages="$errors->get('name')"/>
+                        </div>
+                        <x-primary-button class="w-fit">Enregistrer</x-primary-button>
+                    </form>
+                    <div class="flex flex-col gap-2">
+                        @foreach($tags as $tag)
+                            <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

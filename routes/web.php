@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\WorkController as WorkControllerAlias;
 use App\Http\Controllers\App\ContactController;
 use App\Http\Controllers\App\FaqController;
@@ -18,6 +19,7 @@ Route::prefix('')->name('app.')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/studio', [StudioController::class, 'index'])->name('studio');
     Route::get('/realisations', [WorkController::class, 'index'])->name('work');
+    Route::get('/realisations/{slug}', [WorkController::class, 'show'])->name('show');
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
     Route::get('/articles', [PostController::class, 'index'])->name('posts');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -41,6 +43,8 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
     })->name('dashboard');
     Route::resource('works', WorkControllerAlias::class);
     Route::delete('/works/{work}/image', [WorkControllerAlias::class, 'destroyImage'])->name('works.destroyImage');
+    Route::delete('/images/{image}/image', [WorkControllerAlias::class, 'destroyImages'])->name('works.destroyImages');
+    Route::post('/tags/store', [TagController::class, 'store'])->name('tags.store');
 });
 
 Route::middleware('auth')->group(function () {

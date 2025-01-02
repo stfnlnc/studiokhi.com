@@ -15,8 +15,8 @@ class ImageService extends Controller
         $sizes = config('app.image_sizes');
 
         if ($image->getMimeType() === 'video/mp4') {
-            Storage::disk('public')->put($path . '/mp4/' . $name, file_get_contents($image));
-            return ['mp4' => $image->getClientOriginalName()];
+            Storage::disk('public')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
+            return ['mp4' => $name . '.mp4'];
         }
 
         $imageManager = new ImageManager(new Driver());
@@ -27,9 +27,13 @@ class ImageService extends Controller
         return ['webp' => $name . '.webp'];
     }
 
-    public static function deleteImage($path, $name): void
+    public static function deleteImage($path, $format, $name): void
     {
         $sizes = config('app.image_sizes');
+        if ($format === 'mp4') {
+            Storage::disk('public')->delete($path . '/mp4/' . $name);
+            return;
+        }
         foreach ($sizes as $size) {
             Storage::disk('public')->delete($path . '/' . $size . '/' . $name);
         }

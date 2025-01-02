@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkRequest;
+use App\Models\ImagesWork;
+use App\Models\Tag;
 use App\Models\Work;
 use App\Service\ImageService;
 use Illuminate\Support\Facades\Redirect;
@@ -14,16 +16,21 @@ class WorkController extends Controller
     public function index()
     {
         $works = Work::all();
+        $tags = Tag::all();
 
         return view('admin.work.index', [
-            'works' => $works
+            'works' => $works,
+            'tags' => $tags
         ]);
     }
 
     public function create()
     {
+        $tags = Tag::all();
+
         return view('admin.work.create', [
-            'work' => new Work()
+            'work' => new Work(),
+            'tags' => $tags
         ]);
     }
 
@@ -31,11 +38,22 @@ class WorkController extends Controller
     {
         $validated = $request->validated();
         $slug = Str::slug($validated['title'], '-');
-        $image = ImageService::uploadImage($request->validated('image'), $slug, $slug);
         $validated['slug'] = $slug;
-        $validated['image_format'] = key($image);
-        $validated['image_path'] = current($image);
-        Work::create($validated);
+        if ($request->hasFile('image')) {
+            $image = ImageService::uploadImage($request->validated('image'), $slug, $slug);
+            $validated['image_format'] = key($image);
+            $validated['image_path'] = current($image);
+        }
+        $work = Work::create($validated);
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $data = ImageService::uploadImage($img, $slug, $slug . '-' . uniqid());
+                $work->images()->create([
+                    'image_format' => key($data),
+                    'image_path' => current($data)
+                ]);
+            }
+        }
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet créé avec succès');
     }
 
@@ -45,8 +63,11 @@ class WorkController extends Controller
 
     public function edit(Work $work)
     {
+        $tags = Tag::all();
+
         return view('admin.work.edit', [
-            'work' => $work
+            'work' => $work,
+            'tags' => $tags
         ]);
     }
 
@@ -67,18 +88,26 @@ class WorkController extends Controller
                 ]);
             }
         }
+        $work->tags()->sync($request->tags);
         $work->update($validated);
         return Redirect::route('admin.works.edit', $work)->with('status', 'success')->with('message', 'Projet édité avec succès');
     }
 
     public function destroyImage(Work $work)
     {
-        ImageService::deleteImage($work->slug, $work->image_path);
+        ImageService::deleteImage($work->slug, $work->image_format, $work->image_path);
         $work->update([
             'image_format' => null,
             'image_path' => null
         ]);
         return Redirect::route('admin.works.edit', $work)->with('status', 'success')->with('message', 'Image supprimée avec succès');
+    }
+
+    public function destroyImages(ImagesWork $image)
+    {
+        ImageService::deleteImage($image->work->slug, $image->image_format, $image->image_path);
+        $image->delete();
+        return Redirect::route('admin.works.edit', $image->work)->with('status', 'success')->with('message', 'Image supprimée avec succès');
     }
 
     public function destroy(Work $work)

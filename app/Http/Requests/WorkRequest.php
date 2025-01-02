@@ -30,8 +30,8 @@ class WorkRequest extends FormRequest
             'url' => 'nullable',
             'description' => 'required',
             'online' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,webp,mp4|max:8192',
-            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:8192'
+            'image' => 'mimes:jpeg,png,jpg,webp,mp4|max:8192',
+            'images.*' => 'mimes:jpeg,png,jpg,webp,mp4|max:8192'
         ];
     }
 }
