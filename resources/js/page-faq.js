@@ -6,9 +6,11 @@ const handleFilter = (name) => {
     filterBtn.addEventListener('click', () => {
         faq.forEach((item) => {
             item.classList.add('hidden');
+            item.classList.remove('bg-sk-dark');
         })
         filter.classList.remove('hidden');
         filter.classList.add('flex');
+        filter.classList.add('bg-sk-dark');
     })
 }
 
