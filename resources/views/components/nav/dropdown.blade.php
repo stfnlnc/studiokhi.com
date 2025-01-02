@@ -3,7 +3,6 @@
 >
     <div class="grid grid-cols-3 gap-14">
         <div class="flex flex-col text-sk-light">
-            <span>01</span>
             <x-button.secondary class="link-loader" href="{{ route('app.service.branding') }}" full icon mode="light">Branding & <br/> Direction
                 Artistique
             </x-button.secondary>
@@ -17,7 +16,6 @@
             </ul>
         </div>
         <div class="flex flex-col text-sk-light">
-            <span>02</span>
             <x-button.secondary class="link-loader" href="{{ route('app.service.webdesign') }}" full icon mode="light">Webdesign & <br/> Design
                 Digital
             </x-button.secondary>
@@ -30,15 +28,13 @@
             </ul>
         </div>
         <div class="flex flex-col text-sk-light">
-            <span>03</span>
             <x-button.secondary class="link-loader" href="{{ route('app.service.website') }}" full icon mode="light">Développement Web & <br/> Sites
                 Sur Mesure
             </x-button.secondary>
             <ul class="mt-6 text-sk-grey">
-                <li>Site Vitrine</li>
-                <li>Site E-Commerce</li>
+                <li>Site Vitrine & E-Commerce</li>
                 <li>Front-End & Back-End</li>
-                <li>Fonctionnalités SUr Mesure</li>
+                <li>Fonctionnalités Sur Mesure</li>
                 <li>SEO & Référencement Naturel</li>
                 <li>Formation & Maintenance</li>
             </ul>

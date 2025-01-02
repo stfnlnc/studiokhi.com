@@ -33,7 +33,14 @@ class ServiceController extends Controller
 
                 'Cohérence de la marque' => 'L\'identité de votre marque ne se limite pas à un seul support. C\'est pourquoi nous assurons une déclinaison de votre identité visuelle sur une multitude de supports, des réseaux sociaux en passant par les présentations Powerpoint. Chaque interaction avec votre marque est pensée pour garantir une cohérence et un impact maximal.',
             ],
-            'icons' => [],
+            'icons' => [
+                asset('images/tools/design/figma.svg'),
+                asset('images/tools/design/adobe-illustrator.svg'),
+                asset('images/tools/design/adobe-indesign.svg'),
+                asset('images/tools/design/adobe-lightroom.svg'),
+                asset('images/tools/design/adobe-photoshop.svg'),
+                asset('images/tools/design/procreate.svg'),
+            ],
             'faq' => 'branding',
         ];
 
@@ -65,7 +72,14 @@ class ServiceController extends Controller
 
                 'Design 100% personnalisé' => 'Chaque aspect de notre travail est entièrement personnalisé pour répondre aux besoins spécifiques de votre entreprise. Nous ne croyons pas aux solutions préfabriquées ni aux templates. Au lieu de cela, nous nous engageons à créer des designs uniques qui reflètent la personnalité et les valeurs de votre marque.',
             ],
-            'icons' => [],
+            'icons' => [
+                asset('images/tools/design/figma.svg'),
+                asset('images/tools/design/adobe-illustrator.svg'),
+                asset('images/tools/design/adobe-indesign.svg'),
+                asset('images/tools/design/adobe-lightroom.svg'),
+                asset('images/tools/design/adobe-photoshop.svg'),
+                asset('images/tools/design/procreate.svg'),
+            ],
             'faq' => 'webdesign'
         ];
 
@@ -99,7 +113,14 @@ class ServiceController extends Controller
 
                 'Site 100% optimisé' => 'En concevant des sites sur mesure, nous utilisons les meilleures pratiques web pour un bon référencement et de bonnes performances. Nos sites sont non seulement personnalisés, mais également entièrement adaptables et scalables pour faire évoluer votre site en même temps que votre entreprise.',
             ],
-            'icons' => [],
+            'icons' => [
+                asset('images/tools/web/laravel.svg'),
+                asset('images/tools/web/symfony.svg'),
+                asset('images/tools/web/react.svg'),
+                asset('images/tools/web/shopify.svg'),
+                asset('images/tools/web/wordpress.svg'),
+                asset('images/tools/web/gsap.svg'),
+            ],
             'faq' => 'website'
         ];
 

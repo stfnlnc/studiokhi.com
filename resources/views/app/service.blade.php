@@ -64,12 +64,9 @@
         </div>
     </section>
     <section class="px-4 lg:px-8 xl:px-16 py-4 bg-sk-dark grid grid-cols-3 md:grid-cols-6 gap-8 text-center justify-items-center">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
-        <img src="https://studiokhi.com/build/images/icons/tools/design/figma.svg" alt="">
+        @foreach($icons as $icon)
+            <img src="{{ $icon }}" alt="">
+        @endforeach
     </section>
     <section
         class="relative z-10 flex w-full flex-col lg:flex-row justify-start gap-8 px-4 py-24 bg-sk-{{ $color }} lg:px-8 xl:px-16 text-center lg:text-left">
@@ -88,7 +85,7 @@
                     <div id="branding" class="flex flex-col">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
                                 Qu'est-ce que le branding ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -109,7 +106,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Qu’est-ce qu’une charte graphique ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -126,7 +123,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Quels éléments font partie de l'identité de marque ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -141,7 +138,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Le studio créé-t-il des logos ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -156,7 +153,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Comment s’intègre la stratégie de marque dans la conception du site web ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -171,7 +168,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Quels autres services de design propose le studio ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -190,7 +187,7 @@
                     <div id="webdesign" class="flex flex-col">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
                                 Qu'est-ce que l'UX et UI Design ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -210,7 +207,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 À quoi servent les maquettes et les prototypes ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -226,7 +223,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Le studio propose-t-il des services de développement web en plus du design ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -240,7 +237,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Le design est-il responsive ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -253,7 +250,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 J’ai déjà une identité visuelle, pouvez-vous quand même créer le design de mon site web ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -269,7 +266,7 @@
                     <div id="website" class="flex flex-col">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Pourquoi créer un site sur mesure ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -286,7 +283,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Quels langages de programmation et technologies utilisez-vous ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -299,7 +296,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Pouvez-vous créer des fonctionnalités spécifiques ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -312,7 +309,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Pourrais-je modifier mon site moi-même ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -326,7 +323,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Une maintenance est-elle proposée ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>
@@ -339,7 +336,7 @@
                         <div
                             class="w-full border-b faq border-sk-light-grey">
                             <div
-                                class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                                class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                                 Quels sont les délais pour la création d'un site web ?
                                 <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                             </div>

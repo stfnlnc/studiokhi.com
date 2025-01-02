@@ -93,8 +93,7 @@
                 notre expertise technique, nous transformons vos idées en réalité digitale.
             </p>
             <ul class="text-sk-dark text-body-base">
-                <li>Site vitrine</li>
-                <li>Site E-Commerce</li>
+                <li>Site Vitrine & E-Commerce</li>
                 <li>Front-end & Back-end</li>
                 <li>Fonctionnalités Sur Mesure</li>
                 <li>SEO & Référencement Naturel</li>
@@ -223,7 +222,7 @@
                 <div id="general" class="flex flex-col">
                     <div class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
                             Pourquoi faire confiance au Studio Khi ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -239,7 +238,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Sur quels types de projets notre studio peut-il vous accompagner ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -254,7 +253,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Pourquoi un brief est-il important ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -267,7 +266,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Quelles sont les étapes d’un projet ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -281,7 +280,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Combien de temps dure un projet ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -294,7 +293,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Sur quels types de projets notre studio peut-il vous accompagner ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
@@ -309,7 +308,7 @@
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
                             Quels éléments fournir avant un projet ?
                             <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
