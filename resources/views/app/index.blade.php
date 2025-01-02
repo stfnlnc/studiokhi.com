@@ -16,7 +16,7 @@
         <x-logo.inline class="absolute bottom-0 left-0 hidden w-full px-4 fill-sk-dark md:block lg:px-8 xl:px-16"/>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
+        class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16 -mb-2">
         <p class="w-full lg:w-2/5 text-body-lg">
             Notre approche
         </p>
@@ -42,13 +42,12 @@
         </div>
     </section>
     <section
-        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-green md:h-screen lg:px-8 xl:px-16">
+        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-16 px-4 py-24 service min-h-[700px] bg-sk-green md:h-screen lg:px-8 xl:px-16">
         <div>
-            <span class="text-sk-dark text-body-base">01</span>
             <h1>Branding & <br> Direction Artistique</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
+            <p class="w-full text-body-base text-sk-grey sm:w-2/3">
                 Du logo à un système graphique audacieux, nous élaborons ensemble une image qui vous ressemble pour
                 renforcer votre présence en ligne.
             </p>
@@ -64,13 +63,12 @@
         </div>
     </section>
     <section
-        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-blue md:h-screen lg:px-8 xl:px-16">
+        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-16 px-4 py-24 service min-h-[700px] bg-sk-blue md:h-screen lg:px-8 xl:px-16">
         <div>
-            <span class="text-sk-dark text-body-base">02</span>
             <h1>Webdesign & <br> Design Digital</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
+            <p class="w-full text-body-base text-sk-grey sm:w-2/3">
                 Nous sommes spécialisés dans la conception de sites web qui attirent et retiennent l'attention. Notre
                 approche est de trouver le juste équilibre entre beauté et fonctionnalité.
             </p>
@@ -85,13 +83,12 @@
         </div>
     </section>
     <section
-        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-24 px-4 py-24 service min-h-[700px] bg-sk-purple md:h-screen lg:px-8 xl:px-16">
+        class="relative z-10 flex h-auto w-full flex-col items-start justify-center gap-16 px-4 py-24 service min-h-[700px] bg-sk-purple md:h-screen lg:px-8 xl:px-16">
         <div class="w-full">
-            <span class="text-sk-dark text-body-base">03</span>
             <h1 class="break-words">Développement Web & <br> Sites Sur Mesure</h1>
         </div>
         <div class="flex w-full flex-col items-start justify-start gap-12 self-end lg:w-3/5">
-            <p class="w-full text-body-base text-sk-grey sm:w-1/2">
+            <p class="w-full text-body-base text-sk-grey sm:w-2/3">
                 Nous développons des sites web sur mesure qui rehaussent la présence en ligne de votre marque. Grâce à
                 notre expertise technique, nous transformons vos idées en réalité digitale.
             </p>
@@ -223,33 +220,104 @@
                 FAQ
             </p>
             <div class="flex w-full flex-col lg:w-3/5">
-                <div class="flex flex-col">
+                <div id="general" class="flex flex-col">
                     <div class="w-full border-b faq border-sk-light-grey">
                         <div
                             class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
                             Pourquoi faire confiance au Studio Khi ?
-                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
                         <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate.
+                            Chez Studio Khi, nous privilégions l'approche humaine et la proximité. Nous limitons volontairement le nombre de projets
+                            que nous prenons en charge afin de leur accorder toute l'attention nécessaire. Nous sommes passionnés par notre travail et
+                            nous mettons tout en œuvre pour créer des solutions qui vous ressemblent à 100%. De la conception à la mise en ligne, nous
+                            gérons l'intégralité du processus pour vous permettre de vous concentrer pleinement sur d'autres aspects de votre
+                            entreprise. Travailler avec nous, c'est bénéficier d'un service personnalisé et d'une expertise dédiée à la réussite de
+                            votre projet.
                         </p>
                     </div>
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
                             class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
-                            Pourquoi faire confiance au Studio Khi ?
-                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                            Sur quels types de projets notre studio peut-il vous accompagner ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
                         <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                            adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate.
+                            Nous créons des identités visuelles, des designs et des sites web sur mesure, que vous partiez de zéro ou non. Notre
+                            agence digitale est là pour répondre à vos besoins web : pour tout type d’entreprise (Entrepreneur individuel, Start-up,
+                            TPE, PME, Organisation, Association, etc.) dans tous secteurs (Digital, Saas, Artisanat, Mode, Formations, Culture,
+                            Environnement, Outdoor, etc.) et pour tout projet web (Landing page, Site Vitrine, E-commerce, Espace Membre, Refonte de
+                            Site, etc.).
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            Pourquoi un brief est-il important ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Un brief est essentiel car il permet de définir clairement les objectifs, les attentes et les contraintes d'un projet dès
+                            le départ. En comprenant pleinement vos besoins, nous pouvons mieux orienter nos efforts pour vous fournir des solutions
+                            personnalisées. Afin de créer votre brief, vous pouvez d’ores et déjà nous contacter pour programmer un appel découverte.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            Quelles sont les étapes d’un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Les étapes d'un projet varient en fonction de sa nature et de sa complexité, mais en général, elles comprennent la phase
+                            de découverte et de brief, la recherche et l'analyse, la conception, le développement, les tests et la révision, puis
+                            enfin le déploiement et la maintenance. Chaque étape est soigneusement planifiée et exécutée pour assurer la qualité et la
+                            réussite du projet.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            Combien de temps dure un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            La durée d'un projet peut varier en fonction de sa complexité, de sa taille et de ses exigences graphiques. Nous
+                            travaillons avec chaque client pour établir un calendrier réaliste dès le début du projet. Cela dit, en moyenne, il faut
+                            compter environ un mois et demi entre la signature et la validation finale.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            Sur quels types de projets notre studio peut-il vous accompagner ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Le prix d'une prestation dépendra des spécificités de votre projet, telles que sa complexité, les fonctionnalités
+                            requises, et le niveau de personnalisation souhaité. Nous proposons des solutions adaptées à différents budgets et nous
+                            travaillons avec vous pour trouver l'option qui correspond à vos besoins et à vos moyens financiers. Cependant, afin de
+                            vous donner une estimation, vous pouvez consulter notre grille tarifaire dans notre
+                            <a class="underline underline-offset-4 hover:text-sk-dark" href="{{ route('app.price') }}">Onglet Tarifs</a>.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
+                            Quels éléments fournir avant un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Avant de commencer un projet, il est important que vous nous fournissiez toutes les informations pertinentes concernant
+                            votre projet, vos objectifs, vos préférences en matière de design, ainsi que tout contenu (textes, images, vidéos, etc.)
+                            que vous souhaitez inclure sur votre site web. Plus nous disposons d'informations détaillées dès le départ, plus nous
+                            pourrons créer un site web qui répond parfaitement à vos attentes.
                         </p>
                     </div>
                 </div>

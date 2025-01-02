@@ -19,4 +19,11 @@ class TagController extends Controller
 
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Tag créé avec succès');
     }
+
+    public function destroy(Tag $tag)
+    {
+        $tag->delete();
+
+        return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Tag supprimé avec succès');
+    }
 }

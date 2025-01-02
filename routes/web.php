@@ -45,6 +45,7 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
     Route::delete('/works/{work}/image', [WorkControllerAlias::class, 'destroyImage'])->name('works.destroyImage');
     Route::delete('/images/{image}/image', [WorkControllerAlias::class, 'destroyImages'])->name('works.destroyImages');
     Route::post('/tags/store', [TagController::class, 'store'])->name('tags.store');
+    Route::delete('/tags/delete/{tag}', [TagController::class, 'destroy'])->name('tags.destroy');
 });
 
 Route::middleware('auth')->group(function () {

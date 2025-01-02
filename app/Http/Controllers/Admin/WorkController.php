@@ -45,6 +45,7 @@ class WorkController extends Controller
             $validated['image_path'] = current($image);
         }
         $work = Work::create($validated);
+        $work->tags()->sync($request->tags);
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
                 $data = ImageService::uploadImage($img, $slug, $slug . '-' . uniqid());

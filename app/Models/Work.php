@@ -26,6 +26,16 @@ class Work extends Model
         'image_path'
     ];
 
+    public static function boot(): void
+    {
+        parent::boot();
+
+        static::deleting(function ($work) {
+            // Supprime les relations dans la table pivot
+            $work->tags()->detach();
+        });
+    }
+
     public function images(): HasMany
     {
         return $this->hasMany(ImagesWork::class);

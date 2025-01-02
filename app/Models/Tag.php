@@ -16,6 +16,16 @@ class Tag extends Model
         'color'
     ];
 
+    public static function boot(): void
+    {
+        parent::boot();
+
+        static::deleting(function ($tag) {
+            // Supprime les relations dans la table pivot
+            $tag->works()->detach();
+        });
+    }
+
     public function works(): BelongsToMany
     {
         return $this->belongsToMany(Work::class);

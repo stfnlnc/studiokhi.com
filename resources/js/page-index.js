@@ -9,41 +9,32 @@ if (window.innerWidth > 768) {
     const hero = document.getElementById("hero")
 
     gsap.to(hero, {
-        filter: "blur(5px)",
+        filter: "blur(2px)",
         duration: 1,
         scrollTrigger: {
             trigger: hero,
-            start: "bottom 75%",
+            start: "top top",
             scrub: 1,
+            pin: true,
+            pinSpacing: false,
         }
     })
 
-    ScrollTrigger.create({
-        trigger: hero,
-        pin: true,
-        pinSpacing: false,
-        start: "bottom bottom"
-    })
 
     const services = document.querySelectorAll('.service')
 
 
     services.forEach(service => {
         gsap.to(service, {
-            filter: "blur(5px)",
+            filter: "blur(2px)",
             duration: 1,
             scrollTrigger: {
                 trigger: service,
-                start: "bottom 75%",
+                start: "bottom bottom",
                 scrub: 1,
+                pin: true,
+                pinSpacing: false,
             }
-        })
-
-        ScrollTrigger.create({
-            trigger: service,
-            pin: true,
-            pinSpacing: false,
-            start: "bottom bottom"
         })
     })
 }

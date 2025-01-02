@@ -123,7 +123,14 @@
                     </form>
                     <div class="flex flex-col gap-2">
                         @foreach($tags as $tag)
-                            <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                            <div class="flex flex-row gap-1">
+                                <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                                <form class="" method="post" action="{{ route('admin.tags.destroy', $tag) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-danger-button>X</x-danger-button>
+                                </form>
+                            </div>
                         @endforeach
                     </div>
                 </div>
