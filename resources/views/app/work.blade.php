@@ -24,9 +24,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
             @foreach($works as $work)
                 <div class="@foreach($work->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-2">
-                    <a class="relative link-loader" href="{{ route('app.show', $work->slug) }}">
+                    <a class="relative link-loader" href="{{ route('app.work.show', $work->slug) }}">
                         <img class="aspect-square w-full h-full rounded-3xl object-cover object-center"
-                             src="{{ asset('storage/' . $work->slug . '/1536/' . $work->image_path) }}"
+                             src="{{ asset('storage/works/' . $work->slug . '/1536/' . $work->image_path) }}"
                              alt="">
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($work->tags as $tag)
@@ -34,10 +34,10 @@
                             @endforeach
                         </div>
                     </a>
-                    <a href="{{ route('app.show', $work->slug) }}" class="link-loader mt-2 w-3/4 text-body-lg">
+                    <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader mt-2 w-3/4 text-body-lg">
                         {{ $work->title }}
                     </a>
-                    <x-button.secondary href="{{ route('app.show', $work->slug) }}" class="link-loader" mode="dark">Voir le projet
+                    <x-button.secondary href="{{ route('app.work.show', $work->slug) }}" class="link-loader" mode="dark">Voir le projet
                     </x-button.secondary>
                 </div>
             @endforeach

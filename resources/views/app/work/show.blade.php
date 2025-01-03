@@ -7,20 +7,20 @@
 @section('content')
     <section class="relative z-10 w-full bg-sk-light">
         <img id="pin-image" class="w-full h-[100lvh] object-cover object-center"
-             src="{{ asset('storage/' . $work->slug . '/1536/' . $work->image_path) }}" alt="">
+             src="{{ asset('storage/works/' . $work->slug . '/1536/' . $work->image_path) }}" alt="">
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-12">
         <h1 class="uppercase">{{ $work->title }}</h1>
-        <div class="grid grid-cols-2">
-            <div class="flex flex-col gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="flex flex-col gap-8 mb-16">
                 <p class="text-body-lg">Résumé du projet</p>
                 <div class="flex flex-col gap-2">
                     <x-tag.primary color="blue">Branding</x-tag.primary>
                     <x-tag.primary color="purple">Branding</x-tag.primary>
                 </div>
             </div>
-            <div class="flex flex-col gap-12">
+            <div class="flex flex-col gap-8">
                 <p class="h3">{{ $work->subtitle }}</p>
                 <p class="text-body-base text-sk-grey">{{ $work->description }}</p>
                 <div class="flex flex-col w-full text-body-base">
