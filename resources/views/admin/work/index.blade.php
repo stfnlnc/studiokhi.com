@@ -38,11 +38,9 @@
                             <thead class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400">
                             <tr>
                                 <th scope="col" class="p-4 rounded-tl-lg">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-all-search" type="checkbox"
-                                               class="w-4 h-4 text-indigo-600 bg-zinc-100 border-zinc-300 rounded focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:ring-offset-zinc-800 dark:focus:ring-offset-zinc-800 focus:ring-2 dark:bg-zinc-700 dark:border-zinc-600">
-                                        <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Nom
@@ -50,7 +48,7 @@
                                 <th scope="col" class="px-6 py-3">
                                     Statut
                                 </th>
-                                <th scope="col" class="px-6 py-3 rounded-tr-lg">
+                                <th scope="col" class="px-6 py-3 rounded-tr-lg w-0">
                                     Action
                                 </th>
                             </tr>
@@ -59,18 +57,46 @@
                             @foreach($works as $work)
                                 <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-600">
                                     <td class="w-4 p-4">
-                                        <div class="flex items-center">
-                                            <input id="checkbox-table-search-1" type="checkbox"
-                                                   class="w-4 h-4 text-indigo-600 bg-zinc-100 border-zinc-300 rounded focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:ring-offset-zinc-800 dark:focus:ring-offset-zinc-800 focus:ring-2 dark:bg-zinc-700 dark:border-zinc-600">
-                                            <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                                        <div class="bg-zinc-200 rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">
+                                            {{ $work->order }}
                                         </div>
                                     </td>
-                                    <th scope="row" class="flex items-center px-6 py-4 min-h-full text-zinc-900 whitespace-nowrap dark:text-white">
+                                    <td class="w-4 p-4">
+                                        @if($work->order !== 0)
+                                            <form action="{{ route('admin.works.up', $work) }}" method="post">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button type="submit">
+                                                    <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                              stroke-linejoin="round"
+                                                        />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        @endif
+                                        @if($work->order !== count($works) - 1)
+                                            <form action="{{ route('admin.works.down', $work) }}" method="post">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button type="submit">
+                                                    <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                              stroke-linejoin="round"
+                                                        />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        @endif
+                                    </td>
+                                    <td class="flex items-center px-6 py-4 min-h-full text-zinc-900 whitespace-nowrap dark:text-white">
                                         <div class="ps-3">
                                             <div class="text-base font-semibold">{{ $work->title }}</div>
                                             <div class="font-normal text-zinc-500">{{ $work->subtitle }}</div>
                                         </div>
-                                    </th>
+                                    </td>
                                     <td class="px-6 py-4">
                                         <div class="flex items-center">
                                             <div class="h-2.5 w-2.5 rounded-full {{ $work->online ? 'bg-green-500' : 'bg-red-500' }} me-2"></div>
@@ -121,14 +147,21 @@
                         </div>
                         <x-primary-button class="w-fit">Enregistrer</x-primary-button>
                     </form>
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-row gap-4">
                         @foreach($tags as $tag)
-                            <div class="flex flex-row gap-1">
+                            <div class="relative w-fit">
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
-                                <form class="" method="post" action="{{ route('admin.tags.destroy', $tag) }}">
+                                <form class="absolute -top-2 -right-2" method="post" action="{{ route('admin.tags.destroy', $tag) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <x-danger-button>X</x-danger-button>
+                                    <button type="submit">
+                                        <svg class="fill-red-500 stroke-white" width="20" height="20" viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M15 9L9 15M9 9L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
                                 </form>
                             </div>
                         @endforeach

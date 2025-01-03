@@ -15,7 +15,7 @@ class WorkController extends Controller
 {
     public function index()
     {
-        $works = Work::all();
+        $works = Work::orderBy('order', 'ASC')->get();
         $tags = Tag::all();
 
         return view('admin.work.index', [
@@ -39,6 +39,7 @@ class WorkController extends Controller
         $validated = $request->validated();
         $slug = Str::slug($validated['title'], '-');
         $validated['slug'] = $slug;
+        $validated['order'] = Work::max('order') + 1;
         if ($request->hasFile('image')) {
             $image = ImageService::uploadImage($request->validated('image'), '/works/' . $slug, $slug);
             $validated['image_format'] = key($image);
@@ -117,5 +118,21 @@ class WorkController extends Controller
         $work->delete();
 
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet supprimé avec succès');
+    }
+
+    public function up(Work $work)
+    {
+        $before = Work::where('order', '=', $work->order - 1)->first();
+        $before->update(['order' => $work->order]);
+        $work->update(['order' => $work->order - 1]);
+        return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'L\'ordre a été changé');
+    }
+
+    public function down(Work $work)
+    {
+        $before = Work::where('order', '=', $work->order + 1)->first();
+        $before->update(['order' => $work->order]);
+        $work->update(['order' => $work->order + 1]);
+        return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'L\'ordre a été changé');
     }
 }
