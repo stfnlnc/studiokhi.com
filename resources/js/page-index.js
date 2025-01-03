@@ -20,10 +20,8 @@ if (window.innerWidth > 768) {
         }
     })
 
-
     const services = document.querySelectorAll('.service')
-
-
+    
     services.forEach(service => {
         gsap.to(service, {
             filter: "blur(2px)",

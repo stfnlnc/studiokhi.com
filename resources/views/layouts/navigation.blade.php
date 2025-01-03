@@ -11,14 +11,19 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-2 sm:-my-px sm:ms-8 sm:flex">
                     <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-2 sm:-my-px sm:ms-8 sm:flex">
                     <x-nav-link :href="route('admin.works.index')" :active="str_contains(request()->route()->getName(), 'admin.works')">
                         {{ __('Works') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-2 sm:-my-px sm:ms-8 sm:flex">
+                    <x-nav-link :href="route('admin.posts.index')" :active="str_contains(request()->route()->getName(), 'admin.posts')">
+                        {{ __('Posts') }}
                     </x-nav-link>
                 </div>
             </div>

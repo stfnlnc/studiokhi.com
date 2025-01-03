@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class WorkRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +23,11 @@ class WorkRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'subtitle' => 'required',
-            'category' => 'required',
-            'type' => 'required',
-            'date' => 'required',
-            'url' => 'nullable',
-            'description' => 'required',
-            'online' => 'required',
+            'body' => 'required',
+            'published' => 'required',
+            'published_at' => 'required',
+            'author' => 'required',
             'image' => 'mimes:jpeg,png,jpg,webp|max:8192',
-            'images.*' => 'mimes:jpeg,png,jpg,webp,mp4|max:8192'
         ];
     }
 }

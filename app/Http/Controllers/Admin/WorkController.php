@@ -40,7 +40,7 @@ class WorkController extends Controller
         $slug = Str::slug($validated['title'], '-');
         $validated['slug'] = $slug;
         if ($request->hasFile('image')) {
-            $image = ImageService::uploadImage($request->validated('image'), $slug, $slug);
+            $image = ImageService::uploadImage($request->validated('image'), '/works/' . $slug, $slug);
             $validated['image_format'] = key($image);
             $validated['image_path'] = current($image);
         }
@@ -48,7 +48,7 @@ class WorkController extends Controller
         $work->tags()->sync($request->tags);
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
-                $data = ImageService::uploadImage($img, $slug, $slug . '-' . uniqid());
+                $data = ImageService::uploadImage($img, '/works/' . $slug, $slug . '-' . uniqid());
                 $work->images()->create([
                     'image_format' => key($data),
                     'image_path' => current($data)
@@ -76,13 +76,13 @@ class WorkController extends Controller
     {
         $validated = $request->validated();
         if ($request->hasFile('image')) {
-            $image = ImageService::uploadImage($request->validated('image'), $work->slug, $work->slug);
+            $image = ImageService::uploadImage($request->validated('image'), '/works/' . $work->slug, $work->slug);
             $validated['image_format'] = key($image);
             $validated['image_path'] = current($image);
         }
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
-                $data = ImageService::uploadImage($img, $work->slug, $work->slug . '-' . uniqid());
+                $data = ImageService::uploadImage($img, '/works/' . $work->slug, $work->slug . '-' . uniqid());
                 $work->images()->create([
                     'image_format' => key($data),
                     'image_path' => current($data)
@@ -96,7 +96,7 @@ class WorkController extends Controller
 
     public function destroyImage(Work $work)
     {
-        ImageService::deleteImage($work->slug, $work->image_format, $work->image_path);
+        ImageService::deleteImage('/works/' . $work->slug, $work->image_format, $work->image_path);
         $work->update([
             'image_format' => null,
             'image_path' => null
@@ -106,14 +106,14 @@ class WorkController extends Controller
 
     public function destroyImages(ImagesWork $image)
     {
-        ImageService::deleteImage($image->work->slug, $image->image_format, $image->image_path);
+        ImageService::deleteImage('/works/' . $image->work->slug, $image->image_format, $image->image_path);
         $image->delete();
         return Redirect::route('admin.works.edit', $image->work)->with('status', 'success')->with('message', 'Image supprimée avec succès');
     }
 
     public function destroy(Work $work)
     {
-        ImageService::deleteDirectory($work->slug);
+        ImageService::deleteDirectory('/works/' . $work->slug);
         $work->delete();
 
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'Projet supprimé avec succès');

@@ -21,7 +21,7 @@ class ImageService extends Controller
 
         $imageManager = new ImageManager(new Driver());
         foreach ($sizes as $size) {
-            $img = $imageManager->read($image)->scale($size)->toWebp(95);
+            $img = $imageManager->read($image)->scale($size)->toWebp(100);
             Storage::disk('public')->put($path . '/' . $size . '/' . $name . '.webp', $img);
         }
         return ['webp' => $name . '.webp'];

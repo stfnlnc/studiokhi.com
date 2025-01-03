@@ -123,4 +123,8 @@
     input[type=file]::file-selector-button {
         display: none;
     }
+
+    blockquote {
+        @apply ml-24 border-l pl-4 border-sk-dark;
+    }
 }

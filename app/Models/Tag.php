@@ -24,10 +24,20 @@ class Tag extends Model
             // Supprime les relations dans la table pivot
             $tag->works()->detach();
         });
+
+        static::deleting(function ($tag) {
+            // Supprime les relations dans la table pivot
+            $tag->posts()->detach();
+        });
     }
 
     public function works(): BelongsToMany
     {
         return $this->belongsToMany(Work::class);
+    }
+
+    public function posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class);
     }
 }

@@ -1,7 +1,7 @@
 @extends('base')
 @section('title', 'FAQ')
 
-@vite(['resources/js/page-faq.js'])
+@vite(['resources/js/filter.js'])
 
 @section('content')
     <section
@@ -13,10 +13,10 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-row justify-center gap-8 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
-        <x-button.primary id="general-show" class="bg-transparent">Le Studio</x-button.primary>
-        <x-button.primary id="branding-show" class="bg-transparent">Branding & Logo</x-button.primary>
-        <x-button.primary id="webdesign-show" class="bg-transparent">Webdesign & UX/UI Design</x-button.primary>
-        <x-button.primary id="website-show" class="bg-transparent">Développement Web</x-button.primary>
+        <x-button.filter id="general" class="filter bg-sk-dark text-sk-light">Le Studio</x-button.filter>
+        <x-button.filter id="branding" class="filter">Branding & Logo</x-button.filter>
+        <x-button.filter id="webdesign" class="filter">Webdesign & UX/UI Design</x-button.filter>
+        <x-button.filter id="website" class="filter">Développement Web</x-button.filter>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
@@ -26,7 +26,7 @@
             </p>
             <div class="flex w-full flex-col lg:w-3/5">
                 <div class="flex flex-col">
-                    <div id="general" class="faq-block flex flex-col">
+                    <div class="general-show show-item flex flex-col">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
                                 class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
@@ -143,7 +143,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id="branding" class="faq-block flex-col hidden">
+                    <div class="branding-show show-item flex-col hidden">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
                                 class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
@@ -243,7 +243,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id="webdesign" class="faq-block flex-col hidden">
+                    <div class="webdesign-show show-item flex-col hidden">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
                                 class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
@@ -320,7 +320,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id="website" class="faq-block flex-col hidden">
+                    <div class="website-show show-item flex-col hidden">
                         <div class="w-full border-b faq border-sk-light-grey">
                             <div
                                 class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
