@@ -1,31 +1,29 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
     RewriteEngine On
 
-    # Redirige tout le trafic vers HTTPS
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Force https
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTM_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Dirige tout vers index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
+    # Force no www
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    # Autorise l'accès au répertoire storage
-    Options +FollowSymlinks
-    Options -Indexes
-    RewriteEngine On
-    RewriteCond %{REQUEST_URI} !^/storage
-    RewriteRule ^storage/(.*)$ /storage/$1 [L]
 </IfModule>
-
-# Protéger le fichier .env
-<FilesMatch "^\.env$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-# Protéger les fichiers sensibles
-<FilesMatch "(\.log|composer\.(json|lock))$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
