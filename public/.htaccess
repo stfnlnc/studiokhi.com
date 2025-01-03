@@ -11,6 +11,7 @@
     RewriteRule ^ index.php [L]
 
     # Autorise l'accès au répertoire storage
+    Options +FollowSymlinks
     Options -Indexes
     RewriteEngine On
     RewriteCond %{REQUEST_URI} !^/storage
