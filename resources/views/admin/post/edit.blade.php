@@ -23,7 +23,7 @@
                             @if($post->image_path)
                                 @if($post->image_format === 'webp')
                                     <img class="rounded-lg aspect-video object-cover object-center w-full"
-                                         src="{{ asset('storage/posts/' . $post->slug . '/640/' . $post->image_path) }}"
+                                         src="{{ asset('uploads/posts/' . $post->slug . '/640/' . $post->image_path) }}"
                                          alt="">
                                 @endif
                                 <form class="absolute top-1 right-1" method="post" action="{{ route('admin.posts.destroyImage', $post) }}">

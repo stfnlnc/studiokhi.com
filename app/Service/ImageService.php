@@ -15,14 +15,14 @@ class ImageService extends Controller
         $sizes = config('app.image_sizes');
 
         if ($image->getMimeType() === 'video/mp4') {
-            Storage::disk('public')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
+            Storage::disk('uploads')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
             return ['mp4' => $name . '.mp4'];
         }
 
         $imageManager = new ImageManager(new Driver());
         foreach ($sizes as $size) {
             $img = $imageManager->read($image)->scale($size)->toWebp(100);
-            Storage::disk('public')->put($path . '/' . $size . '/' . $name . '.webp', $img);
+            Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
         }
         return ['webp' => $name . '.webp'];
     }
@@ -31,16 +31,16 @@ class ImageService extends Controller
     {
         $sizes = config('app.image_sizes');
         if ($format === 'mp4') {
-            Storage::disk('public')->delete($path . '/mp4/' . $name);
+            Storage::disk('uploads')->delete($path . '/mp4/' . $name);
             return;
         }
         foreach ($sizes as $size) {
-            Storage::disk('public')->delete($path . '/' . $size . '/' . $name);
+            Storage::disk('uploads')->delete($path . '/' . $size . '/' . $name);
         }
     }
 
     public static function deleteDirectory($directory): void
     {
-        Storage::disk('public')->deleteDirectory($directory);
+        Storage::disk('uploads')->deleteDirectory($directory);
     }
 }

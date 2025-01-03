@@ -7,7 +7,7 @@
 @section('content')
     <section class="relative z-10 w-full bg-sk-light">
         <img id="pin-image" class="w-full h-[100lvh] object-cover object-center"
-             src="{{ asset('storage/works/' . $work->slug . '/1536/' . $work->image_path) }}" alt="">
+             src="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" alt="">
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-12">
@@ -47,9 +47,9 @@
         <section class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-1">
             @foreach($work->images as $image)
                 @if($image->image_format === 'webp')
-                    <img class="rounded-2xl w-full h-auto" src="{{ asset('storage/' . $work->slug . '/1536/' . $image->image_path) }}" alt="">
+                    <img class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/1536/' . $image->image_path) }}" alt="">
                 @else
-                    <video class="rounded-2xl w-full h-auto" src="{{ asset('storage/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
+                    <video class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
                            playsinline muted loop></video>
                 @endif
             @endforeach

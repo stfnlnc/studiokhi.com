@@ -26,7 +26,7 @@
                 <div class="@foreach($work->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-2">
                     <a class="relative link-loader" href="{{ route('app.work.show', $work->slug) }}">
                         <img class="aspect-square w-full h-full rounded-3xl object-cover object-center"
-                             src="{{ asset('storage/works/' . $work->slug . '/1536/' . $work->image_path) }}"
+                             src="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}"
                              alt="">
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($work->tags as $tag)

@@ -23,12 +23,12 @@
                             @if($work->image_path)
                                 @if($work->image_format === 'webp')
                                     <img class="rounded-lg aspect-video object-cover object-center w-full"
-                                         src="{{ asset('storage/works/' . $work->slug . '/640/' . $work->image_path) }}"
+                                         src="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}"
                                          alt="">
                                 @endif
                                 @if($work->image_format === 'mp4')
                                     <video class="rounded-lg" controls loop
-                                           src="{{ asset('storage/works/' . $work->slug . '/mp4/' . $work->image_path) }}"></video>
+                                           src="{{ asset('uploads/works/' . $work->slug . '/mp4/' . $work->image_path) }}"></video>
                                 @endif
                                 <form class="absolute top-1 right-1" method="post" action="{{ route('admin.works.destroyImage', $work) }}">
                                     @csrf
@@ -42,12 +42,12 @@
                                 <div class="relative w-full">
                                     @if($image->image_format === 'webp')
                                         <img class="rounded-lg aspect-video object-cover object-center w-full"
-                                             src="{{ asset('storage/works/' . $work->slug . '/640/' . $image->image_path) }}"
+                                             src="{{ asset('uploads/works/' . $work->slug . '/640/' . $image->image_path) }}"
                                              alt="">
                                     @endif
                                     @if($image->image_format === 'mp4')
                                         <video class="rounded-lg aspect-video object-cover object-center w-full"
-                                               src="{{ asset('storage/works/' . $work->slug . '/mp4/' . $image->image_path) }}" controls loop></video>
+                                               src="{{ asset('uploads/works/' . $work->slug . '/mp4/' . $image->image_path) }}" controls loop></video>
                                         <span class="absolute top-1 left-1 px-1 py-px bg-zinc-50 rounded-lg text-zinc-900 text-xs">video</span>
                                     @endif
                                     <form class="absolute top-1 right-1" method="post"
