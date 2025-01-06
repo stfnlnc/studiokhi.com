@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->text('body');
             $table->string('image_path')->nullable();
             $table->string('image_format')->nullable();
-            $table->boolean('published')->default(false);
+            $table->boolean('is_published')->default(false);
             $table->string('author')->nullable();
             $table->dateTime('published_at')->nullable();
             $table->timestamps();

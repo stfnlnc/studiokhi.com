@@ -30,7 +30,7 @@
                 @endforeach
             </div>
         </div>
-        
+
         <div class="flex flex-row gap-2">
             <div class="flex flex-col gap-1">
                 <label for="image"
@@ -68,10 +68,10 @@
             <x-input-error class="mt-2" :messages="$errors->get('published_at')"/>
         </div>
         <div class="flex items-center">
-            <input type="hidden" name="published" value="0">
-            <input id="published" type="checkbox" value="1" name="published"
+            <input type="hidden" name="is_published" value="0">
+            <input id="is_published" type="checkbox" value="1" name="is_published"
                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600">
-            <label for="published" class="text-sm font-medium text-gray-900 ms-2 dark:text-gray-300">Publier</label>
+            <label for="is_published" class="text-sm font-medium text-gray-900 ms-2 dark:text-gray-300">Publier</label>
         </div>
 
         <div class="flex items-center gap-4">

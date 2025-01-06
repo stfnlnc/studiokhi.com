@@ -13,14 +13,18 @@ return new class extends Migration {
         Schema::create('works', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->string('subtitle');
             $table->string('category');
             $table->string('type');
             $table->string('date');
+            $table->string('image_format')->nullable();
+            $table->string('image_path')->nullable();
             $table->string('url')->nullable();
             $table->text('description');
             $table->integer('order')->nullable();
-            $table->boolean('online');
+            $table->boolean('is_online');
+            $table->boolean('is_published');
             $table->timestamps();
         });
     }

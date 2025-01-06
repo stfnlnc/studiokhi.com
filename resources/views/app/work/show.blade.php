@@ -22,7 +22,7 @@
             </div>
             <div class="flex flex-col gap-8">
                 <p class="h3">{{ $work->subtitle }}</p>
-                <p class="text-body-base text-sk-grey">{{ $work->description }}</p>
+                <div class="text-body-base text-sk-grey">{!! $work->description !!}</div>
                 <div class="flex flex-col w-full text-body-base">
                     <div class="flex flex-row justify-between border-y border-sk-light-grey py-4">
                         <p>Catégorie</p>

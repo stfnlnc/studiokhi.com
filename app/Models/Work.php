@@ -21,7 +21,8 @@ class Work extends Model
         'url',
         'description',
         'order',
-        'online',
+        'is_online',
+        'is_published',
         'image_format',
         'image_path'
     ];

@@ -29,7 +29,8 @@ class WorkRequest extends FormRequest
             'date' => 'required',
             'url' => 'nullable',
             'description' => 'required',
-            'online' => 'required',
+            'is_online' => 'required',
+            'is_published' => 'required',
             'image' => 'mimes:jpeg,png,jpg,webp|max:8192',
             'images.*' => 'mimes:jpeg,png,jpg,webp,mp4|max:8192'
         ];

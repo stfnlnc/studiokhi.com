@@ -16,7 +16,7 @@ class Post extends Model
         'body',
         'image_path',
         'image_format',
-        'published',
+        'is_published',
         'published_at',
         'author'
     ];
