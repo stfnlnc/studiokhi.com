@@ -124,5 +124,5 @@ return [
     ],
 
     'calendly' => env('APP_CALENDLY_URL', ''),
-    'image_sizes' => env('APP_IMAGE_SIZES', ['150', '640', '1280', '1536'])
+    'image_sizes' => env('APP_IMAGE_SIZES', ['150', '480', '640', '960', '1280', '1536'])
 ];

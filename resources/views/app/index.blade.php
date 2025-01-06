@@ -120,23 +120,28 @@
             </div>
         </div>
         <div class="flex flex-col gap-20">
-            <div class="relative flex w-full flex-col gap-4">
-                <img class="aspect-video rounded-2xl object-cover object-center"
-                     src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
-                     alt="">
-                <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
-                    <x-tag.primary color="blue">Développement web</x-tag.primary>
-                    <x-tag.primary color="purple">Branding</x-tag.primary>
-                </div>
-                <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
-                    <p class="text-body-lg lg:w-2/5">Nom du projet</p>
-                    <p class="text-body-base text-sk-grey lg:w-2/5">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit, sed
-                        do eiusmod
-                        tempor incididunt ut labore.</p>
-                    <p class="text-body-base lg:ml-auto">Tech</p>
-                </div>
-            </div>
+            @foreach($works as $work)
+                <a href="{{ route('app.work.show', $work->slug) }}" class="relative flex w-full flex-col gap-4">
+                    <picture>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
+                        <img class="aspect-video rounded-2xl object-cover object-center"
+                             src="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                    </picture>
+                    <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                        @foreach($work->tags as $tag)
+                            <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                        @endforeach
+                    </div>
+                    <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
+                        <p class="text-body-lg lg:w-2/5">{{ $work->title }}</p>
+                        <p class="text-body-base text-sk-grey lg:w-2/5">{{ $work->subtitle }}</p>
+                        <p class="text-body-base lg:ml-auto">{{ $work->type }}</p>
+                    </div>
+                </a>
+            @endforeach
         </div>
         <x-button.secondary :href="route('app.work')" class="link-loader self-end" mode="dark" icon>Voir toutes les réalisations</x-button.secondary>
     </section>
@@ -163,13 +168,29 @@
                 </div>
             </div>
         </div>
-        <div class="lg:grid lg:grid-cols-5">
-            <div class="hidden lg:block col-span-2 lg:mr-8">
-                <img class="w-full rounded-3xl object-cover object-center h-[32rem]"
-                     src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
+        <div class="flex flex-row w-full">
+            <div class="hidden lg:block w-2/5 pr-8">
+                <picture class="w-full rounded-3xl object-cover object-center h-[32rem]">
+                    <source srcset="{{ asset('images/studio-photo-2/full/studio-photo-2.webp') }}" media="(min-width: 1536px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/1536/studio-photo-2.webp') }}" media="(min-width: 1280px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/1280/studio-photo-2.webp') }}" media="(min-width: 960px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/960/studio-photo-2.webp') }}" media="(min-width: 640px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/640/studio-photo-2.webp') }}" media="(min-width: 480px)"/>
+                    <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
+                         src="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" alt="Le Studio"/>
+
+                </picture>
             </div>
-            <img class="col-span-3 w-full rounded-3xl object-cover object-center h-[32rem]"
-                 src="https://studiokhi.com/build/images/uploads/studio-2.webp" alt="">
+            <picture class="lg:w-3/5 w-full">
+                <source srcset="{{ asset('images/studio-photo/full/studio-photo.webp') }}" media="(min-width: 1536px)"/>
+                <source srcset="{{ asset('images/studio-photo/1536/studio-photo.webp') }}" media="(min-width: 1280px)"/>
+                <source srcset="{{ asset('images/studio-photo/1280/studio-photo.webp') }}" media="(min-width: 960px)"/>
+                <source srcset="{{ asset('images/studio-photo/960/studio-photo.webp') }}" media="(min-width: 640px)"/>
+                <source srcset="{{ asset('images/studio-photo/640/studio-photo.webp') }}" media="(min-width: 480px)"/>
+                <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
+                     src="{{ asset('images/studio-photo/480/studio-photo.webp') }}" alt="Le Studio"/>
+
+            </picture>
         </div>
     </section>
     @include('app.partials.review')
@@ -188,28 +209,24 @@
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
-            <div class="flex flex-col items-start gap-4">
-                <a href="">
-                    <img class="aspect-square rounded-3xl object-cover object-center"
-                         src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
-                         alt="">
-                </a>
-                <a href="" class="mt-2 w-3/4 text-body-lg">
-                    5 ways the power of Ai might impact your corporate vision
-                </a>
-                <x-button.secondary>Lire l'article</x-button.secondary>
-            </div>
-            <div class="flex flex-col items-start gap-4">
-                <a href="">
-                    <img class="aspect-square rounded-3xl object-cover object-center"
-                         src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
-                         alt="">
-                </a>
-                <a href="" class="mt-2 w-3/4 text-body-lg">
-                    5 ways the power of Ai might impact your corporate vision
-                </a>
-                <x-button.secondary>Lire l'article</x-button.secondary>
-            </div>
+            @foreach($posts as $post)
+                <div class="flex flex-col items-start gap-4">
+                    <a href="{{ route('app.post.show', $post->slug) }}">
+                        <picture>
+                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" media="(min-width: 1536px)"/>
+                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
+                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1280/' . $post->image_path) }}" media="(min-width: 960px)"/>
+                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/960/' . $post->image_path) }}" media="(min-width: 640px)"/>
+                            <img class="aspect-square rounded-3xl object-cover object-center"
+                                 src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
+                        </picture>
+                    </a>
+                    <a href="{{ route('app.post.show', $post->slug) }}" class="mt-2 w-3/4 text-body-lg">
+                        {{ $post->title }}
+                    </a>
+                    <x-button.secondary>Lire l'article</x-button.secondary>
+                </div>
+            @endforeach
         </div>
     </section>
     <section

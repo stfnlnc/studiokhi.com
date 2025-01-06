@@ -20,6 +20,8 @@ class ImageService extends Controller
         }
 
         $imageManager = new ImageManager(new Driver());
+        $img = $imageManager->read($image)->toWebp(100);
+        Storage::disk('uploads')->put($path . '/full/' . $name . '.webp', $img);
         foreach ($sizes as $size) {
             $img = $imageManager->read($image)->scale($size)->toWebp(100);
             Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
@@ -34,6 +36,7 @@ class ImageService extends Controller
             Storage::disk('uploads')->delete($path . '/mp4/' . $name);
             return;
         }
+        Storage::disk('uploads')->delete($path . '/full/' . $name);
         foreach ($sizes as $size) {
             Storage::disk('uploads')->delete($path . '/' . $size . '/' . $name);
         }

@@ -24,7 +24,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required',
             'body' => 'required',
-            'published' => 'required',
+            'is_published' => 'required',
             'published_at' => 'required',
             'author' => 'required',
             'image' => 'mimes:jpeg,png,jpg,webp|max:8192',
