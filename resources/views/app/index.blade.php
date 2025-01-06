@@ -127,6 +127,7 @@
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
                         <img class="aspect-video rounded-2xl object-cover object-center"
                              src="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
@@ -178,7 +179,6 @@
                     <source srcset="{{ asset('images/studio-photo-2/640/studio-photo-2.webp') }}" media="(min-width: 480px)"/>
                     <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
                          src="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" alt="Le Studio"/>
-
                 </picture>
             </div>
             <picture class="lg:w-3/5 w-full">
@@ -217,6 +217,7 @@
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1280/' . $post->image_path) }}" media="(min-width: 960px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/960/' . $post->image_path) }}" media="(min-width: 640px)"/>
+                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/640/' . $post->image_path) }}" media="(min-width: 480px)"/>
                             <img class="aspect-square rounded-3xl object-cover object-center"
                                  src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
                         </picture>

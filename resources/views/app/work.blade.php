@@ -25,9 +25,15 @@
             @foreach($works as $work)
                 <div class="@foreach($work->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-2">
                     <a class="relative link-loader" href="{{ route('app.work.show', $work->slug) }}">
-                        <img class="aspect-square w-full h-full rounded-3xl object-cover object-center"
-                             src="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}"
-                             alt="">
+                        <picture>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
+                            <img class="aspect-square rounded-3xl object-cover object-center"
+                                 src="{{ asset('uploads/posts/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                        </picture>
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($work->tags as $tag)
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
