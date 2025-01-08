@@ -59,10 +59,10 @@
                         <div class="flex flex-col gap-16">
                             <div class="h2">Nous avons hâte <br>d'écouter votre projet</div>
                             <div class="flex flex-col gap-4 lg:flex-row">
-                                <x-button.primary mode="light" icon>Réservez votre appel
+                                <x-button.primary :href="config('app.calendly')" mode="light" icon>Réservez votre appel
                                     découverte
                                 </x-button.primary>
-                                <x-button.primary mode="dark" icon>Contactez-nous par mail</x-button.primary>
+                                <x-button.primary href="mailto:hello@studiokhi.com" mode="dark" icon>Contactez-nous par mail</x-button.primary>
                             </div>
                         </div>
                         <x-logo.square class="hidden w-48 fill-sk-light lg:block"/>
