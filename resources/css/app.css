@@ -106,7 +106,6 @@
     }
 
     section::before, footer::before {
-        background: repeat url('../images/noise.gif');
         background-size: 50px;
         bottom: 0;
         content: "";

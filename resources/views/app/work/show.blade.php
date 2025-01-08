@@ -47,7 +47,15 @@
         <section class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-1">
             @foreach($work->images as $image)
                 @if($image->image_format === 'webp')
-                    <img class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/1536/' . $image->image_path) }}" alt="">
+                    <picture>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $image->image_path) }}" media="(min-width: 1536px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $image->image_path) }}" media="(min-width: 1280px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $image->image_path) }}" media="(min-width: 960px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $image->image_path) }}" media="(min-width: 640px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $image->image_path) }}" media="(min-width: 480px)"/>
+                        <img class="rounded-2xl w-full h-auto"
+                             src="{{ asset('uploads/posts/' . $work->slug . '/480/' . $image->image_path) }}" alt="{{ $work->title }}"/>
+                    </picture>
                 @else
                     <video class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
                            playsinline muted loop></video>
