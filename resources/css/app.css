@@ -27,7 +27,7 @@
         margin: 0;
         padding: 0;
         font-family: "Inter", sans-serif;
-        @apply overflow-x-hidden text-sk-dark bg-sk-dark;
+        @apply overflow-x-hidden text-sk-dark bg-sk-light;
     }
 
     h1,
@@ -103,20 +103,6 @@
     .text-body-lg {
         @apply text-[1.25rem] lg:text-[1.625rem] 2xl:text-[1.625vw];
         line-height: 135%;
-    }
-
-    section::before, footer::before {
-        background-size: 50px;
-        bottom: 0;
-        content: "";
-        height: 100%;
-        left: 0;
-        opacity: 0.07;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        z-index: -40;
     }
 
     input[type=file]::file-selector-button {

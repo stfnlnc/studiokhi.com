@@ -6,7 +6,7 @@
     <section id="hero"
              class="relative z-10 flex w-full flex-col items-center justify-center px-4 bg-sk-light h-[100lvh] min-h-[700px] lg:px-8 xl:px-16">
         <div class="flex flex-col-reverse items-center gap-8 text-center md:flex-col">
-            <x-button.primary :href="config('app.calendly')" mode="dark" icon>Réserver votre appel découverte</x-button.primary>
+            <x-button.primary :href="config('app.calendly')" target="_blank" mode="dark" icon>Réserver votre appel découverte</x-button.primary>
             <p class="w-full text-body-base  sm:w-1/2">Nous créons des sites et des designs pour des marques
                 et des
                 entrepreneur
@@ -121,7 +121,7 @@
         </div>
         <div class="flex flex-col gap-20">
             @foreach($works as $work)
-                <a href="{{ route('app.work.show', $work->slug) }}" class="relative flex w-full flex-col gap-4">
+                <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader relative flex w-full flex-col gap-4">
                     <picture>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
@@ -207,7 +207,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
             @foreach($posts as $post)
                 <div class="flex flex-col items-start gap-4">
-                    <a href="{{ route('app.post.show', $post->slug) }}">
+                    <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader">
                         <picture>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" media="(min-width: 1536px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
@@ -218,10 +218,10 @@
                                  src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
                         </picture>
                     </a>
-                    <a href="{{ route('app.post.show', $post->slug) }}" class="mt-2 w-3/4 text-body-lg">
+                    <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader mt-2 w-3/4 text-body-lg">
                         {{ $post->title }}
                     </a>
-                    <x-button.secondary>Lire l'article</x-button.secondary>
+                    <x-button.secondary href="{{ route('app.post.show', $post->slug) }}" class="link-loader">Lire l'article</x-button.secondary>
                 </div>
             @endforeach
         </div>
@@ -316,7 +316,7 @@
                             requises, et le niveau de personnalisation souhaité. Nous proposons des solutions adaptées à différents budgets et nous
                             travaillons avec vous pour trouver l'option qui correspond à vos besoins et à vos moyens financiers. Cependant, afin de
                             vous donner une estimation, vous pouvez consulter notre grille tarifaire dans notre
-                            <a class="underline underline-offset-4 hover:text-sk-dark" href="{{ route('app.price') }}">Onglet Tarifs</a>.
+                            <a class="link-loader underline underline-offset-4 hover:text-sk-dark" href="{{ route('app.price') }}">Onglet Tarifs</a>.
                         </p>
                     </div>
                     <div

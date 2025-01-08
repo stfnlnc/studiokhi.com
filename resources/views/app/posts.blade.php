@@ -12,10 +12,10 @@
         </p>
     </section>
     <section
-        class="relative z-10 flex w-full flex-row justify-center gap-8 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        class="relative z-10 flex w-full flex-col md:flex-row justify-center gap-8 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         @foreach($tags as $key => $tag)
             <x-button.filter id="{{ $tag->slug }}"
-                             class="filter">{{ $tag->name }}</x-button.filter>
+                             class="filter shrink-0">{{ $tag->name }}</x-button.filter>
         @endforeach
     </section>
     <section class="relative z-10 w-full gap-20 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16">
