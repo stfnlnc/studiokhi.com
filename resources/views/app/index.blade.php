@@ -124,7 +124,7 @@
                 <a href="{{ route('app.work.show', $work->slug) }}" class="relative flex w-full flex-col gap-4">
                     <picture>
                         <img loading="lazy" class="aspect-video rounded-2xl object-cover object-center"
-                             src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                             src="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
                     <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                         @foreach($work->tags as $tag)
@@ -168,12 +168,12 @@
             <div class="hidden lg:block w-2/5 pr-8">
                 <picture class="w-full rounded-3xl object-cover object-center h-[32rem]">
                     <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                         src="{{ asset('images/studio-photo-2/full/studio-photo-2.webp') }}" alt="Le Studio"/>
+                         src="{{ asset('images/studio-photo-2/1536/studio-photo-2.webp') }}" alt="Le Studio"/>
                 </picture>
             </div>
             <picture class="lg:w-3/5 w-full">
                 <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                     src="{{ asset('images/studio-photo/full/studio-photo.webp') }}" alt="Le Studio"/>
+                     src="{{ asset('images/studio-photo/1536/studio-photo.webp') }}" alt="Le Studio"/>
             </picture>
         </div>
     </section>
@@ -198,7 +198,7 @@
                     <a href="{{ route('app.post.show', $post->slug) }}">
                         <picture>
                             <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
-                                 src="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" alt="{{ $post->title }}"/>
+                                 src="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" alt="{{ $post->title }}"/>
                         </picture>
                     </a>
                     <a href="{{ route('app.post.show', $post->slug) }}" class="mt-2 w-3/4 text-body-lg">
