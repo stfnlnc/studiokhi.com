@@ -172,23 +172,19 @@
         <div class="flex flex-row w-full">
             <div class="hidden lg:block w-2/5 pr-8">
                 <picture class="w-full rounded-3xl object-cover object-center h-[32rem]">
-                    <source srcset="{{ asset('images/studio-photo-2/1536/studio-photo-2.webp') }}" media="(min-width: 1536px)"/>
-                    <source srcset="{{ asset('images/studio-photo-2/1280/studio-photo-2.webp') }}" media="(min-width: 1280px)"/>
-                    <source srcset="{{ asset('images/studio-photo-2/960/studio-photo-2.webp') }}" media="(min-width: 960px)"/>
-                    <source srcset="{{ asset('images/studio-photo-2/640/studio-photo-2.webp') }}" media="(min-width: 640px)"/>
-                    <source srcset="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" media="(min-width: 480px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/960/studio-photo-2.webp') }}" media="(min-width: 1536px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/640/studio-photo-2.webp') }}" media="(min-width: 1280px)"/>
+                    <source srcset="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" media="(min-width: 960px)"/>
                     <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                         src="{{ asset('images/studio-photo-2/full/studio-photo-2.webp') }}" alt="Le Studio"/>
+                         src="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" alt="Le Studio"/>
                 </picture>
             </div>
             <picture class="lg:w-3/5 w-full">
-                <source srcset="{{ asset('images/studio-photo/1536/studio-photo.webp') }}" media="(min-width: 1536px)"/>
-                <source srcset="{{ asset('images/studio-photo/1280/studio-photo.webp') }}" media="(min-width: 1280px)"/>
-                <source srcset="{{ asset('images/studio-photo/960/studio-photo.webp') }}" media="(min-width: 960px)"/>
-                <source srcset="{{ asset('images/studio-photo/640/studio-photo.webp') }}" media="(min-width: 640px)"/>
-                <source srcset="{{ asset('images/studio-photo/480/studio-photo.webp') }}" media="(min-width: 480px)"/>
+                <source srcset="{{ asset('images/studio-photo/960/studio-photo.webp') }}" media="(min-width: 1536px)"/>
+                <source srcset="{{ asset('images/studio-photo/640/studio-photo.webp') }}" media="(min-width: 1280px)"/>
+                <source srcset="{{ asset('images/studio-photo/480/studio-photo.webp') }}" media="(min-width: 960px)"/>
                 <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                     src="{{ asset('images/studio-photo/full/studio-photo.webp') }}" alt="Le Studio"/>
+                     src="{{ asset('images/studio-photo/480/studio-photo.webp') }}" alt="Le Studio"/>
 
             </picture>
         </div>
