@@ -128,7 +128,7 @@
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 960px)"/>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 640px)"/>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" media="(min-width: 480px)"/>
-                        <img class="aspect-video rounded-2xl object-cover object-center"
+                        <img loading="lazy" class="aspect-video rounded-2xl object-cover object-center"
                              src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
                     <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
@@ -175,7 +175,7 @@
                     <source srcset="{{ asset('images/studio-photo-2/960/studio-photo-2.webp') }}" media="(min-width: 1536px)"/>
                     <source srcset="{{ asset('images/studio-photo-2/640/studio-photo-2.webp') }}" media="(min-width: 1280px)"/>
                     <source srcset="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" media="(min-width: 960px)"/>
-                    <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
+                    <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
                          src="{{ asset('images/studio-photo-2/480/studio-photo-2.webp') }}" alt="Le Studio"/>
                 </picture>
             </div>
@@ -183,7 +183,7 @@
                 <source srcset="{{ asset('images/studio-photo/960/studio-photo.webp') }}" media="(min-width: 1536px)"/>
                 <source srcset="{{ asset('images/studio-photo/640/studio-photo.webp') }}" media="(min-width: 1280px)"/>
                 <source srcset="{{ asset('images/studio-photo/480/studio-photo.webp') }}" media="(min-width: 960px)"/>
-                <img class="w-full h-[32rem] rounded-3xl object-cover object-center"
+                <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
                      src="{{ asset('images/studio-photo/480/studio-photo.webp') }}" alt="Le Studio"/>
 
             </picture>
@@ -214,7 +214,7 @@
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1280/' . $post->image_path) }}" media="(min-width: 960px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/960/' . $post->image_path) }}" media="(min-width: 640px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/640/' . $post->image_path) }}" media="(min-width: 480px)"/>
-                            <img class="aspect-square rounded-3xl object-cover object-center"
+                            <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
                                  src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
                         </picture>
                     </a>
