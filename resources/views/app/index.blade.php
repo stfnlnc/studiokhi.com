@@ -123,13 +123,13 @@
             @foreach($works as $work)
                 <a href="{{ route('app.work.show', $work->slug) }}" class="relative flex w-full flex-col gap-4">
                     <picture>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1536px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 1280px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 960px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 640px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" media="(min-width: 480px)"/>
-                        <img loading="lazy" class="aspect-video rounded-2xl object-cover object-center"
-                             src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
+                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
+                        <img loading="lazy" class="aspect-video w-full rounded-2xl object-cover object-center"
+                             src="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
                     <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                         @foreach($work->tags as $tag)
