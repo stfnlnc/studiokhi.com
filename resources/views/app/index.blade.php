@@ -21,7 +21,7 @@
             Notre approche
         </p>
         <div class="flex w-full flex-col gap-14 lg:w-3/5">
-            <h3 class="w-full md:w-4/5">On vous accompagne pour que vous ne ressembliez à personne.</h3>
+            <h1 class="h3 w-full md:w-4/5">On vous accompagne pour que vous ne ressembliez à personne.</h1>
             <div class="text-body-base text-sk-grey">
                 <p>Chez Studio Khi, nous combinons stratégie digitale, design et développement web pour créer des
                     identités
@@ -154,9 +154,9 @@
                 Le Studio
             </p>
             <div class="flex w-full flex-col gap-14 lg:w-3/5">
-                <h3 class="w-full md:w-4/5">
+                <h1 class="h3 w-full md:w-4/5">
                     Un duo créatif au service d’une seule mission : vous rendre unique.
-                </h3>
+                </h1>
                 <div class="text-body-base text-sk-grey">
                     <p>Derrière Studio Khi, nous sommes deux : une designer et un développeur. Nous avons rassemblé nos
                         compétences afin de vous proposer une expertise complète au service de votre marque.
