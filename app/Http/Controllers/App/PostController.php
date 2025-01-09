@@ -20,9 +20,11 @@ class PostController extends Controller
 
     public function show(string $slug)
     {
+        $posts = Post::whereNotIn('slug', [$slug])->inRandomOrder()->take(2)->get();
         $post = Post::where('slug', $slug)->firstOrFail();
         return view('app.post.show', [
             'post' => $post,
+            'posts' => $posts,
             'slug' => $post->slug,
         ]);
     }

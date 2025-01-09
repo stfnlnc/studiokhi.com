@@ -20,9 +20,11 @@ class WorkController extends Controller
 
     public function show(string $slug)
     {
+        $works = Work::whereNotIn('slug', [$slug])->inRandomOrder()->take(2)->get();
         $work = Work::where('slug', $slug)->firstOrFail();
         return view('app.work.show', [
             'work' => $work,
+            'works' => $works,
             'slug' => $work->slug,
         ]);
     }

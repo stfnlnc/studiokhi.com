@@ -63,4 +63,45 @@
             @endforeach
         </section>
     @endif
+    @include('app.partials.cta-light')
+    <section
+        class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <p class="w-full lg:w-2/5 text-body-lg">
+                Découvrir un autre projet
+            </p>
+            <div class="flex w-full flex-col gap-14 lg:w-3/5">
+                <div class="h3 w-full md:w-4/5">
+                    Vous avez encore deux minutes ?
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
+            @foreach($works as $work)
+                <div class="@foreach($work->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-2">
+                    <a class="relative link-loader" href="{{ route('app.work.show', $work->slug) }}">
+                        <picture>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
+                            <img class="aspect-square rounded-3xl object-cover object-center"
+                                 src="{{ asset('uploads/posts/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                        </picture>
+                        <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                            @foreach($work->tags as $tag)
+                                <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                            @endforeach
+                        </div>
+                    </a>
+                    <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader mt-2 w-3/4 text-body-lg">
+                        {{ $work->title }}
+                    </a>
+                    <x-button.secondary href="{{ route('app.work.show', $work->slug) }}" class="link-loader" mode="dark">Voir le projet
+                    </x-button.secondary>
+                </div>
+            @endforeach
+        </div>
+    </section>
 @endsection

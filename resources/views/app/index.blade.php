@@ -185,7 +185,6 @@
                 <source srcset="{{ asset('images/studio-photo/480/studio-photo.webp') }}" media="(min-width: 960px)"/>
                 <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
                      src="{{ asset('images/studio-photo/480/studio-photo.webp') }}" alt="Le Studio"/>
-
             </picture>
         </div>
     </section>
@@ -207,7 +206,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mg:gap-5">
             @foreach($posts as $post)
                 <div class="flex flex-col items-start gap-4">
-                    <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader">
+                    <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader relative">
                         <picture>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" media="(min-width: 1536px)"/>
                             <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
@@ -217,6 +216,11 @@
                             <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
                                  src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
                         </picture>
+                        <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                            @foreach($post->tags as $tag)
+                                <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                            @endforeach
+                        </div>
                     </a>
                     <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader mt-2 w-3/4 text-body-lg">
                         {{ $post->title }}

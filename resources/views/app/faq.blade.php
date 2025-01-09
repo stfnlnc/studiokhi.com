@@ -408,4 +408,5 @@
             </div>
         </div>
     </section>
+    @include('app.partials.cta')
 @endsection
