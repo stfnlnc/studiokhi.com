@@ -16,15 +16,18 @@ class ImageService extends Controller
 
         if ($image->getMimeType() === 'video/mp4') {
             Storage::disk('uploads')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
+            chmod($path . '/mp4/' . $name . '.mp4', 0755);
             return ['mp4' => $name . '.mp4'];
         }
 
         $imageManager = new ImageManager(new Driver());
         $img = $imageManager->read($image)->toWebp(100);
         Storage::disk('uploads')->put($path . '/full/' . $name . '.webp', $img);
+        chmod($path . '/full/' . $name . '.webp', 0755);
         foreach ($sizes as $size) {
             $img = $imageManager->read($image)->scale($size)->toWebp(100);
             Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
+            chmod($path . '/' . $size . '/' . $name . '.webp', 0755);
         }
         return ['webp' => $name . '.webp'];
     }
