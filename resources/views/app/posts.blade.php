@@ -5,14 +5,14 @@
 
 @section('content')
     <section
-        class="relative z-10 flex w-full flex-col gap-20 px-4 py-36 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        class="relative z-10 flex w-full flex-col gap-12 lg:gap-20 px-4 pt-36 pb-12 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         <h1>Articles & Blog</h1>
         <p class="text-body-base w-full lg:w-1/2 self-end">
             Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d’articles.
         </p>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col md:flex-row justify-center gap-8 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        class="relative z-10 flex w-full flex-row justify-center flex-wrap gap-8 px-4 py-8 lg:py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         @foreach($tags as $key => $tag)
             <x-button.filter id="{{ $tag->slug }}"
                              class="filter shrink-0">{{ $tag->name }}</x-button.filter>

@@ -5,14 +5,14 @@
 
 @section('content')
     <section
-        class="relative z-10 flex w-full flex-col gap-20 px-4 py-36 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        class="relative z-10 flex w-full flex-col gap-12 lg:gap-20 px-4 pt-36 pb-12 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         <h1>Des questions ?</h1>
         <p class="text-body-base w-full lg:w-1/2 self-end">
             Nous avons peut-être déjà les réponses à vos questions ! Ne manquez pas notre FAQ pour trouver les réponses dont vous avez besoin.
         </p>
     </section>
     <section
-        class="relative z-10 flex w-full flex-row justify-center gap-8 px-4 py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
+        class="relative z-10 flex w-full flex-row justify-center flex-wrap gap-8 px-4 py-8 lg:py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         <x-button.filter id="general" class="filter bg-sk-dark text-sk-light">Le Studio</x-button.filter>
         <x-button.filter id="branding" class="filter">Branding & Logo</x-button.filter>
         <x-button.filter id="webdesign" class="filter">Webdesign & UX/UI Design</x-button.filter>

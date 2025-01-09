@@ -5,7 +5,7 @@
 
 @section('content')
     <section
-        class="relative z-10 flex w-full flex-col gap-20 border-b px-4 py-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 lg:py-48 xl:px-16">
+        class="relative z-10 flex w-full flex-col gap-12 lg:gap-20 px-4 pt-36 pb-12 lg:py-48 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         <h1>Découvrir notre studio</h1>
         <div class="flex w-full flex-col gap-16 self-end lg:w-1/2">
             <p class="text-body-base">
