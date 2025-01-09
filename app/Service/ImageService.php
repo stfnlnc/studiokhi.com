@@ -27,23 +27,6 @@ class ImageService extends Controller
             Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
         }
 
-        // Appliquer les permissions au dossier principal
-        chmod('uploads', 0755);
-
-        // Parcourir récursivement les fichiers et dossiers
-        $files = File::allFiles('uploads');
-        $directories = File::directories('uploads');
-
-        // Appliquer les permissions aux fichiers
-        foreach ($files as $file) {
-            chmod($file->getRealPath(), 0644);
-        }
-
-        // Appliquer les permissions aux sous-dossiers
-        foreach ($directories as $dir) {
-            chmod($dir, 0755);
-        }
-
         return ['webp' => $name . '.webp'];
     }
 
