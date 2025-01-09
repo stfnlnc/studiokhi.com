@@ -10,7 +10,7 @@ class WorkController extends Controller
 {
     public function index()
     {
-        $works = Work::all();
+        $works = Work::where('is_published', '=', 1)->orderBy('created_at', 'desc')->get();
         $tags = Tag::all();
         return view('app.work', [
             'works' => $works,

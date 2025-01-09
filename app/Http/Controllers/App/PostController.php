@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        $posts = Post::all();
+        $posts = Post::where('is_published', '=', 1)->orderBy('created_at', 'desc')->get();
         return view('app.posts', [
             'posts' => $posts,
             'tags' => $tags
