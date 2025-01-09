@@ -26,6 +26,11 @@
                         {{ __('Posts') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-2 sm:-my-px sm:ms-8 sm:flex">
+                    <x-nav-link :href="route('admin.images.index')" :active="str_contains(request()->route()->getName(), 'admin.images')">
+                        {{ __('Images') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

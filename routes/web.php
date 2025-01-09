@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\PostController as PostControllerAlias;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\WorkController as WorkControllerAlias;
@@ -52,6 +53,8 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
     Route::delete('/tags/delete/{tag}', [TagController::class, 'destroy'])->name('tags.destroy');
     Route::resource('posts', PostControllerAlias::class);
     Route::delete('/posts/{post}/image', [PostControllerAlias::class, 'destroyImage'])->name('posts.destroyImage');
+    Route::get('/images', [ImageController::class, 'index'])->name('images.index');
+    Route::patch('/images/updateorcreate', [ImageController::class, 'updateOrCreate'])->name('images.updateorcreate');
 });
 
 Route::middleware('auth')->group(function () {

@@ -16,7 +16,13 @@
         </div>
     </section>
     <section class="relative z-10 bg-sk-light">
-        <img id="pin-image" class="w-full h-[100lvh]" src="https://studiokhi.com/build/images/uploads/le-studio-1.webp" alt="">
+        <picture>
+            <source srcset="{{ asset('uploads/images/image-studio-top/full/image-studio-top.webp') }}" media="(min-width: 1536px)"/>
+            <source srcset="{{ asset('uploads/images/image-studio-top/1536/image-studio-top.webp') }}" media="(min-width: 1280px)"/>
+            <source srcset="{{ asset('uploads/images/image-studio-top/1280/image-studio-top.webp') }}" media="(min-width: 960px)"/>
+            <img loading="lazy" id="pin-image" class="w-full h-[100lvh] object-cover object-center"
+                 src="{{ asset('uploads/images/image-studio-top/full/image-studio-top.webp') }}" alt="Le Studio"/>
+        </picture>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
@@ -93,15 +99,27 @@
             </h3>
             <div class="grid grid-cols-2 gap-8">
                 <div class="flex flex-col">
-                    <img class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                         src="https://studiokhi.com/build/images/uploads/cynthia-jego.webp" alt="">
+                    <picture>
+                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/960/image-studio-cynthia.webp') }}"
+                                media="(min-width: 1536px)"/>
+                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/640/image-studio-cynthia.webp') }}"
+                                media="(min-width: 1280px)"/>
+                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/480/image-studio-cynthia.webp') }}" media="(min-width: 960px)"/>
+                        <img loading="lazy" class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
+                             src="{{ asset('uploads/images/image-studio-cynthia/480/image-studio-cynthia.webp') }}" alt="Le Studio"/>
+                    </picture>
                     <p class="text-body-lg mt-4">Cynthia Jego</p>
                     <p class="text-body-base text-sk-grey">Designer</p>
                     <x-button.secondary href="https://www.linkedin.com/in/cynthia-jego/" icon mode="dark" class="mt-4">Linkedin</x-button.secondary>
                 </div>
                 <div class="flex flex-col">
-                    <img class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                         src="https://studiokhi.com/build/images/uploads/stefan-lancelot.webp" alt="">
+                    <picture>
+                        <source srcset="{{ asset('uploads/images/image-studio-stefan/960/image-studio-stefan.webp') }}" media="(min-width: 1536px)"/>
+                        <source srcset="{{ asset('uploads/images/image-studio-stefan/640/image-studio-stefan.webp') }}" media="(min-width: 1280px)"/>
+                        <source srcset="{{ asset('uploads/images/image-studio-stefan/480/image-studio-stefan.webp') }}" media="(min-width: 960px)"/>
+                        <img loading="lazy" class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
+                             src="{{ asset('uploads/images/image-studio-stefan/480/image-studio-stefan.webp') }}" alt="Le Studio"/>
+                    </picture>
                     <p class="text-body-lg mt-4">Stefan Lancelot</p>
                     <p class="text-body-base text-sk-grey">Développeur web</p>
                     <x-button.secondary href="https://www.linkedin.com/in/stefan-lancelot/" icon mode="dark" class="mt-4">Linkedin
@@ -178,7 +196,13 @@
     </section>
     @include('app.partials.review')
     <section>
-        <img class="w-full h-[100lvh]" src="https://studiokhi.com/build/images/uploads/le-studio-1.webp" alt="">
+        <picture>
+            <source srcset="{{ asset('uploads/images/image-studio-bottom/full/image-studio-bottom.webp') }}" media="(min-width: 1536px)"/>
+            <source srcset="{{ asset('uploads/images/image-studio-bottom/1536/image-studio-bottom.webp') }}" media="(min-width: 1280px)"/>
+            <source srcset="{{ asset('uploads/images/image-studio-bottom/1280/image-studio-bottom.webp') }}" media="(min-width: 960px)"/>
+            <img loading="lazy" class="w-full h-[100lvh] object-cover object-center"
+                 src="{{ asset('uploads/images/image-studio-bottom/960/image-studio-bottom.webp') }}" alt="Le Studio"/>
+        </picture>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
@@ -187,33 +211,120 @@
                 FAQ
             </p>
             <div class="flex w-full flex-col lg:w-3/5">
-                <div class="flex flex-col">
+                <div class="general-show show-item flex flex-col">
                     <div class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between  py-5 text-body-lg">
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4  py-5 text-body-lg">
                             Pourquoi faire confiance au Studio Khi ?
-                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
                         <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate.
+                            Chez Studio Khi, nous privilégions l'approche humaine et la proximité. Nous limitons volontairement le nombre de
+                            projets
+                            que nous prenons en charge afin de leur accorder toute l'attention nécessaire. Nous sommes passionnés par notre
+                            travail et
+                            nous mettons tout en œuvre pour créer des solutions qui vous ressemblent à 100%. De la conception à la mise en ligne,
+                            nous
+                            gérons l'intégralité du processus pour vous permettre de vous concentrer pleinement sur d'autres aspects de votre
+                            entreprise. Travailler avec nous, c'est bénéficier d'un service personnalisé et d'une expertise dédiée à la réussite
+                            de
+                            votre projet.
                         </p>
                     </div>
                     <div
                         class="w-full border-b faq border-sk-light-grey">
                         <div
-                            class="flex cursor-pointer flex-row items-center justify-between py-5 text-body-lg">
-                            Pourquoi faire confiance au Studio Khi ?
-                            <x-icon.plus class="h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Sur quels types de projets notre studio peut-il vous accompagner ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
                         </div>
                         <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                            adipisci aliquam animi aperiam
-                            commodi, corporis dolorem ea fugit impedit ipsum labore nobis obcaecati omnis quod soluta
-                            tempora totam vero voluptate.
+                            Nous créons des identités visuelles, des designs et des sites web sur mesure, que vous partiez de zéro ou non. Notre
+                            agence digitale est là pour répondre à vos besoins web : pour tout type d’entreprise (Entrepreneur individuel,
+                            Start-up,
+                            TPE, PME, Organisation, Association, etc.) dans tous secteurs (Digital, Saas, Artisanat, Mode, Formations, Culture,
+                            Environnement, Outdoor, etc.) et pour tout projet web (Landing page, Site Vitrine, E-commerce, Espace Membre, Refonte
+                            de
+                            Site, etc.).
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Pourquoi un brief est-il important ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Un brief est essentiel car il permet de définir clairement les objectifs, les attentes et les contraintes d'un projet
+                            dès
+                            le départ. En comprenant pleinement vos besoins, nous pouvons mieux orienter nos efforts pour vous fournir des
+                            solutions
+                            personnalisées. Afin de créer votre brief, vous pouvez d’ores et déjà nous contacter pour programmer un appel
+                            découverte.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Quelles sont les étapes d’un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Les étapes d'un projet varient en fonction de sa nature et de sa complexité, mais en général, elles comprennent la
+                            phase
+                            de découverte et de brief, la recherche et l'analyse, la conception, le développement, les tests et la révision, puis
+                            enfin le déploiement et la maintenance. Chaque étape est soigneusement planifiée et exécutée pour assurer la qualité
+                            et la
+                            réussite du projet.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Combien de temps dure un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            La durée d'un projet peut varier en fonction de sa complexité, de sa taille et de ses exigences graphiques. Nous
+                            travaillons avec chaque client pour établir un calendrier réaliste dès le début du projet. Cela dit, en moyenne, il
+                            faut
+                            compter environ un mois et demi entre la signature et la validation finale.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Sur quels types de projets notre studio peut-il vous accompagner ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Le prix d'une prestation dépendra des spécificités de votre projet, telles que sa complexité, les fonctionnalités
+                            requises, et le niveau de personnalisation souhaité. Nous proposons des solutions adaptées à différents budgets et
+                            nous
+                            travaillons avec vous pour trouver l'option qui correspond à vos besoins et à vos moyens financiers. Cependant, afin
+                            de
+                            vous donner une estimation, vous pouvez consulter notre grille tarifaire dans notre
+                            <a class="underline underline-offset-4 hover:text-sk-dark" href="{{ route('app.price') }}">Onglet Tarifs</a>.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full border-b faq border-sk-light-grey">
+                        <div
+                            class="flex cursor-pointer flex-row items-center justify-between gap-4 py-5 text-body-lg">
+                            Quels éléments fournir avant un projet ?
+                            <x-icon.plus class="ml-4 shrink-0 h-3 w-3 rotate-45 transition-transform duration-300 faq-plus"/>
+                        </div>
+                        <p class="hidden w-full md:w-3/4 pb-5 faq-answer text-sk-grey text-body-sm">
+                            Avant de commencer un projet, il est important que vous nous fournissiez toutes les informations pertinentes
+                            concernant
+                            votre projet, vos objectifs, vos préférences en matière de design, ainsi que tout contenu (textes, images, vidéos,
+                            etc.)
+                            que vous souhaitez inclure sur votre site web. Plus nous disposons d'informations détaillées dès le départ, plus nous
+                            pourrons créer un site web qui répond parfaitement à vos attentes.
                         </p>
                     </div>
                 </div>
