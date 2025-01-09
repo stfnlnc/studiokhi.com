@@ -13,21 +13,25 @@ class ImageService extends Controller
     public static function uploadImage(UploadedFile $image, $path, $name): array
     {
         $sizes = config('app.image_sizes');
-
+        chmod('uploads', 0755);
+        chmod('uploads/' . $path, 0755);
         if ($image->getMimeType() === 'video/mp4') {
             Storage::disk('uploads')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
-            chmod('uploads/' . $path . '/mp4/' . $name . '.mp4', 0755);
+            chmod('uploads/' . $path . '/mp4/', 0755);
+            chmod('uploads/' . $path . '/mp4/' . $name . '.mp4', 0644);
             return ['mp4' => $name . '.mp4'];
         }
 
         $imageManager = new ImageManager(new Driver());
         $img = $imageManager->read($image)->toWebp(100);
         Storage::disk('uploads')->put($path . '/full/' . $name . '.webp', $img);
-        chmod('uploads/' . $path . '/full/' . $name . '.webp', 0755);
+        chmod('uploads/' . $path . '/full/', 0755);
+        chmod('uploads/' . $path . '/full/' . $name . '.webp', 0644);
         foreach ($sizes as $size) {
             $img = $imageManager->read($image)->scale($size)->toWebp(100);
             Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
-            chmod('uploads/' . $path . '/' . $size . '/' . $name . '.webp', 0755);
+            chmod('uploads/' . $path . '/' . $size . '/', 0755);
+            chmod('uploads/' . $path . '/' . $size . '/' . $name . '.webp', 0644);
         }
         return ['webp' => $name . '.webp'];
     }
