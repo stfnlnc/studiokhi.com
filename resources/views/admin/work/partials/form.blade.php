@@ -106,14 +106,14 @@
 
         <div class="flex items-center">
             <input type="hidden" name="is_online" value="0">
-            <input id="is_online" type="checkbox" value="1" name="is_online"
+            <input id="is_online" type="checkbox" @if($work->is_online) checked @endif value="1" name="is_online"
                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600">
             <label for="is_online" class="text-sm font-medium text-gray-900 ms-2 dark:text-gray-300">À la une</label>
         </div>
 
         <div class="flex items-center">
             <input type="hidden" name="is_published" value="0">
-            <input id="is_published" type="checkbox" value="1" name="is_published"
+            <input id="is_published" type="checkbox" @if($work->is_published) checked @endif value="1" name="is_published"
                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600">
             <label for="is_published" class="text-sm font-medium text-gray-900 ms-2 dark:text-gray-300">Publier</label>
         </div>

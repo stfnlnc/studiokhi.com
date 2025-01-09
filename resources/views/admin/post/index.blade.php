@@ -72,8 +72,9 @@
                                     </th>
                                     <td class="px-6 py-4">
                                         <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full {{ $post->published ? 'bg-green-500' : 'bg-red-500' }} me-2"></div>
-                                            {{ $post->published ? 'En ligne' : 'Hors ligne' }}
+                                            <div
+                                                class="h-2.5 w-2.5 rounded-full {{ $post->is_published ? 'bg-green-500' : 'bg-red-500' }} me-2"></div>
+                                            {{ $post->is_published ? 'En ligne' : 'Hors ligne' }}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 gap-2 flex flex-row items-start">
