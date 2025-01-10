@@ -24,8 +24,9 @@
             <div class="flex flex-col gap-8 mb-16">
                 <p class="text-body-lg">Résumé du projet</p>
                 <div class="flex flex-col gap-2">
-                    <x-tag.primary color="blue">Branding</x-tag.primary>
-                    <x-tag.primary color="purple">Branding</x-tag.primary>
+                    @foreach($work->tags as $tag)
+                        <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
+                    @endforeach
                 </div>
             </div>
             <div class="flex flex-col gap-8">
