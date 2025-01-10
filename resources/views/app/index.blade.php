@@ -130,12 +130,12 @@
                         <img loading="lazy" class="aspect-video w-full rounded-2xl object-cover object-center"
                              src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
-                    <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                    <div class="top-5 left-5 flex flex-row gap-2 mt-2 lg:absolute">
                         @foreach($work->tags as $tag)
                             <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                         @endforeach
                     </div>
-                    <div class="flex w-full flex-col items-start justify-start gap-2 mt-2 lg:flex-row">
+                    <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
                         <p class="text-body-lg lg:w-2/5">{{ $work->title }}</p>
                         <p class="text-body-base text-sk-grey lg:w-2/5">{{ $work->subtitle }}</p>
                         <p class="text-body-base lg:ml-auto">{{ $work->type }}</p>
