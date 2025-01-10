@@ -112,4 +112,17 @@
     blockquote {
         @apply ml-24 border-l pl-4 border-sk-dark;
     }
+
+    section::before, footer::before {
+        background-image: url('../images/noise.gif');
+        background-size: auto;
+        bottom: 0;
+        content: "";
+        left: 0;
+        opacity: 0.04;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
 }
