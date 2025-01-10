@@ -21,7 +21,7 @@
     <div id="container" class="relative flex w-full flex-row">
         <div id="wrapper" class="inline-flex gap-8">
             <card
-                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[25rem] h-auto border-sk-dark text-body-sm">
+                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[28rem] h-auto border-sk-dark text-body-sm">
                 <x-icon.stars/>
                 <p class="mt-2">
                     Laure, Paul & Quentin
@@ -38,7 +38,7 @@
                 </p>
             </card>
             <card
-                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[25rem] h-auto border-sk-dark text-body-sm">
+                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[28rem] h-auto border-sk-dark text-body-sm">
                 <x-icon.stars/>
                 <p class="mt-2">
                     Cinéma Le Méliès
@@ -52,7 +52,7 @@
                 </p>
             </card>
             <card
-                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[25rem] h-auto border-sk-dark text-body-sm">
+                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[28rem] h-auto border-sk-dark text-body-sm">
                 <x-icon.stars/>
                 <p class="mt-2">
                     Delphine Danielou & Sammy Billlon
@@ -67,7 +67,7 @@
                 </p>
             </card>
             <card
-                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[25rem] h-auto border-sk-dark text-body-sm">
+                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[28rem] h-auto border-sk-dark text-body-sm">
                 <x-icon.stars/>
                 <p class="mt-2">
                     Carole Bees
@@ -81,7 +81,7 @@
                 </p>
             </card>
             <card
-                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[25rem] h-auto border-sk-dark text-body-sm">
+                class="flex flex-shrink-0 flex-col rounded-3xl border p-8 lg:p-12 w-[16rem] lg:w-[28rem] h-auto border-sk-dark text-body-sm">
                 <x-icon.stars/>
                 <p class="mt-2">
                     Garance Baby
