@@ -345,5 +345,5 @@
             </div>
         </div>
     </section>
-    @include('app.partials.cta')
+    @include('app.partials.cta', ['href' => config('app.calendly')])
 @endsection

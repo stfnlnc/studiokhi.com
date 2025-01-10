@@ -123,6 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'calendly' => env('APP_CALENDLY_URL', ''),
+    'calendly' => env('APP_CALENDLY_URL', 'https://calendly.com/studiokhi/appel-decouverte'),
     'image_sizes' => env('APP_IMAGE_SIZES', ['640', '1280', '1920'])
 ];

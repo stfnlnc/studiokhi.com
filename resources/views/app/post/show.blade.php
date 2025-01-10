@@ -34,7 +34,7 @@
             </div>
         </div>
     </section>
-    @include('app.partials.cta-light')
+    @include('app.partials.cta-light', ['href' => config('app.calendly')])
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
         <div class="flex flex-col lg:flex-row gap-4">

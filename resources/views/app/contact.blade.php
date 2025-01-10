@@ -11,7 +11,7 @@
                 <a href="mailto:hello@studiokhi.com">hello[@]studiokhi.com</a>
                 <p>Remote depuis les Pyrénées</p>
             </div>
-            <x-button.primary class="self-end" mode="light" icon>Réservez votre appel découverte</x-button.primary>
+            <x-button.primary :href="config('app.calendly')" class="self-end" mode="light" icon>Réservez votre appel découverte</x-button.primary>
         </div>
     </section>
 @endsection
