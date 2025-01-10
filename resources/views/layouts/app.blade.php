@@ -22,6 +22,15 @@
         </header>
     @endisset
 
+    <!-- Errors -->
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <x-alert status="danger"
+            >{{ $error }}
+            </x-alert>
+        @endforeach
+    @endif
+
     <!-- Page Content -->
     <main>
         {{ $slot }}

@@ -65,7 +65,7 @@
                                         </div>
                                     </td>
                                     <td class="w-4 p-4">
-                                        @if($work->order !== 0)
+                                        @if($work->order !== 1)
                                             <form action="{{ route('admin.works.up', $work) }}" method="post">
                                                 @csrf
                                                 @method('PATCH')
@@ -79,7 +79,7 @@
                                                 </button>
                                             </form>
                                         @endif
-                                        @if($work->order !== count($works) - 1)
+                                        @if($work->order !== count($works))
                                             <form action="{{ route('admin.works.down', $work) }}" method="post">
                                                 @csrf
                                                 @method('PATCH')
@@ -116,7 +116,6 @@
                                                 <div
                                                     class="h-2.5 w-2.5 rounded-full {{ $work->is_online && $work->is_published ? 'bg-green-500' : 'bg-red-500' }} me-2"></div>
                                                 {{ $work->is_online && $work->is_published ? 'À la une' : '' }}
-
                                             @endif
                                         </div>
                                     </td>
