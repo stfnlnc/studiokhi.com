@@ -31,8 +31,8 @@ class WorkRequest extends FormRequest
             'description' => 'required',
             'is_online' => 'required',
             'is_published' => 'required',
-            'image' => 'mimes:jpeg,png,jpg,webp|max:8192',
-            'images.*' => 'mimes:jpeg,png,jpg,webp,mp4|max:8192'
+            'image' => 'mimes:jpeg,png,jpg,webp|max:16384',
+            'images.*' => 'mimes:jpeg,png,jpg,webp,mp4|max:16384'
         ];
     }
 }
