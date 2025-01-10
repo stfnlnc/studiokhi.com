@@ -48,11 +48,12 @@ class WorkController extends Controller
         $work = Work::create($validated);
         $work->tags()->sync($request->tags);
         if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $img) {
+            foreach ($request->file('images') as $key => $img) {
                 $data = ImageService::uploadImage($img, '/works/' . $slug, $slug . '-' . uniqid());
                 $work->images()->create([
                     'image_format' => key($data),
-                    'image_path' => current($data)
+                    'image_path' => current($data),
+                    'order' => $key,
                 ]);
             }
         }
@@ -82,11 +83,13 @@ class WorkController extends Controller
             $validated['image_path'] = current($image);
         }
         if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $img) {
+            $lastImageOrder = ImagesWork::where('work_id', $work->id)->max('order');
+            foreach ($request->file('images') as $key => $img) {
                 $data = ImageService::uploadImage($img, '/works/' . $work->slug, $work->slug . '-' . uniqid());
                 $work->images()->create([
                     'image_format' => key($data),
-                    'image_path' => current($data)
+                    'image_path' => current($data),
+                    'order' => $lastImageOrder + $key + 1,
                 ]);
             }
         }
@@ -107,6 +110,10 @@ class WorkController extends Controller
 
     public function destroyImages(ImagesWork $image)
     {
+        $images = ImagesWork::where([['work_id', $image->work_id], ['order', '>', $image->order]])->orderBy('order', 'ASC')->get();
+        foreach ($images as $img) {
+            $img->update(['order' => $img->order - 1]);
+        }
         ImageService::deleteImage('/works/' . $image->work->slug, $image->image_format, $image->image_path);
         $image->delete();
         return Redirect::route('admin.works.edit', $image->work)->with('status', 'success')->with('message', 'Image supprimée avec succès');
@@ -122,8 +129,8 @@ class WorkController extends Controller
 
     public function up(Work $work)
     {
-        $before = Work::where('order', '=', $work->order - 1)->first();
-        $before->update(['order' => $work->order]);
+        $after = Work::where('order', '=', $work->order - 1)->first();
+        $after->update(['order' => $work->order]);
         $work->update(['order' => $work->order - 1]);
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'L\'ordre a été changé');
     }
@@ -134,5 +141,22 @@ class WorkController extends Controller
         $before->update(['order' => $work->order]);
         $work->update(['order' => $work->order + 1]);
         return Redirect::route('admin.works.index')->with('status', 'success')->with('message', 'L\'ordre a été changé');
+    }
+
+    public function upImage(ImagesWork $image)
+    {
+        $after = ImagesWork::where('order', '=', $image->order + 1)->first();
+        $after->update(['order' => $image->order]);
+        $image->update(['order' => $image->order + 1]);
+        return Redirect::route('admin.works.edit', $image->work)->with('status', 'success')->with('message', 'Image déplacée avec succès');
+    }
+
+    public function downImage(ImagesWork $image)
+    {
+        $after = ImagesWork::where('order', '=', $image->order - 1)->first();
+        $after->update(['order' => $image->order]);
+        $image->update(['order' => $image->order - 1]);
+        return Redirect::route('admin.works.edit', $image->work)->with('status', 'success')->with('message', 'Image déplacée avec succès');
+
     }
 }

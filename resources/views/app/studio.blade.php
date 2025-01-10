@@ -17,11 +17,15 @@
     </section>
     <section class="relative z-10 bg-sk-light">
         <picture>
-            <source srcset="{{ asset('uploads/images/image-studio-top/full/image-studio-top.webp') }}" media="(min-width: 1536px)"/>
-            <source srcset="{{ asset('uploads/images/image-studio-top/1536/image-studio-top.webp') }}" media="(min-width: 1280px)"/>
-            <source srcset="{{ asset('uploads/images/image-studio-top/1280/image-studio-top.webp') }}" media="(min-width: 960px)"/>
+            @php $key = 'image-studio-top' @endphp
+            @foreach(config('app.image_sizes') as $size)
+                <source
+                    srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                    media="(max-width: {{ $size }}px)"/>
+            @endforeach
             <img loading="lazy" id="pin-image" class="w-full h-[100lvh] object-cover object-center"
-                 src="{{ asset('uploads/images/image-studio-top/full/image-studio-top.webp') }}" alt="Le Studio"/>
+                 src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                 alt="Le Studio"/>
         </picture>
     </section>
     <section
@@ -100,13 +104,15 @@
             <div class="grid grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <picture>
-                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/960/image-studio-cynthia.webp') }}"
-                                media="(min-width: 1536px)"/>
-                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/640/image-studio-cynthia.webp') }}"
-                                media="(min-width: 1280px)"/>
-                        <source srcset="{{ asset('uploads/images/image-studio-cynthia/480/image-studio-cynthia.webp') }}" media="(min-width: 960px)"/>
+                        @php $key = 'image-studio-cynthia' @endphp
+                        @foreach(config('app.image_sizes') as $size)
+                            <source
+                                srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                                media="(max-width: {{ $size }}px)"/>
+                        @endforeach
                         <img loading="lazy" class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                             src="{{ asset('uploads/images/image-studio-cynthia/480/image-studio-cynthia.webp') }}" alt="Le Studio"/>
+                             src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                             alt="Le Studio"/>
                     </picture>
                     <p class="text-body-lg mt-4">Cynthia Jego</p>
                     <p class="text-body-base text-sk-grey">Designer</p>
@@ -114,11 +120,15 @@
                 </div>
                 <div class="flex flex-col">
                     <picture>
-                        <source srcset="{{ asset('uploads/images/image-studio-stefan/960/image-studio-stefan.webp') }}" media="(min-width: 1536px)"/>
-                        <source srcset="{{ asset('uploads/images/image-studio-stefan/640/image-studio-stefan.webp') }}" media="(min-width: 1280px)"/>
-                        <source srcset="{{ asset('uploads/images/image-studio-stefan/480/image-studio-stefan.webp') }}" media="(min-width: 960px)"/>
+                        @php $key = 'image-studio-stefan' @endphp
+                        @foreach(config('app.image_sizes') as $size)
+                            <source
+                                srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                                media="(max-width: {{ $size }}px)"/>
+                        @endforeach
                         <img loading="lazy" class="rounded-3xl aspect-[3/4] w-full object-cover object-center"
-                             src="{{ asset('uploads/images/image-studio-stefan/480/image-studio-stefan.webp') }}" alt="Le Studio"/>
+                             src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                             alt="Le Studio"/>
                     </picture>
                     <p class="text-body-lg mt-4">Stefan Lancelot</p>
                     <p class="text-body-base text-sk-grey">Développeur web</p>
@@ -197,11 +207,15 @@
     @include('app.partials.review')
     <section>
         <picture>
-            <source srcset="{{ asset('uploads/images/image-studio-bottom/full/image-studio-bottom.webp') }}" media="(min-width: 1536px)"/>
-            <source srcset="{{ asset('uploads/images/image-studio-bottom/1536/image-studio-bottom.webp') }}" media="(min-width: 1280px)"/>
-            <source srcset="{{ asset('uploads/images/image-studio-bottom/1280/image-studio-bottom.webp') }}" media="(min-width: 960px)"/>
+            @php $key = 'image-studio-bottom' @endphp
+            @foreach(config('app.image_sizes') as $size)
+                <source
+                    srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                    media="(max-width: {{ $size }}px)"/>
+            @endforeach
             <img loading="lazy" class="w-full h-[100lvh] object-cover object-center"
-                 src="{{ asset('uploads/images/image-studio-bottom/960/image-studio-bottom.webp') }}" alt="Le Studio"/>
+                 src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                 alt="Le Studio"/>
         </picture>
     </section>
     <section

@@ -13,7 +13,8 @@ class ImagesWork extends Model
     protected $fillable = [
         'work_id',
         'image_format',
-        'image_path'
+        'image_path',
+        'order'
     ];
 
     public function work(): BelongsTo

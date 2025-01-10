@@ -145,7 +145,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-zinc-900 dark:text-zinc-100 grid grid-cols-2">
+                <div class="p-6 text-zinc-900 dark:text-zinc-100 grid grid-cols-1 md:grid-cols-2 gap-16">
                     <form action="{{ route('admin.tags.store') }}" method="post" class="flex flex-col gap-4">
                         @csrf
                         <div>
@@ -167,15 +167,15 @@
                         </div>
                         <x-primary-button class="w-fit">Enregistrer</x-primary-button>
                     </form>
-                    <div class="flex flex-row gap-4">
+                    <div class="flex flex-col gap-4">
                         @foreach($tags as $tag)
                             <div class="relative w-fit">
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
-                                <form class="absolute -top-2 -right-2" method="post" action="{{ route('admin.tags.destroy', $tag) }}">
+                                <form class="absolute -top-4 -right-4" method="post" action="{{ route('admin.tags.destroy', $tag) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit">
-                                        <svg class="fill-red-500 stroke-white" width="20" height="20" viewBox="0 0 24 24"
+                                        <svg class="fill-red-500 stroke-white" width="30" height="30" viewBox="0 0 24 24"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M15 9L9 15M9 9L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"

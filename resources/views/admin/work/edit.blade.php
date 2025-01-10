@@ -33,13 +33,18 @@
                                 <form class="absolute top-1 right-1" method="post" action="{{ route('admin.works.destroyImage', $work) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <x-danger-button>X</x-danger-button>
+                                    <x-danger-button>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 7L7 17M7 7L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </svg>
+                                    </x-danger-button>
                                 </form>
                             @endif
                         </div>
-                        <div class="grid grid-cols-2 w-full gap-4">
-                            @foreach($work->images as $image)
-                                <div class="relative w-full">
+                        <div class="grid grid-cols-1 w-full gap-4">
+                            @foreach($work->images->sortBy('order') as $key => $image)
+                                <div id="{{ $key }}" class="relative w-full">
                                     @if($image->image_format === 'webp')
                                         <img class="rounded-lg aspect-video object-cover object-center w-full"
                                              src="{{ asset('uploads/works/' . $work->slug . '/640/' . $image->image_path) }}"
@@ -54,8 +59,44 @@
                                           action="{{ route('admin.works.destroyImages', $image) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <x-danger-button>X</x-danger-button>
+                                        <x-danger-button>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 7L7 17M7 7L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                            </svg>
+                                        </x-danger-button>
                                     </form>
+                                    <div class="absolute top-2 left-2 flex flex-row gap-2">
+                                        @if($image->order !== count($work->images) - 1)
+                                            <form action="{{ route('admin.images.up', $image) }}#{{ $key }}" method="post">
+                                                @csrf
+                                                @method('PATCH')
+                                                <x-primary-button type="submit">
+                                                    <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24"
+                                                         fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                              stroke-linejoin="round"
+                                                        />
+                                                    </svg>
+                                                </x-primary-button>
+                                            </form>
+                                        @endif
+                                        @if($image->order !== 0)
+                                            <form action="{{ route('admin.images.down', $image) }}#{{ $key }}" method="post">
+                                                @csrf
+                                                @method('PATCH')
+                                                <x-primary-button type="submit">
+                                                    <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                              stroke-linejoin="round"
+                                                        />
+                                                    </svg>
+                                                </x-primary-button>
+                                            </form>
+                                        @endif
+                                    </div>
                                 </div>
                             @endforeach
                         </div>

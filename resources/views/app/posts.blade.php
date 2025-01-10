@@ -24,13 +24,14 @@
                 <div class="@foreach($post->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-4">
                     <a class="relative" href="{{ route('app.post.show', $post->slug) }}">
                         <picture>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" media="(min-width: 1536px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1280/' . $post->image_path) }}" media="(min-width: 960px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/960/' . $post->image_path) }}" media="(min-width: 640px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/640/' . $post->image_path) }}" media="(min-width: 480px)"/>
-                            <img class="aspect-square rounded-3xl object-cover object-center"
-                                 src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
+                            @foreach(config('app.image_sizes') as $size)
+                                <source
+                                    srcset="{{ asset('uploads/posts/' . $post->slug . '/' . $size . '/' . $post->image_path) }}"
+                                    media="(max-width: {{ $size }}px)"/>
+                            @endforeach
+                            <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
+                                 src="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}"
+                                 alt="{{ $post->title }}"/>
                         </picture>
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($post->tags as $tag)

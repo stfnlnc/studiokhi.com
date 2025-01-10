@@ -45,7 +45,7 @@
     </section>
     @if($work->images)
         <section class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-1">
-            @foreach($work->images as $image)
+            @foreach($work->images->sortBy('order') as $image)
                 @if($image->image_format === 'webp')
                     <picture>
                         <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $image->image_path) }}" media="(min-width: 1536px)"/>

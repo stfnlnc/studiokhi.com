@@ -49,6 +49,8 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
     Route::patch('works/down/{work}', [WorkControllerAlias::class, 'down'])->name('works.down');
     Route::delete('/works/{work}/image', [WorkControllerAlias::class, 'destroyImage'])->name('works.destroyImage');
     Route::delete('/images/{image}/image', [WorkControllerAlias::class, 'destroyImages'])->name('works.destroyImages');
+    Route::patch('images/up/{image}', [WorkControllerAlias::class, 'upImage'])->name('images.up');
+    Route::patch('images/down/{image}', [WorkControllerAlias::class, 'downImage'])->name('images.down');
     Route::post('/tags/store', [TagController::class, 'store'])->name('tags.store');
     Route::delete('/tags/delete/{tag}', [TagController::class, 'destroy'])->name('tags.destroy');
     Route::resource('posts', PostControllerAlias::class);

@@ -123,13 +123,12 @@
             @foreach($works as $work)
                 <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader relative flex w-full flex-col gap-4">
                     <picture>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
+                        @foreach(config('app.image_sizes') as $size)
+                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
+                                    media="(max-width: {{ $size }}px)"/>
+                        @endforeach
                         <img loading="lazy" class="aspect-video w-full rounded-2xl object-cover object-center"
-                             src="{{ asset('uploads/works/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                             src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" alt="{{ $work->title }}"/>
                     </picture>
                     <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                         @foreach($work->tags as $tag)
@@ -172,19 +171,27 @@
         <div class="flex flex-row w-full">
             <div class="hidden lg:block w-2/5 pr-8">
                 <picture class="w-full rounded-3xl object-cover object-center h-[32rem]">
-                    <source srcset="{{ asset('uploads/images/image-index-left/960/image-index-left.webp') }}" media="(min-width: 1536px)"/>
-                    <source srcset="{{ asset('uploads/images/image-index-left/640/image-index-left.webp') }}" media="(min-width: 1280px)"/>
-                    <source srcset="{{ asset('uploads/images/image-index-left/480/image-index-left.webp') }}" media="(min-width: 960px)"/>
+                    @php $key = 'image-index-left' @endphp
+                    @foreach(config('app.image_sizes') as $size)
+                        <source
+                            srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                            media="(max-width: {{ $size }}px)"/>
+                    @endforeach
                     <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                         src="{{ asset('uploads/images/image-index-left/480/image-index-left.webp') }}" alt="Le Studio"/>
+                         src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                         alt="Le Studio"/>
                 </picture>
             </div>
             <picture class="lg:w-3/5 w-full">
-                <source srcset="{{ asset('uploads/images/image-index-right/960/image-index-right.webp') }}" media="(min-width: 1536px)"/>
-                <source srcset="{{ asset('uploads/images/image-index-right/640/image-index-right.webp') }}" media="(min-width: 1280px)"/>
-                <source srcset="{{ asset('uploads/images/image-index-right/480/image-index-right.webp') }}" media="(min-width: 960px)"/>
+                @php $key = 'image-index-right' @endphp
+                @foreach(config('app.image_sizes') as $size)
+                    <source
+                        srcset="{{ asset('uploads/images/' . $key . '/' . $size . '/' . $images[$key]) }}"
+                        media="(max-width: {{ $size }}px)"/>
+                @endforeach
                 <img loading="lazy" class="w-full h-[32rem] rounded-3xl object-cover object-center"
-                     src="{{ asset('uploads/images/image-index-right/480/image-index-rigt.webp') }}" alt="Le Studio"/>
+                     src="{{ asset('uploads/images/' . $key . '/full/' . $images[$key]) }}"
+                     alt="Le Studio"/>
             </picture>
         </div>
     </section>
@@ -208,13 +215,14 @@
                 <div class="flex flex-col items-start gap-4">
                     <a href="{{ route('app.post.show', $post->slug) }}" class="link-loader relative">
                         <picture>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}" media="(min-width: 1536px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1536/' . $post->image_path) }}" media="(min-width: 1280px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/1280/' . $post->image_path) }}" media="(min-width: 960px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/960/' . $post->image_path) }}" media="(min-width: 640px)"/>
-                            <source srcset="{{ asset('uploads/posts/' . $post->slug . '/640/' . $post->image_path) }}" media="(min-width: 480px)"/>
+                            @foreach(config('app.image_sizes') as $size)
+                                <source
+                                    srcset="{{ asset('uploads/posts/' . $post->slug . '/' . $size . '/' . $post->image_path) }}"
+                                    media="(max-width: {{ $size }}px)"/>
+                            @endforeach
                             <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
-                                 src="{{ asset('uploads/posts/' . $post->slug . '/480/' . $post->image_path) }}" alt="{{ $post->title }}"/>
+                                 src="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}"
+                                 alt="{{ $post->title }}"/>
                         </picture>
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($post->tags as $tag)

@@ -11,8 +11,10 @@ use Intervention\Image\ImageManager;
 
 class ImageService extends Controller
 {
+
     public static function uploadImage(UploadedFile $image, $path, $name): array
     {
+        ini_set('max_execution_time', 300);
         $sizes = config('app.image_sizes');
         if ($image->getMimeType() === 'video/mp4') {
             Storage::disk('uploads')->put($path . '/mp4/' . $name . '.mp4', file_get_contents($image));
@@ -26,6 +28,7 @@ class ImageService extends Controller
             $img = $imageManager->read($image)->scale($size)->toWebp(100);
             Storage::disk('uploads')->put($path . '/' . $size . '/' . $name . '.webp', $img);
         }
+        ini_set('max_execution_time', 30);
 
         return ['webp' => $name . '.webp'];
     }
