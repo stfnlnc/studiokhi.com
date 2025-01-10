@@ -58,7 +58,7 @@
                     <picture>
                         @foreach(config('app.image_sizes') as $size)
                             <source
-                                srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
+                                srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $image->image_path) }}"
                                 media="(max-width: {{ $size }}px)"/>
                         @endforeach
                         <img loading="lazy" class="rounded-2xl w-full h-auto"
