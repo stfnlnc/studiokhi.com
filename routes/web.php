@@ -14,6 +14,7 @@ use App\Http\Controllers\App\ServiceController;
 use App\Http\Controllers\App\StudioController;
 use App\Http\Controllers\App\WorkController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -64,6 +65,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/sitemap', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::fallback(function () {
     return view('errors.404');
