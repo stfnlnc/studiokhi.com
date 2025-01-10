@@ -18,7 +18,7 @@
         </picture>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 mt-8 lg:-mt-12">
+        class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 pt-8 -mt-12">
         <h1 class="uppercase">{{ $work->title }}</h1>
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="flex flex-col gap-8 mb-16">
