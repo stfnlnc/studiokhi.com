@@ -1,5 +1,6 @@
 @extends('base')
 @section('title', 'Le Studio')
+@section('description', 'Fondé par Cynthia Jego et Stéfan Lancelot, notre studio de création est basé à Pau, aux portes des Pyrénées')
 
 @vite(['resources/js/page-studio.js'])
 

@@ -1,5 +1,6 @@
 @extends('base')
 @section('title', 'Articles & Blog')
+@section('description', 'Vous proposer notre vision et nos réflexions sur le design, le web et la stratégie digitale par notre sélection d\'articles.')
 
 @vite(['resources/js/filter.js'])
 

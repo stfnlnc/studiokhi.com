@@ -1,5 +1,6 @@
 @extends('base')
 @section('title', 'Nous Contacter')
+@section('description', 'Vous avez des questions ? Contactez-nous pour discuter ensemble de votre projet !')
 
 @section('content')
     <section class="relative z-10 flex w-full flex-col gap-20  px-4 py-24 lg:px-8 xl:px-16 h-screen min-h-[700px] bg-sk-dark items-start justify-center

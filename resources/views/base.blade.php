@@ -7,11 +7,13 @@
     <link rel="icon" type="image/svg" href="/favicon.svg">
     <meta property="og:title" content="@yield('title', 'Création de sites web et identités visuelles') - {{ config('app.name') }}">
     <meta property="og:description"
-          content="Nous créons des sites et des designs pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.">
+          content="@yield('description', 'Nous créons des sites et des designs pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.')">
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <title>@yield('title', 'Création de sites web et identités visuelles') - {{ config('app.name') }}</title>
+    <meta name="description"
+          content="@yield('description', 'Nous créons des sites et des designs pour des marques et des entrepreneurs qui souhaitent se démarquer sur le web.')">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 

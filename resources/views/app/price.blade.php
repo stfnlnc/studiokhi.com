@@ -1,5 +1,6 @@
 @extends('base')
 @section('title', 'Infos & Tarifs')
+@section('description', 'Retrouvez les tarifs pour toutes nos prestations ici.')
 
 @vite(['resources/js/filter.js'])
 

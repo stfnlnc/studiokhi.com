@@ -1,5 +1,6 @@
 @extends('base')
 @section('title', $pageTitle)
+@section('description', $description)
 
 @vite(['resources/js/page-service.js'])
 

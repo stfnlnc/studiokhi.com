@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('title', $work->title)
+@section('description', $work->subtitle)
 
 @vite(['resources/js/page-work.js'])
 

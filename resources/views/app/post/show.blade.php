@@ -2,6 +2,7 @@
 @extends('base')
 
 @section('title', $post->title)
+@section('description', $post->title)
 
 @section('content')
 
