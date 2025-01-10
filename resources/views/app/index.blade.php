@@ -135,7 +135,7 @@
                             <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                         @endforeach
                     </div>
-                    <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
+                    <div class="flex w-full flex-col items-start justify-start gap-2 mt-4 lg:flex-row">
                         <p class="text-body-lg lg:w-2/5">{{ $work->title }}</p>
                         <p class="text-body-base text-sk-grey lg:w-2/5">{{ $work->subtitle }}</p>
                         <p class="text-body-base lg:ml-auto">{{ $work->type }}</p>
