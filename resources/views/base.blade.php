@@ -42,8 +42,10 @@
         <x-button.primary class="hidden link-loader lg:flex" :href="route('app.contact')" mode="light"
                           icon>Contact
         </x-button.primary>
+        <x-nav.mobile id="dropdown-menu-mobile"></x-nav.mobile>
     </nav>
     <x-nav.dropdown id="dropdown"/>
+    <x-nav.dropdown-mobile id="dropdown-mobile" :route="$route"/>
     <x-nav.loader id="loader"/>
     <x-nav.preloader id="preloader"/>
 </header>
