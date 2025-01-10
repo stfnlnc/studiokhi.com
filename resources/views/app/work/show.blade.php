@@ -6,8 +6,16 @@
 
 @section('content')
     <section class="relative z-10 w-full bg-sk-light">
-        <img id="pin-image" class="w-full h-[100lvh] object-cover object-center"
-             src="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" alt="">
+        <picture>
+            @foreach(config('app.image_sizes') as $size)
+                <source
+                    srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
+                    media="(max-width: {{ $size }}px)"/>
+            @endforeach
+            <img loading="lazy" id="pin-image" class="w-full h-[100lvh] object-cover object-center"
+                 src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}"
+                 alt="{{ $work->title }}"/>
+        </picture>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-12">
@@ -48,13 +56,14 @@
             @foreach($work->images->sortBy('order') as $image)
                 @if($image->image_format === 'webp')
                     <picture>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $image->image_path) }}" media="(min-width: 1536px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $image->image_path) }}" media="(min-width: 1280px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $image->image_path) }}" media="(min-width: 960px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $image->image_path) }}" media="(min-width: 640px)"/>
-                        <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $image->image_path) }}" media="(min-width: 480px)"/>
-                        <img class="rounded-2xl w-full h-auto"
-                             src="{{ asset('uploads/posts/' . $work->slug . '/480/' . $image->image_path) }}" alt="{{ $work->title }}"/>
+                        @foreach(config('app.image_sizes') as $size)
+                            <source
+                                srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
+                                media="(max-width: {{ $size }}px)"/>
+                        @endforeach
+                        <img loading="lazy" class="rounded-2xl w-full h-auto"
+                             src="{{ asset('uploads/works/' . $work->slug . '/full/' . $image->image_path) }}"
+                             alt="{{ $work->title }}"/>
                     </picture>
                 @else
                     <video class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
@@ -81,13 +90,14 @@
                 <div class="@foreach($work->tags as $tag) {{ $tag->slug . '-show' }} @endforeach show-item flex flex-col items-start gap-2">
                     <a class="relative link-loader" href="{{ route('app.work.show', $work->slug) }}">
                         <picture>
-                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}" media="(min-width: 1536px)"/>
-                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1536/' . $work->image_path) }}" media="(min-width: 1280px)"/>
-                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/1280/' . $work->image_path) }}" media="(min-width: 960px)"/>
-                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/960/' . $work->image_path) }}" media="(min-width: 640px)"/>
-                            <source srcset="{{ asset('uploads/works/' . $work->slug . '/640/' . $work->image_path) }}" media="(min-width: 480px)"/>
-                            <img class="aspect-square rounded-3xl object-cover object-center"
-                                 src="{{ asset('uploads/posts/' . $work->slug . '/480/' . $work->image_path) }}" alt="{{ $work->title }}"/>
+                            @foreach(config('app.image_sizes') as $size)
+                                <source
+                                    srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
+                                    media="(max-width: {{ $size }}px)"/>
+                            @endforeach
+                            <img loading="lazy" class="aspect-square rounded-3xl object-cover object-center"
+                                 src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}"
+                                 alt="{{ $work->title }}"/>
                         </picture>
                         <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
                             @foreach($work->tags as $tag)
