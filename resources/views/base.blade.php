@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
     <link rel="icon" type="image/svg" href="/favicon.svg">
     <meta property="og:title" content="@yield('title', 'Création de sites web et identités visuelles') - {{ config('app.name') }}">
     <meta property="og:description"
