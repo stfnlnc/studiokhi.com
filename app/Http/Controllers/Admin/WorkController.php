@@ -53,7 +53,7 @@ class WorkController extends Controller
                 $work->images()->create([
                     'image_format' => key($data),
                     'image_path' => current($data),
-                    'order' => $key,
+                    'order' => $key + 1,
                 ]);
             }
         }

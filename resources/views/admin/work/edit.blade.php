@@ -67,7 +67,7 @@
                                         </x-danger-button>
                                     </form>
                                     <div class="absolute top-2 left-2 flex flex-row gap-2">
-                                        @if($image->order !== count($work->images) - 1)
+                                        @if($image->order !== count($work->images))
                                             <form action="{{ route('admin.images.up', $image) }}#{{ $key }}" method="post">
                                                 @csrf
                                                 @method('PATCH')
@@ -82,7 +82,7 @@
                                                 </x-primary-button>
                                             </form>
                                         @endif
-                                        @if($image->order !== 0)
+                                        @if($image->order !== 1)
                                             <form action="{{ route('admin.images.down', $image) }}#{{ $key }}" method="post">
                                                 @csrf
                                                 @method('PATCH')
