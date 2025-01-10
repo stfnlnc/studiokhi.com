@@ -101,7 +101,7 @@
             <h3 class="w-full md:w-4/5">
                 Un duo de passionnés dévoués à des projets passionnants.
             </h3>
-            <div class="grid grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <picture>
                         @php $key = 'image-studio-cynthia' @endphp

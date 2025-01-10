@@ -121,7 +121,7 @@
         </div>
         <div class="flex flex-col gap-20">
             @foreach($works as $work)
-                <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader relative flex w-full flex-col gap-4">
+                <a href="{{ route('app.work.show', $work->slug) }}" class="link-loader relative flex w-full flex-col">
                     <picture>
                         @foreach(config('app.image_sizes') as $size)
                             <source srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
@@ -135,7 +135,7 @@
                             <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                         @endforeach
                     </div>
-                    <div class="flex w-full flex-col items-start justify-start gap-2 lg:flex-row">
+                    <div class="flex w-full flex-col items-start justify-start gap-2 mt-2 lg:flex-row">
                         <p class="text-body-lg lg:w-2/5">{{ $work->title }}</p>
                         <p class="text-body-base text-sk-grey lg:w-2/5">{{ $work->subtitle }}</p>
                         <p class="text-body-base lg:ml-auto">{{ $work->type }}</p>
@@ -224,7 +224,7 @@
                                  src="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}"
                                  alt="{{ $post->title }}"/>
                         </picture>
-                        <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                        <div class="top-5 left-5 flex flex-row gap-2 mt-2 lg:absolute">
                             @foreach($post->tags as $tag)
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                             @endforeach

@@ -33,7 +33,7 @@
                                  src="{{ asset('uploads/posts/' . $post->slug . '/full/' . $post->image_path) }}"
                                  alt="{{ $post->title }}"/>
                         </picture>
-                        <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                        <div class="top-5 left-5 flex flex-row gap-2 mt-2 lg:absolute">
                             @foreach($post->tags as $tag)
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                             @endforeach

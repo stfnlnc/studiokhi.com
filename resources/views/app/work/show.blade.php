@@ -53,7 +53,8 @@
         </div>
     </section>
     @if($work->images)
-        <section class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-1">
+        <section
+            class="relative z-10 flex w-full flex-col gap-8 lg:gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-1">
             @foreach($work->images->sortBy('order') as $image)
                 @if($image->image_format === 'webp')
                     <picture>
@@ -100,7 +101,7 @@
                                  src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}"
                                  alt="{{ $work->title }}"/>
                         </picture>
-                        <div class="top-5 left-5 flex flex-row gap-2 lg:absolute">
+                        <div class="top-5 left-5 flex flex-row gap-2 mt-2 lg:absolute">
                             @foreach($work->tags as $tag)
                                 <x-tag.primary color="{{ $tag->color }}">{{ $tag->name }}</x-tag.primary>
                             @endforeach
