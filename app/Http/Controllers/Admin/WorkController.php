@@ -121,6 +121,10 @@ class WorkController extends Controller
 
     public function destroy(Work $work)
     {
+        $works = Work::where('order', '>', $work->order)->orderBy('order', 'ASC')->get();
+        foreach ($works as $work) {
+            $work->update(['order' => $work->order - 1]);
+        }
         ImageService::deleteDirectory('/works/' . $work->slug);
         $work->delete();
 
