@@ -12,13 +12,13 @@
                     srcset="{{ asset('uploads/works/' . $work->slug . '/' . $size . '/' . $work->image_path) }}"
                     media="(max-width: {{ $size }}px)"/>
             @endforeach
-            <img loading="lazy" id="pin-image" class="w-full h-[100lvh] object-cover object-center"
+            <img loading="lazy" id="pin-image" class="w-full h-auto md:h-[100lvh] object-cover object-center"
                  src="{{ asset('uploads/works/' . $work->slug . '/full/' . $work->image_path) }}"
                  alt="{{ $work->title }}"/>
         </picture>
     </section>
     <section
-        class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 -mt-12">
+        class="relative z-10 flex w-full flex-col gap-20 px-4 pb-36 bg-sk-light text-sk-dark border-sk-light-grey lg:px-8 xl:px-16 mt-8 lg:-mt-12">
         <h1 class="uppercase">{{ $work->title }}</h1>
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="flex flex-col gap-8 mb-16">
