@@ -55,7 +55,7 @@
             @yield('content')
             @if (!request()->route()->named('app.contact'))
                 <footer
-                    class="relative -z-10 flex w-full flex-col justify-end pt-24 pb-8 footer bg-sk-dark text-sk-light lg:h-[100lvh] lg:-mt-[100lvh]">
+                    class="relative z-0 flex w-full flex-col justify-end pt-24 pb-8 footer bg-sk-dark text-sk-light lg:h-[100lvh] lg:-mt-[100lvh]">
                     <div
                         class="flex flex-row items-start justify-between border-b px-4 pb-20 border-sk-grey lg:px-8 xl:px-16">
                         <div class="flex flex-col gap-16">
