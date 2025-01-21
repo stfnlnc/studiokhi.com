@@ -198,13 +198,6 @@
                 <div>15-20 pages</div>
                 <div>30-40 pages</div>
             </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Maintenance</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Maintenance</div>
-                <div>En option</div>
-                <div>En option</div>
-                <div>En option</div>
-            </div>
             <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Carte de visite</div>
             <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
                 <div class="text-left lg:block hidden">Carte de visite</div>
