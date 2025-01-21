@@ -69,7 +69,7 @@
                              alt="{{ $work->title }}"/>
                     </picture>
                 @else
-                    <video class="rounded-2xl w-full h-auto" src="{{ asset('uploads/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
+                    <video class="rounded-2xl w-full h-auto" src="{{ asset('uploads/works/' . $work->slug . '/mp4/' . $image->image_path) }}" autoplay
                            playsinline muted loop></video>
                 @endif
             @endforeach
