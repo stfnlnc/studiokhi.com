@@ -9,7 +9,7 @@
             <x-button.primary :href="config('app.calendly')" target="_blank" mode="dark" icon>Réserver votre appel découverte</x-button.primary>
             <p class="w-full text-body-base  sm:w-1/2">Nous créons des sites et des designs pour des marques
                 et des
-                entrepreneur
+                entrepreneurs
                 qui souhaitent se démarquer sur le web.</p>
             <x-logo.square class="mb-16 block w-48 fill-sk-dark md:hidden"/>
         </div>
