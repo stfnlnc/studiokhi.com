@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden flex-col w-full text-center text-body-sm branding-show show-item">
+        <div class="hidden flex-col w-full text-left text-body-sm branding-show show-item">
             <div class="flex flex-col">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                     <div class="text-body-sm md:col-span-2">Création d’une identité visuelle complète</div>
