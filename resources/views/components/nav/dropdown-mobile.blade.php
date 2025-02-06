@@ -25,8 +25,8 @@
                 underline>Réalisations
     </x-nav.link>
     <span class="w-full border-t border-sk-dark-grey"></span>
-    <x-nav.link class="link-loader text-sk-light h4 my-2 ml-4" :current="$route === 'app.faq'" :href="route('app.faq')"
-                mode="dark" underline>FAQ
+    <x-nav.link class="link-loader text-sk-light h4 my-2 ml-4" :current="$route === 'app.price'" :href="route('app.price')"
+                mode="dark" underline>Tarifs
     </x-nav.link>
     <span class="w-full border-t border-sk-dark-grey"></span>
     <x-nav.link class="link-loader text-sk-light h4 my-2 ml-4" :current="$route === 'app.studio'"

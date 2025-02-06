@@ -33,7 +33,7 @@
             <x-nav.link class="link-loader" :current="$route === 'app.work'" :href="route('app.work')" mode="dark"
                         underline>Réalisations
             </x-nav.link>
-            <x-nav.link class="link-loader" :current="$route === 'app.faq'" :href="route('app.faq')" mode="dark" underline>FAQ
+            <x-nav.link class="link-loader" :current="$route === 'app.price'" :href="route('app.price')" mode="dark" underline>Tarifs
             </x-nav.link>
             <x-nav.link class="link-loader" :current="$route === 'app.studio'" :href="route('app.studio')" mode="dark" underline>Studio
             </x-nav.link>
