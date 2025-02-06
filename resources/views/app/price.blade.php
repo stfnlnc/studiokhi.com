@@ -2,7 +2,7 @@
 @section('title', 'Infos & Tarifs')
 @section('description', 'Retrouvez les tarifs pour toutes nos prestations ici.')
 
-@vite(['resources/js/filter.js', 'resources/js/filter-pricing.js'])
+@vite(['resources/js/filter-pricing.js'])
 
 @section('content')
     <section
@@ -18,12 +18,12 @@
                          class="filter shrink-0">Branding
         </x-button.filter>
     </section>
-    <section class="relative z-10 flex w-full flex-col gap-4 px-4 py-24 bg-sk-light  lg:px-8 xl:px-16">
+    <section class="relative z-10 flex w-full flex-col gap-4 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
         <div class="flex flex-col w-full text-left text-body-sm website-show show-item">
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5  border-b border-sk-light-grey">
-                <div class="pricing-web-filter h3 cursor-pointer hover:text-sk-dark transition-colors duration-300">One Page <br> Standard</div>
+                <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">One Page <br> Standard</div>
                 <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">One Page <br> Immersive</div>
-                <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">Site <br> Standard</div>
+                <div class="pricing-web-filter h3 cursor-pointer hover:text-sk-dark transition-colors duration-300">Site <br> Standard</div>
                 <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">Site <br> Immersif</div>
             </div>
             <div class="relative w-full h-full">
@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden flex-col w-full text-left text-body-sm branding-show show-item">
+        <div class="flex flex-col text-left text-body-sm branding-show show-item absolute top-0 left-0 w-full h-full px-4 lg:px-8 xl:px-16 pt-24">
             <div class="flex flex-col">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                     <div class="text-body-sm md:col-span-2">Création d’une identité visuelle complète</div>

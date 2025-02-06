@@ -126,7 +126,11 @@
         z-index: -1;
     }
 
-    .pricing-web:not(:first-child) {
+    .pricing-web:not(:nth-child(3)) {
+        clip-path: inset(0% 0% 100% 0%);
+    }
+
+    .branding-show {
         clip-path: inset(0% 0% 100% 0%);
     }
 }
