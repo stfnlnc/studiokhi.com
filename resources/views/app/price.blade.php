@@ -11,15 +11,15 @@
     </section>
     <section
         class="relative z-10 flex w-full flex-row justify-center flex-wrap gap-8 px-4 py-8 lg:py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
-        <x-button.filter id="website"
+        <x-button.filter id="web-pricing"
                          class="filter shrink-0 bg-sk-dark text-sk-light">Site Web
         </x-button.filter>
-        <x-button.filter id="branding"
+        <x-button.filter id="branding-pricing"
                          class="filter shrink-0">Branding
         </x-button.filter>
     </section>
     <section class="relative z-10 flex w-full flex-col gap-4 px-4 py-24 bg-sk-light lg:px-8 xl:px-16">
-        <div class="flex flex-col w-full text-left text-body-sm website-show show-item">
+        <div class="flex flex-col w-full text-left text-body-sm web-pricing-show show-item">
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5  border-b border-sk-light-grey">
                 <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">One Page <br> Standard</div>
                 <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">One Page <br> Immersive</div>
@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col text-left text-body-sm branding-show show-item absolute top-0 left-0 w-full h-full px-4 lg:px-8 xl:px-16 pt-24">
+        <div class="flex flex-col text-left text-body-sm branding-pricing-show show-item absolute top-0 left-0 w-full h-full px-4 lg:px-8 xl:px-16 pt-24">
             <div class="flex flex-col">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                     <div class="text-body-sm md:col-span-2">Création d’une identité visuelle complète</div>
