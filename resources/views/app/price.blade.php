@@ -28,7 +28,7 @@
             </div>
             <div class="relative w-full h-full">
                 <div class="flex flex-col pricing-web">
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                         <div class="text-body-sm md:col-span-2">Site d’une seule page avec interactions simples</div>
                         <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
                             <div class="text-body-sm text-sk-grey">Durée</div>
@@ -39,7 +39,7 @@
                             <div class="text-body-lg">3 500€ ht</div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 border-t border-sk-light-grey py-5">
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">Inclus</span> <br>
                             Stratégie de Marque <br>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                         <div class="text-body-sm md:col-span-2">Site d’une seule page avec animations avancées</div>
                         <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
                             <div class="text-body-sm text-sk-grey">Durée</div>
@@ -72,7 +72,7 @@
                             <div class="text-body-lg">5 500€ ht</div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 border-t border-sk-light-grey py-5">
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">Inclus</span> <br>
                             Stratégie de Marque <br>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                         <div class="text-body-sm md:col-span-2">Site vitrine d’environ 5 pages avec interactions simples</div>
                         <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
                             <div class="text-body-sm text-sk-grey">Durée</div>
@@ -105,7 +105,7 @@
                             <div class="text-body-lg">6 000€ ht</div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 border-t border-sk-light-grey py-5">
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">Inclus</span> <br>
                             Stratégie de Marque <br>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
                         <div class="text-body-sm md:col-span-2">Site vitrine d’environ 5 pages avec animations avancées</div>
                         <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
                             <div class="text-body-sm text-sk-grey">Durée</div>
@@ -138,7 +138,7 @@
                             <div class="text-body-lg">8 500€ ht</div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 border-t border-sk-light-grey py-5">
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">Inclus</span> <br>
                             Stratégie de Marque <br>
@@ -162,7 +162,41 @@
             </div>
         </div>
         <div class="hidden flex-col w-full text-center text-body-sm branding-show show-item">
-            Branding
+            <div class="flex flex-col">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5">
+                    <div class="text-body-sm md:col-span-2">Création d’une identité visuelle complète</div>
+                    <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                        <div class="text-body-sm text-sk-grey">Durée</div>
+                        <div class="text-body-lg">4 semaines</div>
+                    </div>
+                    <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                        <div class="text-body-sm text-sk-grey">À partir de</div>
+                        <div class="text-body-lg">2 500€ ht</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 border-t border-sk-light-grey py-5">
+                    <div class="text-body-sm text-sk-grey">
+                        <span class="text-sk-dark">Inclus</span> <br>
+                        Stratégie de Marque <br>
+                        Moodboards <br>
+                        Concepts Graphiques (x2) <br>
+                        Logo et Déclinaisons <br>
+                        Palette de Couleurs <br>
+                        Combinaison de Typographies <br>
+                        Charte Graphique <br>
+                        Supports de Communication au Choix (x3) <br>
+                        Livraison Formats Vectoriels et Standards
+                    </div>
+                    <div class="text-body-sm text-sk-grey">
+                        <span class="text-sk-dark">En supplément</span> <br>
+                        Naming <br>
+                        Community Management <br>
+                        Photo & Vidéo <br>
+                        Illustrations <br>
+                        3D
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section
