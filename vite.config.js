@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/admin/app.js',
                 'resources/js/faq.js',
                 'resources/js/filter.js',
+                'resources/js/filter-pricing.js',
                 'resources/js/loader.js',
                 'resources/js/page-index.js',
                 'resources/js/page-service.js',

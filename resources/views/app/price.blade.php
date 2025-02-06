@@ -2,7 +2,7 @@
 @section('title', 'Infos & Tarifs')
 @section('description', 'Retrouvez les tarifs pour toutes nos prestations ici.')
 
-@vite(['resources/js/filter.js'])
+@vite(['resources/js/filter.js', 'resources/js/filter-pricing.js'])
 
 @section('content')
     <section
@@ -12,235 +12,166 @@
     <section
         class="relative z-10 flex w-full flex-row justify-center flex-wrap gap-8 px-4 py-8 lg:py-16 bg-sk-light text-sk-dark lg:px-8 xl:px-16 border-b border-sk-light-grey">
         <x-button.filter id="website"
-                         class="filter shrink-0 bg-sk-dark text-sk-light">Webdesign & Développement
+                         class="filter shrink-0 bg-sk-dark text-sk-light">Site Web
         </x-button.filter>
         <x-button.filter id="branding"
-                         class="filter shrink-0">Branding & Logo
+                         class="filter shrink-0">Branding
         </x-button.filter>
     </section>
-    <section class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:px-8 xl:px-16">
-        <div class="flex flex-col w-full text-center text-body-sm website-show show-item">
-            <div class="grid lg:grid-cols-4 grid-cols-3 w-full text-center text-body-sm py-8 border-b border-sk-light-grey">
-                <div class="lg:block hidden mt-auto text-sk-grey text-left">* Sur la base d'un site web de 5 pages</div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Basic</span>
-                    <span>à partir de 3400 €*</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Avancé</span>
-                    <span>à partir de 5100 €*</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Expert</span>
-                    <span>à partir de 6700 €*</span>
-                </div>
+    <section class="relative z-10 flex w-full flex-col gap-4 px-4 py-24 bg-sk-light  lg:px-8 xl:px-16">
+        <div class="flex flex-col w-full text-left text-body-sm website-show show-item">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-16 py-5  border-b border-sk-light-grey">
+                <div class="pricing-web-filter h3 cursor-pointer hover:text-sk-dark transition-colors duration-300">One Page <br> Standard</div>
+                <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">One Page <br> Immersive</div>
+                <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">Site <br> Standard</div>
+                <div class="pricing-web-filter h3 cursor-pointer text-sk-light-grey hover:text-sk-dark transition-colors duration-300">Site <br> Immersif</div>
             </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Complexité du design</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Complexité du design</div>
-                <div>Simple</div>
-                <div>Moyenne</div>
-                <div>Haute</div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Complexité des animations</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Complexité des animations</div>
-                <div>Simple</div>
-                <div>Moyenne</div>
-                <div>Haute</div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">UX/UI Design</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">UX/UI Design</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
+            <div class="relative w-full h-full">
+                <div class="flex flex-col pricing-web">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                        <div class="text-body-sm md:col-span-2">Site d’une seule page avec interactions simples</div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">Durée</div>
+                            <div class="text-body-lg">4 semaines</div>
+                        </div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">À partir de</div>
+                            <div class="text-body-lg">3 500€ ht</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">Inclus</span> <br>
+                            Stratégie de Marque <br>
+                            Copywriting & SEO <br>
+                            Architecture & Wireframing (UX) <br>
+                            Digital Design (UI) <br>
+                            Développement <br>
+                            Dashboard Intuitif <br>
+                            Formation & Tutoriels
+                        </div>
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">En supplément</span> <br>
+                            Branding <br>
+                            Social Content <br>
+                            Photo & Vidéo <br>
+                            Illustrations <br>
+                            3D
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
+                <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                        <div class="text-body-sm md:col-span-2">Site d’une seule page avec animations avancées</div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">Durée</div>
+                            <div class="text-body-lg">6 semaines</div>
+                        </div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">À partir de</div>
+                            <div class="text-body-lg">5 500€ ht</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">Inclus</span> <br>
+                            Stratégie de Marque <br>
+                            Copywriting & SEO <br>
+                            Architecture & Wireframing (UX) <br>
+                            Digital Design (UI) <br>
+                            Développement <br>
+                            Dashboard Intuitif <br>
+                            Formation & Tutoriels
+                        </div>
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">En supplément</span> <br>
+                            Branding <br>
+                            Social Content <br>
+                            Photo & Vidéo <br>
+                            Illustrations <br>
+                            3D
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
+                <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                        <div class="text-body-sm md:col-span-2">Site vitrine d’environ 5 pages avec interactions simples</div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">Durée</div>
+                            <div class="text-body-lg">8 semaines</div>
+                        </div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">À partir de</div>
+                            <div class="text-body-lg">6 000€ ht</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">Inclus</span> <br>
+                            Stratégie de Marque <br>
+                            Copywriting & SEO <br>
+                            Architecture & Wireframing (UX) <br>
+                            Digital Design (UI) <br>
+                            Développement <br>
+                            Dashboard Intuitif <br>
+                            Formation & Tutoriels
+                        </div>
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">En supplément</span> <br>
+                            Branding <br>
+                            Social Content <br>
+                            Photo & Vidéo <br>
+                            Illustrations <br>
+                            3D
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Responsive</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Responsive</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
+                <div class="flex flex-col pricing-web absolute top-0 left-0 w-full h-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 py-5">
+                        <div class="text-body-sm md:col-span-2">Site vitrine d’environ 5 pages avec animations avancées</div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">Durée</div>
+                            <div class="text-body-lg">12 semaines</div>
+                        </div>
+                        <div class="border border-sk-light-grey rounded-2xl p-5 flex flex-col gap-1">
+                            <div class="text-body-sm text-sk-grey">À partir de</div>
+                            <div class="text-body-lg">8 500€ ht</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 border-t border-sk-light-grey py-5">
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">Inclus</span> <br>
+                            Stratégie de Marque <br>
+                            Copywriting & SEO <br>
+                            Architecture & Wireframing (UX) <br>
+                            Digital Design (UI) <br>
+                            Développement <br>
+                            Dashboard Intuitif <br>
+                            Formation & Tutoriels
+                        </div>
+                        <div class="text-body-sm text-sk-grey">
+                            <span class="text-sk-dark">En supplément</span> <br>
+                            Branding <br>
+                            Social Content <br>
+                            Photo & Vidéo <br>
+                            Illustrations <br>
+                            3D
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">SEO & Optimisation</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">SEO & Optimisation</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Support & Formation</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Support & Formation</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">E-Commerce</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">E-Commerce</div>
-                <div>+ 3000 €</div>
-                <div>+ 3000 €</div>
-                <div>+ 3000 €</div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Maintenance</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Maintenance</div>
-                <div>En option</div>
-                <div>En option</div>
-                <div>En option</div>
             </div>
         </div>
         <div class="hidden flex-col w-full text-center text-body-sm branding-show show-item">
-            <div class="grid lg:grid-cols-4 grid-cols-3 w-full text-center text-body-sm py-8 border-b border-sk-light-grey">
-                <div class="lg:block hidden"></div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Starter</span>
-                    <span>à partir de 1200 €*</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Avancé</span>
-                    <span>à partir de 2000 €*</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="h5 lg:h3">Expert</span>
-                    <span>à partir de 3500 €*</span>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Brainstorming & Workshop</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Brainstorming & Workshop</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Moodboards</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Moodboards</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Logo Concepts et Retours</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Logo Concepts et Retours</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Formats PNG, EPS, SVG</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Formats PNG, EPS, SVG</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Palette de Couleurs</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Palette de Couleurs</div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Charte graphique</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Charte graphique</div>
-                <div>1 page</div>
-                <div>15-20 pages</div>
-                <div>30-40 pages</div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Carte de visite</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Carte de visite</div>
-                <div class="flex flex-row justify-center items-center">
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Template Réseaux Sociaux</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Template Réseaux Sociaux</div>
-                <div class="flex flex-row justify-center items-center">
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
-            <div class="lg:hidden flex text-left w-full py-4 border-b border-sk-light-grey">Pitchdeck</div>
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-body-sm py-4 border-b border-sk-light-grey">
-                <div class="text-left lg:block hidden">Pitchdeck</div>
-                <div class="flex flex-row justify-center items-center">
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                </div>
-                <div class="flex flex-row justify-center items-center">
-                    <div class="w-4 h-4 rounded-full bg-sk-dark"></div>
-                </div>
-            </div>
+            Branding
         </div>
     </section>
     <section
         class="relative z-10 flex w-full flex-col gap-4 border-t px-4 py-24 bg-sk-light border-sk-light-grey lg:flex-row lg:px-8 xl:px-16">
-        <p class="w-full lg:w-2/5 text-body-lg">
+        <p class="w-full lg:w-2/5 text-body-sm">
             Votre devis sur mesure
         </p>
         <div class="flex w-full flex-col gap-14 lg:w-3/5">
-            <div class="text-body-base text-sk-grey">
+            <div class="text-body-sm text-sk-grey">
                 <p>
                     * Bien que nous proposions une grille tarifaire de départ pour nos services, il est important de noter que chaque projet est
                     unique et peut nécessiter des besoins spécifiques. Nos tarifs de départ fournissent une estimation générale, mais pour obtenir un

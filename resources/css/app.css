@@ -125,4 +125,8 @@
         top: 0;
         z-index: -1;
     }
+
+    .pricing-web:not(:first-child) {
+        clip-path: inset(0% 0% 100% 0%);
+    }
 }
