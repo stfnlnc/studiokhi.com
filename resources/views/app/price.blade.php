@@ -49,6 +49,7 @@
                             Développement <br>
                             Dashboard Intuitif <br>
                             Formation & Tutoriels
+                            Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">En supplément</span> <br>
@@ -82,6 +83,7 @@
                             Développement <br>
                             Dashboard Intuitif <br>
                             Formation & Tutoriels
+                            Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">En supplément</span> <br>
@@ -115,6 +117,7 @@
                             Développement <br>
                             Dashboard Intuitif <br>
                             Formation & Tutoriels
+                            Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">En supplément</span> <br>
@@ -148,6 +151,7 @@
                             Développement <br>
                             Dashboard Intuitif <br>
                             Formation & Tutoriels
+                            Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
                             <span class="text-sk-dark">En supplément</span> <br>
