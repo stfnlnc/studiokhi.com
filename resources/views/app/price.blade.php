@@ -48,7 +48,7 @@
                             Digital Design (UI) <br>
                             Développement <br>
                             Dashboard Intuitif <br>
-                            Formation & Tutoriels
+                            Formation & Tutoriels <br>
                             Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
@@ -82,7 +82,7 @@
                             Digital Design (UI) <br>
                             Développement <br>
                             Dashboard Intuitif <br>
-                            Formation & Tutoriels
+                            Formation & Tutoriels <br>
                             Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
@@ -116,7 +116,7 @@
                             Digital Design (UI) <br>
                             Développement <br>
                             Dashboard Intuitif <br>
-                            Formation & Tutoriels
+                            Formation & Tutoriels <br>
                             Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
@@ -150,7 +150,7 @@
                             Digital Design (UI) <br>
                             Développement <br>
                             Dashboard Intuitif <br>
-                            Formation & Tutoriels
+                            Formation & Tutoriels <br>
                             Support & Maintenance
                         </div>
                         <div class="text-body-sm text-sk-grey">
