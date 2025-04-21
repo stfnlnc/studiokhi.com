@@ -15,7 +15,11 @@ use App\Http\Controllers\App\StudioController;
 use App\Http\Controllers\App\WorkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Resources\WorkResource;
+use App\Models\Work;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 Route::prefix('')->name('app.')->group(function () {
@@ -38,6 +42,10 @@ Route::prefix('')->name('app.')->group(function () {
         Route::get('/politique-de-confidentialite', [PolicyController::class, 'privacy_policy'])->name('privacy_policy');
         Route::get('/cookies', [PolicyController::class, 'cookies'])->name('cookies');
     });
+});
+
+Route::get('/api/works', function () {
+    return WorkResource::collection(Work::orderBy('order')->get());
 });
 
 
